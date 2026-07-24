@@ -20,3 +20,6 @@ func on_play_scene_ready() -> void:
 
 func on_change_scene_controller_progressing_loading_scene_updated_listener(new_value: float) -> void:
 	loading_progress_bar.value = new_value
+
+func on_exit_click_listener() -> void:
+	get_tree().quit()

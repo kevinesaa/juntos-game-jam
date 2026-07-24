@@ -99,3 +99,4 @@ max_value = 1.0
 [connection signal="progressing_loading_scene_completed" from="ChangeSceneController" to="." method="on_play_scene_ready"]
 [connection signal="progressing_loading_scene_updated" from="ChangeSceneController" to="." method="on_change_scene_controller_progressing_loading_scene_updated_listener"]
 [connection signal="button_down" from="CanvasLayer/MarginContainer/HBoxContainer/buttonsZone_VBoxContainer/play_Button" to="." method="on_click_play_button_listener"]
+[connection signal="button_down" from="CanvasLayer/MarginContainer/HBoxContainer/buttonsZone_VBoxContainer/quit_Button" to="." method="on_exit_click_listener"]
