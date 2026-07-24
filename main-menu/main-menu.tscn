@@ -1,11 +1,101 @@
 [gd_scene format=3 uid="uid://dpna2o5hm31nn"]
 
-[ext_resource type="Texture2D" uid="uid://dky8v0kwgby60" path="res://art-visuals/main_menu-place-holder.png" id="1_2g4i4"]
 [ext_resource type="Script" uid="uid://l8di6o87hbaj" path="res://main-menu/main-menu-controller.gd" id="1_6u48k"]
+[ext_resource type="Script" uid="uid://dn1vx62hd863p" path="res://_commons/scene-manager/change-scene-controller.gd" id="2_6u48k"]
 
 [node name="MainMenu" type="Node2D" unique_id=1442265409]
 script = ExtResource("1_6u48k")
 
-[node name="MainMenuPlaceHolder" type="Sprite2D" parent="." unique_id=1204827438]
-position = Vector2(319, 174)
-texture = ExtResource("1_2g4i4")
+[node name="ChangeSceneController" type="Node" parent="." unique_id=873296796]
+script = ExtResource("2_6u48k")
+debug_loading = true
+path_to_next_scene = "res://level-jam/level-jam.tscn"
+metadata/_custom_type_script = "uid://dn1vx62hd863p"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=2049821220]
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer" unique_id=2026456850]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/MarginContainer" unique_id=69795556]
+layout_mode = 2
+
+[node name="buttonsZone_VBoxContainer" type="VBoxContainer" parent="CanvasLayer/MarginContainer/HBoxContainer" unique_id=1895943995]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.25
+alignment = 2
+
+[node name="about_Button" type="Button" parent="CanvasLayer/MarginContainer/HBoxContainer/buttonsZone_VBoxContainer" unique_id=1580640494]
+layout_mode = 2
+text = "About"
+
+[node name="support_Button" type="Button" parent="CanvasLayer/MarginContainer/HBoxContainer/buttonsZone_VBoxContainer" unique_id=14384256]
+layout_mode = 2
+text = "Support
+Venezuela"
+
+[node name="controls_Button" type="Button" parent="CanvasLayer/MarginContainer/HBoxContainer/buttonsZone_VBoxContainer" unique_id=611826068]
+layout_mode = 2
+text = "Controls"
+
+[node name="play_Button" type="Button" parent="CanvasLayer/MarginContainer/HBoxContainer/buttonsZone_VBoxContainer" unique_id=845421752]
+layout_mode = 2
+text = "Play"
+
+[node name="settings_Button" type="Button" parent="CanvasLayer/MarginContainer/HBoxContainer/buttonsZone_VBoxContainer" unique_id=26916274]
+layout_mode = 2
+disabled = true
+text = "Settings"
+
+[node name="credits_Button" type="Button" parent="CanvasLayer/MarginContainer/HBoxContainer/buttonsZone_VBoxContainer" unique_id=2097174143]
+layout_mode = 2
+text = "Credits"
+
+[node name="quit_Button" type="Button" parent="CanvasLayer/MarginContainer/HBoxContainer/buttonsZone_VBoxContainer" unique_id=961170784]
+layout_mode = 2
+text = "Quit"
+
+[node name="PanelContainer" type="PanelContainer" parent="CanvasLayer/MarginContainer/HBoxContainer" unique_id=993776462]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="loadingPanel" type="Panel" parent="CanvasLayer" unique_id=1375120956]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="CanvasLayer/loadingPanel" unique_id=909496729]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/loadingPanel/CenterContainer" unique_id=1742961675]
+layout_mode = 2
+
+[node name="loadingLabel" type="Label" parent="CanvasLayer/loadingPanel/CenterContainer/VBoxContainer" unique_id=2062157606]
+layout_mode = 2
+text = "Loading"
+
+[node name="loadingProgressBar" type="ProgressBar" parent="CanvasLayer/loadingPanel/CenterContainer/VBoxContainer" unique_id=1820770777]
+layout_mode = 2
+max_value = 1.0
+
+[connection signal="progressing_loading_scene_completed" from="ChangeSceneController" to="." method="on_play_scene_ready"]
+[connection signal="progressing_loading_scene_updated" from="ChangeSceneController" to="." method="on_change_scene_controller_progressing_loading_scene_updated_listener"]
+[connection signal="button_down" from="CanvasLayer/MarginContainer/HBoxContainer/buttonsZone_VBoxContainer/play_Button" to="." method="on_click_play_button_listener"]
