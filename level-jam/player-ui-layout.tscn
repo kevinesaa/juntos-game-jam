@@ -1,0 +1,92 @@
+[gd_scene format=3 uid="uid://bcfwgr42yj4bi"]
+
+[ext_resource type="Texture2D" uid="uid://cm27tw11hwgyp" path="res://art-visuals/player_portrait.png" id="1_fw2xj"]
+[ext_resource type="Texture2D" uid="uid://gwe0tkq54bdg" path="res://art-visuals/skill_place-holder.png" id="2_3se0s"]
+
+[node name="PlayerLayout" type="Control" unique_id=1557586174]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=2032768151]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/separation = 0
+
+[node name="nameLabel" type="Label" parent="VBoxContainer" unique_id=386310880]
+layout_mode = 2
+size_flags_vertical = 0
+text = "Player name"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=922029011]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 0
+
+[node name="portrait_TextureRect" type="TextureRect" parent="VBoxContainer/HBoxContainer" unique_id=1617202784]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.54
+texture = ExtResource("1_fw2xj")
+expand_mode = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/HBoxContainer" unique_id=33685284]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/HBoxContainer/MarginContainer" unique_id=1296333036]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="helth_ProgressBar" type="ProgressBar" parent="VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer" unique_id=469408522]
+layout_mode = 2
+show_percentage = false
+
+[node name="space_Control" type="Control" parent="VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer" unique_id=1080651700]
+custom_minimum_size = Vector2(0, 2)
+layout_mode = 2
+
+[node name="power_ProgressBar" type="ProgressBar" parent="VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer" unique_id=1964725370]
+layout_mode = 2
+show_percentage = false
+
+[node name="space2_Control" type="Control" parent="VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer" unique_id=1616365690]
+custom_minimum_size = Vector2(0, 2)
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer" unique_id=824376250]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="skills_one_CenterContainer" type="CenterContainer" parent="VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=23853541]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer/HBoxContainer/skills_one_CenterContainer" unique_id=334713291]
+layout_mode = 2
+texture = ExtResource("2_3se0s")
+
+[node name="spaceControl" type="Control" parent="VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1958667455]
+custom_minimum_size = Vector2(9, 0)
+layout_mode = 2
+
+[node name="skills_two_CenterContainer" type="CenterContainer" parent="VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1279546566]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer/HBoxContainer/skills_two_CenterContainer" unique_id=946895611]
+layout_mode = 2
+texture = ExtResource("2_3se0s")
+
+[node name="space2Control" type="Control" parent="VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=561391679]
+custom_minimum_size = Vector2(9, 0)
+layout_mode = 2
+
+[node name="skills_three_CenterContainer" type="CenterContainer" parent="VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=138806023]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer/HBoxContainer/skills_three_CenterContainer" unique_id=728246448]
+layout_mode = 2
+texture = ExtResource("2_3se0s")

@@ -1,11 +1,60 @@
 [gd_scene format=3 uid="uid://q8ayu4h0jhug"]
 
 [ext_resource type="Script" uid="uid://b7ad4c60fa2ks" path="res://level-jam/level-jam-controller.gd" id="1_dgymi"]
-[ext_resource type="Texture2D" uid="uid://cmuq1elt1opx2" path="res://art-visuals/play-screen-place-holder.png" id="1_wiwh0"]
+[ext_resource type="PackedScene" uid="uid://bcfwgr42yj4bi" path="res://level-jam/player-ui-layout.tscn" id="2_dgymi"]
 
 [node name="LevelJam" type="Node2D" unique_id=917062658]
 script = ExtResource("1_dgymi")
 
-[node name="PlayScreenPlaceHolder" type="Sprite2D" parent="." unique_id=409316671]
-position = Vector2(316, 177)
-texture = ExtResource("1_wiwh0")
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1630577108]
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer" unique_id=517873449]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/MarginContainer" unique_id=754402209]
+layout_mode = 2
+
+[node name="spacing_Control" type="Control" parent="CanvasLayer/MarginContainer/VBoxContainer" unique_id=456048802]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/MarginContainer/VBoxContainer" unique_id=1278755472]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.25
+
+[node name="PlayerOneLayout" parent="CanvasLayer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1557586174 instance=ExtResource("2_dgymi")]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="space1_Control" type="Control" parent="CanvasLayer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1177596036]
+custom_minimum_size = Vector2(32, 0)
+layout_mode = 2
+
+[node name="PlayerTwoLayout" parent="CanvasLayer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1880116095 instance=ExtResource("2_dgymi")]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="space2_Control" type="Control" parent="CanvasLayer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=312282163]
+custom_minimum_size = Vector2(32, 0)
+layout_mode = 2
+
+[node name="PlayerThreeLayout" parent="CanvasLayer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1046926634 instance=ExtResource("2_dgymi")]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="space3_Control" type="Control" parent="CanvasLayer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=19572423]
+custom_minimum_size = Vector2(32, 0)
+layout_mode = 2
+
+[node name="PlayerFourLayout" parent="CanvasLayer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1569786280 instance=ExtResource("2_dgymi")]
+layout_mode = 2
+size_flags_horizontal = 3
