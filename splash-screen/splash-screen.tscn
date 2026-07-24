@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://drgxrwnmo7f0b"]
+
+[ext_resource type="Script" uid="uid://dvgennuhlpfn3" path="res://splash-screen/splash-controller.gd" id="1_acvsa"]
+[ext_resource type="Texture2D" uid="uid://tiupyj4ik552" path="res://art-visuals/splash_loading.png" id="1_l3rff"]
+[ext_resource type="Script" uid="uid://dn1vx62hd863p" path="res://_commons/scene-manager/change-scene-controller.gd" id="2_gdnlb"]
+
+[node name="SplashScreen" type="Node2D" unique_id=997119350]
+script = ExtResource("1_acvsa")
+
+[node name="SplashLoading" type="Sprite2D" parent="." unique_id=1051157299]
+position = Vector2(323, 180)
+texture = ExtResource("1_l3rff")
+
+[node name="changeSceneController" type="Node2D" parent="." unique_id=1924880332]
+script = ExtResource("2_gdnlb")
+debug_loading = true
+path_to_next_scene = "res://main-menu/main-menu.tscn"
+
+[node name="toMainTimer" type="Timer" parent="." unique_id=304281100]
+wait_time = 3.0
+one_shot = true
+
+[connection signal="progressing_loading_scene_completed" from="changeSceneController" to="." method="on_next_scene_is_ready_listener"]
+[connection signal="timeout" from="toMainTimer" to="." method="start_next_scene_load"]

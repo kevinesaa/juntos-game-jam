@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://dpna2o5hm31nn"]
+
+[ext_resource type="Texture2D" uid="uid://dky8v0kwgby60" path="res://art-visuals/main_menu-place-holder.png" id="1_2g4i4"]
+[ext_resource type="Script" uid="uid://l8di6o87hbaj" path="res://main-menu/main-menu-controller.gd" id="1_6u48k"]
+
+[node name="MainMenu" type="Node2D" unique_id=1442265409]
+script = ExtResource("1_6u48k")
+
+[node name="MainMenuPlaceHolder" type="Sprite2D" parent="." unique_id=1204827438]
+position = Vector2(319, 174)
+texture = ExtResource("1_2g4i4")
