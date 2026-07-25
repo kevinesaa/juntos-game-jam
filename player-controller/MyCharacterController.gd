@@ -3,7 +3,8 @@ extends Node2D
 
 
 @export var baseSpeed:float
-@onready var my_rigid_body_2d: RigidBody2D = $RigidBody2D
+@export var skills_node_paths:Array[String]
+
 
 var indexId:int
 var newPosition:Vector2 = Vector2.ZERO
@@ -18,3 +19,9 @@ func moveCharacter(deltaTime:float,moveVector:Vector2) -> void:
 	self.newPosition = (deltaTime * self.baseSpeed) * moveVector
 	var position:Vector2 = self.position + self.newPosition
 	self.position = position
+
+func selectNextSkill() -> void:
+	pass
+	
+func selectPreviusSkill() -> void:
+	pass

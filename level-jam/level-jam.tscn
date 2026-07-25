@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://cln65aqyty84m" path="res://art-visuals/player1.png" id="5_oestl"]
 [ext_resource type="Texture2D" uid="uid://cvahwba2xh1u" path="res://art-visuals/player3.png" id="5_qq2pt"]
 [ext_resource type="Texture2D" uid="uid://clw1kaql6m8qs" path="res://art-visuals/player4.png" id="6_oestl"]
+[ext_resource type="Script" uid="uid://077dg2mjwp8t" path="res://skills-controller/SkillController.gd" id="7_r7tiq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nr37e"]
 size = Vector2(14, 56)
@@ -46,6 +47,7 @@ script = ExtResource("3_xy2ov")
 position = Vector2(240, 240)
 script = ExtResource("4_qq2pt")
 baseSpeed = 40.0
+skills_node_paths = Array[String](["gameNode/playerController_Node/player1_Node2D/skill1_player_1"])
 
 [node name="player1_CharacterBody2D" type="CharacterBody2D" parent="gameNode/playerController_Node/player1_Node2D" unique_id=1478620453]
 
@@ -55,6 +57,9 @@ texture = ExtResource("5_oestl")
 [node name="player1_CollisionShape2D" type="CollisionShape2D" parent="gameNode/playerController_Node/player1_Node2D/player1_CharacterBody2D" unique_id=1112553368]
 position = Vector2(0, 4)
 shape = SubResource("RectangleShape2D_nr37e")
+
+[node name="skill1_player_1" type="Node2D" parent="gameNode/playerController_Node/player1_Node2D" unique_id=2086321377]
+script = ExtResource("7_r7tiq")
 
 [node name="player2_Node2D" type="Node2D" parent="gameNode/playerController_Node" unique_id=1958795324]
 position = Vector2(420, 240)
@@ -70,6 +75,9 @@ texture = ExtResource("4_xy2ov")
 position = Vector2(-1, 2)
 shape = SubResource("RectangleShape2D_6g1t1")
 
+[node name="skill1_plyer2_Node2D" type="Node2D" parent="gameNode/playerController_Node/player2_Node2D" unique_id=1616884184]
+script = ExtResource("7_r7tiq")
+
 [node name="player3_Node2D" type="Node2D" parent="gameNode/playerController_Node" unique_id=350844624]
 position = Vector2(370, 240)
 script = ExtResource("4_qq2pt")
@@ -83,6 +91,9 @@ texture = ExtResource("5_qq2pt")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="gameNode/playerController_Node/player3_Node2D/CharacterBody2D" unique_id=120226561]
 position = Vector2(0.5, 3.5)
 shape = SubResource("RectangleShape2D_sobt1")
+
+[node name="skill1_player3_Node2D" type="Node2D" parent="gameNode/playerController_Node/player3_Node2D" unique_id=1098852025]
+script = ExtResource("7_r7tiq")
 
 [node name="player4_Node2D" type="Node2D" parent="gameNode/playerController_Node" unique_id=355279349]
 position = Vector2(320, 240)
@@ -98,6 +109,9 @@ texture = ExtResource("6_oestl")
 position = Vector2(-1.5, 2.5)
 shape = SubResource("RectangleShape2D_viwgl")
 
+[node name="skil1_player4_Node2D" type="Node2D" parent="gameNode/playerController_Node/player4_Node2D" unique_id=1126401925]
+script = ExtResource("7_r7tiq")
+
 [node name="ground_Node2D" type="Node2D" parent="gameNode" unique_id=39951809]
 position = Vector2(320, 285)
 
@@ -108,7 +122,6 @@ position = Vector2(-0.5, 0)
 shape = SubResource("RectangleShape2D_cw4k4")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1630577108]
-visible = false
 
 [node name="MarginContainer" type="MarginContainer" parent="CanvasLayer" unique_id=517873449]
 anchors_preset = 15
