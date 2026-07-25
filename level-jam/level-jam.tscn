@@ -2,9 +2,53 @@
 
 [ext_resource type="Script" uid="uid://b7ad4c60fa2ks" path="res://level-jam/level-jam-controller.gd" id="1_dgymi"]
 [ext_resource type="PackedScene" uid="uid://bcfwgr42yj4bi" path="res://level-jam/player-ui-layout.tscn" id="2_dgymi"]
+[ext_resource type="Texture2D" uid="uid://7v287sn2ae03" path="res://art-visuals/game-play-holder.png" id="2_xxrfw"]
+[ext_resource type="Script" uid="uid://g16hbx7227jf" path="res://player-controller/PlayerController.gd" id="3_xy2ov"]
+[ext_resource type="Script" uid="uid://dnnobjaro3ye8" path="res://player-controller/CharacterController.gd" id="4_qq2pt"]
+[ext_resource type="Texture2D" uid="uid://dxlgyitjvulnr" path="res://art-visuals/player2.png" id="4_xy2ov"]
+[ext_resource type="Texture2D" uid="uid://cln65aqyty84m" path="res://art-visuals/player1.png" id="5_oestl"]
+[ext_resource type="Texture2D" uid="uid://cvahwba2xh1u" path="res://art-visuals/player3.png" id="5_qq2pt"]
+[ext_resource type="Texture2D" uid="uid://clw1kaql6m8qs" path="res://art-visuals/player4.png" id="6_oestl"]
 
 [node name="LevelJam" type="Node2D" unique_id=917062658]
 script = ExtResource("1_dgymi")
+
+[node name="gameNode" type="Node" parent="." unique_id=871327871]
+
+[node name="GamePlayHolder" type="Sprite2D" parent="gameNode" unique_id=1449437486]
+position = Vector2(322, 181)
+texture = ExtResource("2_xxrfw")
+
+[node name="playerController_Node" type="Node" parent="gameNode" unique_id=687942859]
+script = ExtResource("3_xy2ov")
+
+[node name="player1_Node2D" type="Node2D" parent="gameNode/playerController_Node" unique_id=271839000]
+script = ExtResource("4_qq2pt")
+
+[node name="Player" type="Sprite2D" parent="gameNode/playerController_Node/player1_Node2D" unique_id=593470189]
+position = Vector2(212, 239)
+texture = ExtResource("5_oestl")
+
+[node name="player2_Node2D" type="Node2D" parent="gameNode/playerController_Node" unique_id=1958795324]
+script = ExtResource("4_qq2pt")
+
+[node name="Player" type="Sprite2D" parent="gameNode/playerController_Node/player2_Node2D" unique_id=1949557825]
+position = Vector2(393, 239)
+texture = ExtResource("4_xy2ov")
+
+[node name="player3_Node2D" type="Node2D" parent="gameNode/playerController_Node" unique_id=350844624]
+script = ExtResource("4_qq2pt")
+
+[node name="Player" type="Sprite2D" parent="gameNode/playerController_Node/player3_Node2D" unique_id=1354094665]
+position = Vector2(461, 236)
+texture = ExtResource("5_qq2pt")
+
+[node name="player4_Node2D" type="Node2D" parent="gameNode/playerController_Node" unique_id=355279349]
+script = ExtResource("4_qq2pt")
+
+[node name="Player" type="Sprite2D" parent="gameNode/playerController_Node/player4_Node2D" unique_id=1558608659]
+position = Vector2(309, 241)
+texture = ExtResource("6_oestl")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1630577108]
 

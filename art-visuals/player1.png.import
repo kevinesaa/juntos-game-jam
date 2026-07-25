@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cmuq1elt1opx2"
-path="res://.godot/imported/play-screen-place-holder.png-cdeb0850fd10f9f1b861372d0b3cd665.ctex"
+uid="uid://cln65aqyty84m"
+path="res://.godot/imported/player1.png-62ecbbb227b3e0f5a6ea98cee71446d8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art-visuals/play-screen-place-holder.png"
-dest_files=["res://.godot/imported/play-screen-place-holder.png-cdeb0850fd10f9f1b861372d0b3cd665.ctex"]
+source_file="res://art-visuals/player1.png"
+dest_files=["res://.godot/imported/player1.png-62ecbbb227b3e0f5a6ea98cee71446d8.ctex"]
 
 [params]
 
