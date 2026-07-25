@@ -36,7 +36,7 @@ func  _previusCharater() -> void:
 	if(self.currentSelectedIndex < 0):
 		self.currentSelectedIndex = self.characters.size() - 1
 	
-	print(self.currentSelectedIndex)
+	
 	
 func _nextCharacter() -> void:
 	self.currentSelectedIndex = self.currentSelectedIndex + 1
@@ -44,5 +44,5 @@ func _nextCharacter() -> void:
 	if(self.currentSelectedIndex > maxIndex):
 		self.currentSelectedIndex = 0
 	
-	print(self.currentSelectedIndex)
+	
 	
