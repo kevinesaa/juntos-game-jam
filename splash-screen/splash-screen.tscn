@@ -13,7 +13,6 @@ texture = ExtResource("1_l3rff")
 
 [node name="changeSceneController" type="Node2D" parent="." unique_id=1924880332]
 script = ExtResource("2_gdnlb")
-debug_loading = true
 path_to_next_scene = "res://main-menu/main-menu.tscn"
 
 [node name="toMainTimer" type="Timer" parent="." unique_id=304281100]

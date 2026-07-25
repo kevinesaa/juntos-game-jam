@@ -18,10 +18,11 @@ func _ready() -> void:
 	characters.append(player_2_node_2d)
 	characters.append(player_3_node_2d)
 	characters.append(player_4_node_2d)
-
-
-
 	
+	for i in characters.size():
+		var c = characters.get(i)
+		c.setIndexId(i)
+		
 	
 func  _process(delta: float) -> void:
 	
@@ -45,7 +46,8 @@ func  _process(delta: float) -> void:
 	var moveInput:float = Input.get_axis("move_left","move_right")
 	
 	_move(delta,moveInput)
-		
+	
+	
 
 func _physics_process(delta: float) -> void:
 	
@@ -64,7 +66,9 @@ func _nextCharacter() -> void:
 	
 func _move(deltaTime:float, moveInput:float) -> void:
 	var currentCharacter:MyCharacterController = self.characters.get(self.currentSelectedIndex)
-	var moveVector:Vector2 = moveInput*Vector2.RIGHT
+	var moveVector:Vector2 = moveInput * Vector2.RIGHT
+	print("aqui")
+	print(moveInput)
 	currentCharacter.moveCharacter(deltaTime,moveVector)
 	
 	
