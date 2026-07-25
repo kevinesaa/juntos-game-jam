@@ -67,8 +67,6 @@ func _nextCharacter() -> void:
 func _move(deltaTime:float, moveInput:float) -> void:
 	var currentCharacter:MyCharacterController = self.characters.get(self.currentSelectedIndex)
 	var moveVector:Vector2 = moveInput * Vector2.RIGHT
-	print("aqui")
-	print(moveInput)
 	currentCharacter.moveCharacter(deltaTime,moveVector)
 	
 	

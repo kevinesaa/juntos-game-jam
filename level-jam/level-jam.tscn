@@ -47,7 +47,7 @@ script = ExtResource("3_xy2ov")
 position = Vector2(240, 240)
 script = ExtResource("4_qq2pt")
 baseSpeed = 40.0
-skills_node_paths = Array[String](["gameNode/playerController_Node/player1_Node2D/skill1_player_1"])
+skills_node_paths = Array[NodePath]([NodePath("skill1_player_1")])
 
 [node name="player1_CharacterBody2D" type="CharacterBody2D" parent="gameNode/playerController_Node/player1_Node2D" unique_id=1478620453]
 
@@ -65,6 +65,7 @@ script = ExtResource("7_r7tiq")
 position = Vector2(420, 240)
 script = ExtResource("4_qq2pt")
 baseSpeed = 40.0
+skills_node_paths = Array[NodePath]([NodePath("skill1_plyaer2_Node2D")])
 
 [node name="player2_CharacterBody2D" type="CharacterBody2D" parent="gameNode/playerController_Node/player2_Node2D" unique_id=1397011205]
 
@@ -75,13 +76,14 @@ texture = ExtResource("4_xy2ov")
 position = Vector2(-1, 2)
 shape = SubResource("RectangleShape2D_6g1t1")
 
-[node name="skill1_plyer2_Node2D" type="Node2D" parent="gameNode/playerController_Node/player2_Node2D" unique_id=1616884184]
+[node name="skill1_plyaer2_Node2D" type="Node2D" parent="gameNode/playerController_Node/player2_Node2D" unique_id=1616884184]
 script = ExtResource("7_r7tiq")
 
 [node name="player3_Node2D" type="Node2D" parent="gameNode/playerController_Node" unique_id=350844624]
 position = Vector2(370, 240)
 script = ExtResource("4_qq2pt")
 baseSpeed = 50.0
+skills_node_paths = Array[NodePath]([NodePath("skill1_player3_Node2D")])
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="gameNode/playerController_Node/player3_Node2D" unique_id=1291829239]
 
@@ -99,6 +101,7 @@ script = ExtResource("7_r7tiq")
 position = Vector2(320, 240)
 script = ExtResource("4_qq2pt")
 baseSpeed = 30.0
+skills_node_paths = Array[NodePath]([NodePath("skill1_player4_Node2D")])
 
 [node name="player4_CharacterBody2D" type="CharacterBody2D" parent="gameNode/playerController_Node/player4_Node2D" unique_id=473400376]
 
@@ -109,7 +112,7 @@ texture = ExtResource("6_oestl")
 position = Vector2(-1.5, 2.5)
 shape = SubResource("RectangleShape2D_viwgl")
 
-[node name="skil1_player4_Node2D" type="Node2D" parent="gameNode/playerController_Node/player4_Node2D" unique_id=1126401925]
+[node name="skill1_player4_Node2D" type="Node2D" parent="gameNode/playerController_Node/player4_Node2D" unique_id=1126401925]
 script = ExtResource("7_r7tiq")
 
 [node name="ground_Node2D" type="Node2D" parent="gameNode" unique_id=39951809]
