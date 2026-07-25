@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://b7ad4c60fa2ks" path="res://level-jam/level-jam-controller.gd" id="1_dgymi"]
 [ext_resource type="PackedScene" uid="uid://bcfwgr42yj4bi" path="res://level-jam/player-ui-layout.tscn" id="2_dgymi"]
+[ext_resource type="Script" uid="uid://dn1vx62hd863p" path="res://_commons/scene-manager/change-scene-controller.gd" id="2_oestl"]
 [ext_resource type="Texture2D" uid="uid://7v287sn2ae03" path="res://art-visuals/game-play-holder.png" id="2_xxrfw"]
 [ext_resource type="Script" uid="uid://g16hbx7227jf" path="res://player-controller/PlayerController.gd" id="3_xy2ov"]
 [ext_resource type="Script" uid="uid://dnnobjaro3ye8" path="res://player-controller/MyCharacterController.gd" id="4_qq2pt"]
@@ -27,6 +28,10 @@ size = Vector2(655, 20)
 
 [node name="LevelJam" type="Node2D" unique_id=917062658]
 script = ExtResource("1_dgymi")
+
+[node name="sceneController_Node" type="Node" parent="." unique_id=134762211]
+script = ExtResource("2_oestl")
+path_to_next_scene = "res://main-menu/main-menu.tscn"
 
 [node name="gameNode" type="Node" parent="." unique_id=871327871]
 
@@ -107,7 +112,6 @@ position = Vector2(-0.5, 0)
 shape = SubResource("RectangleShape2D_cw4k4")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1630577108]
-visible = false
 
 [node name="MarginContainer" type="MarginContainer" parent="CanvasLayer" unique_id=517873449]
 anchors_preset = 15
@@ -160,3 +164,56 @@ layout_mode = 2
 [node name="PlayerFourLayout" parent="CanvasLayer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1569786280 instance=ExtResource("2_dgymi")]
 layout_mode = 2
 size_flags_horizontal = 3
+
+[node name="pause_Panel" type="Panel" parent="CanvasLayer" unique_id=1243917536]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="CanvasLayer/pause_Panel" unique_id=1255208396]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/pause_Panel/CenterContainer" unique_id=171910356]
+layout_mode = 2
+
+[node name="quitGame_Button" type="Button" parent="CanvasLayer/pause_Panel/CenterContainer/VBoxContainer" unique_id=380258384]
+layout_mode = 2
+text = "Exit"
+
+[node name="loadingPanel" type="Panel" parent="CanvasLayer" unique_id=31131447]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="CanvasLayer/loadingPanel" unique_id=637905405]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/loadingPanel/CenterContainer" unique_id=847456022]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/loadingPanel/CenterContainer/VBoxContainer" unique_id=1055280048]
+layout_mode = 2
+text = "Loading"
+
+[node name="ProgressBar" type="ProgressBar" parent="CanvasLayer/loadingPanel/CenterContainer/VBoxContainer" unique_id=431513831]
+layout_mode = 2
+max_value = 1.0
+
+[connection signal="progressing_loading_scene_completed" from="sceneController_Node" to="." method="on_load_scene_complete_listener"]
+[connection signal="progressing_loading_scene_updated" from="sceneController_Node" to="." method="on_change_scene_controller_progressing_loading_scene_updated_listener"]
+[connection signal="on_press_pause_notify" from="gameNode/playerController_Node" to="." method="on_toggle_pause_listener"]
+[connection signal="button_down" from="CanvasLayer/pause_Panel/CenterContainer/VBoxContainer/quitGame_Button" to="." method="on_exit_game_click_listener"]

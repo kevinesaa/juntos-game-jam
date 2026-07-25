@@ -6,10 +6,11 @@ extends Node
 @onready var player_3_node_2d: MyCharacterController = $player3_Node2D
 @onready var player_4_node_2d: MyCharacterController = $player4_Node2D
 
+signal on_press_pause_notify(pauseStatus:bool)
+
+var pauseStatus:bool = false
 var characters:Array[MyCharacterController] = []
 var currentSelectedIndex:int = 0
-
-
 
 
 func _ready() -> void:
@@ -23,6 +24,14 @@ func _ready() -> void:
 	
 	
 func  _process(delta: float) -> void:
+	
+	var pauseButtonPress = Input.is_action_just_pressed("pause")
+	if(pauseButtonPress):
+		self.pauseStatus = not self.pauseStatus
+		self.on_press_pause_notify.emit(self.pauseStatus)
+	
+	if(pauseStatus):
+		return 
 	
 	var previusCharacter = Input.is_action_just_pressed("previus_character")
 	var nextCharacter = Input.is_action_just_pressed("next_character")
