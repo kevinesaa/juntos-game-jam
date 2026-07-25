@@ -30,6 +30,7 @@ size_flags_vertical = 3
 layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.25
+theme_override_constants/separation = 0
 
 [node name="PlayerOneLayout" parent="CanvasLayer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1557586174 instance=ExtResource("2_dgymi")]
 layout_mode = 2
