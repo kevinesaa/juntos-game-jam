@@ -17,6 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://bor468sdc3wa1" path="res://art-visuals/player_1/idle/idle_player1_frame_3.png" id="9_jvn1f"]
 [ext_resource type="Script" uid="uid://bbajwn3ixpowo" path="res://falling-debris/DebrisSpawner.gd" id="9_spawner"]
 [ext_resource type="PackedScene" path="res://falling-debris/falling-debris.tscn" id="10_debris"]
+[ext_resource type="PackedScene" path="res://band-slideshow/band-slideshow.tscn" id="16_bandslide"]
 [ext_resource type="Texture2D" uid="uid://d00yrgs2p7skf" path="res://art-visuals/player_1/idle/idle_player1_frame_4.png" id="10_s5760"]
 [ext_resource type="Texture2D" uid="uid://b6ob8a0kjyyjg" path="res://art-visuals/player_1/walk/walk_player1_frame_1.png" id="11_dg01t"]
 [ext_resource type="Script" uid="uid://ck146t6l34lhi" path="res://_commons/debug/InputDebugOverlay.gd" id="11_inputdbg"]
@@ -721,6 +722,9 @@ layout_mode = 2
 [node name="resultLabel" type="Label" parent="CanvasLayer/endgame_container_PanelContainer/VBoxContainer/CenterContainer" unique_id=1776656619]
 layout_mode = 2
 text = "You survived the earthquake!"
+
+[node name="bandSlideshow" parent="CanvasLayer/endgame_container_PanelContainer/VBoxContainer" unique_id=1776656622 instance=ExtResource("16_bandslide")]
+layout_mode = 2
 
 [node name="donate_MarginContainer" type="MarginContainer" parent="CanvasLayer/endgame_container_PanelContainer/VBoxContainer" unique_id=1776656620]
 layout_mode = 2
