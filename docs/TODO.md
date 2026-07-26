@@ -100,8 +100,10 @@ Revisit if time remains after the skill + falling-target loop is playable.
   `DebrisSpawner.gd`, `falling-debris.tscn`, `InputDebugOverlay.gd`,
   `characteUiController.gd`) are byte-for-byte identical, and all 12 skill
   nodes carry identical scripts and tuning values across both copies.
-- Still true and still worth doing: **this session's work is entirely
-  uncommitted.** Commit it so it isn't resting on one working directory.
+- This session's work is now committed (two commits, originally on
+  `feat/falling-debris-skills`, then merged to `main`), so it no longer rests
+  on a single working directory. `CLAUDE.md` stays deliberately untracked
+  (gitignored) and therefore exists only in the canonical copy.
 
 ## Known pre-existing issues (not caused by this session's work)
 - `level-jam/level-jam.tscn91616243952.tmp` — stray Godot scene backup file
@@ -109,11 +111,14 @@ Revisit if time remains after the skill + falling-target loop is playable.
 - Several read-but-unused inputs in `PlayerController` (`togetherSkill`,
   `upgradeCurrentSkill`, `basicSkill`, `followme`, `unfollowme`) were dead
   scaffolding before this session.
-- `endPlay_Node/Timer.wait_time` is currently `3.0` (seconds) — a deliberate
-  local test value, kept for fast iteration. **Bump it up before submitting**,
-  and note that at 3s the JUNTOS meter can't reach full (needs ~10 debris
-  kills), so the together skill is untestable until you either raise the timer
-  or lower `togetherChargePerKill` in the editor.
+- `endPlay_Node/Timer.wait_time` is `155.0` (seconds) — the teammate's value,
+  and what is committed. It was briefly set to `3.0` locally for fast
+  iteration during this session and restored before committing, so no debug
+  value reached the branch. At 155s the JUNTOS meter fills comfortably (needs
+  ~10 debris kills), so the together skill is reachable in a normal run.
+  Caveat for future sessions: two commit bodies on this branch
+  (`3b55145`, `15ac33e`) claim the timer "is still 3.0" — that was written
+  from a stale read and is wrong; trust the file, not those messages.
 
 ## Explicitly out of scope for this build
 - Wave escalation / enemy AI.
