@@ -4,6 +4,7 @@ extends Node2D
 @export var baseHealth:float = 100.0
 @export var baseSpeed:float
 @export var skills_node_paths:Array[NodePath] =[]
+@export var path_animation_controller:NodePath
 
 #region skill controller signals
 signal on_current_skill_change(characterIndexId:int, skillIndex:int)
@@ -17,10 +18,12 @@ var characterIndexId:int
 var newPosition:Vector2 = Vector2.ZERO
 var currentSkillIndex:int = 0
 var charaterSkills: Array[SkillController] = []
+var animationController:AnimatedSprite2D
+
 
 func _ready() -> void:
 	self.currentHealth = self.baseHealth
-
+	animationController = get_node_or_null(path_animation_controller) as AnimatedSprite2D
 	for i in skills_node_paths.size():
 		var path = skills_node_paths.get(i)
 		var skillNode = get_node_or_null(path)

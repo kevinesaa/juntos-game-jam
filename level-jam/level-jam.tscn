@@ -7,26 +7,118 @@
 [ext_resource type="Texture2D" uid="uid://b1opabpolh8q8" path="res://art-visuals/game-play-background.png" id="3_r7tiq"]
 [ext_resource type="Script" uid="uid://g16hbx7227jf" path="res://player-controller/PlayerController.gd" id="3_xy2ov"]
 [ext_resource type="Script" uid="uid://dnnobjaro3ye8" path="res://player-controller/MyCharacterController.gd" id="4_qq2pt"]
-[ext_resource type="Texture2D" uid="uid://dxlgyitjvulnr" path="res://art-visuals/player2.png" id="4_xy2ov"]
-[ext_resource type="Texture2D" uid="uid://cln65aqyty84m" path="res://art-visuals/player1.png" id="5_oestl"]
-[ext_resource type="Texture2D" uid="uid://cvahwba2xh1u" path="res://art-visuals/player3.png" id="5_qq2pt"]
-[ext_resource type="Texture2D" uid="uid://clw1kaql6m8qs" path="res://art-visuals/player4.png" id="6_oestl"]
+[ext_resource type="Texture2D" uid="uid://dxlgyitjvulnr" path="res://art-visuals/player_2/idle/idle_player2_frame_1.png" id="4_xy2ov"]
+[ext_resource type="Texture2D" uid="uid://cln65aqyty84m" path="res://art-visuals/player_1/idle/idle_player1_frame_1.png" id="5_oestl"]
+[ext_resource type="Texture2D" uid="uid://cvahwba2xh1u" path="res://art-visuals/player_3/idle/idle_player3_frame_1.png" id="5_qq2pt"]
+[ext_resource type="Texture2D" uid="uid://clw1kaql6m8qs" path="res://art-visuals/player_4/idle/idle_player4_frame_1.png" id="6_oestl"]
 [ext_resource type="Script" uid="uid://077dg2mjwp8t" path="res://skills-controller/SkillController.gd" id="7_r7tiq"]
+[ext_resource type="Texture2D" uid="uid://cb7qgab22neif" path="res://art-visuals/player_1/idle/idle_player1_frame_2.png" id="8_kj87h"]
 [ext_resource type="Script" uid="uid://c2cbfir0yxdst" path="res://skills-controller/RangedShotSkill.gd" id="8_rangedshot"]
+[ext_resource type="Texture2D" uid="uid://bor468sdc3wa1" path="res://art-visuals/player_1/idle/idle_player1_frame_3.png" id="9_jvn1f"]
 [ext_resource type="Script" uid="uid://bbajwn3ixpowo" path="res://falling-debris/DebrisSpawner.gd" id="9_spawner"]
 [ext_resource type="PackedScene" path="res://falling-debris/falling-debris.tscn" id="10_debris"]
+[ext_resource type="Texture2D" uid="uid://d00yrgs2p7skf" path="res://art-visuals/player_1/idle/idle_player1_frame_4.png" id="10_s5760"]
 [ext_resource type="Script" uid="uid://ck146t6l34lhi" path="res://_commons/debug/InputDebugOverlay.gd" id="11_inputdbg"]
 [ext_resource type="Script" uid="uid://b31p2b2tb7y4a" path="res://skills-controller/ShockwaveRadiusDebug.gd" id="12_radiusdbg"]
 [ext_resource type="Script" uid="uid://bl2ypqeinp4cp" path="res://skills-controller/ShockwaveVisual.gd" id="13_wavevisual"]
+[ext_resource type="Texture2D" uid="uid://ce711sdndn3ew" path="res://art-visuals/player_2/idle/idle_player2_frame_2.png" id="16_alr0a"]
+[ext_resource type="Texture2D" uid="uid://dr2stciwxsj5m" path="res://art-visuals/player_2/idle/idle_player2_frame_3.png" id="17_acjl5"]
+[ext_resource type="Texture2D" uid="uid://dxm7wcfc10ign" path="res://art-visuals/player_2/idle/idle_player2_frame_4.png" id="18_pw28h"]
+[ext_resource type="Texture2D" uid="uid://bbrejl7o60a25" path="res://art-visuals/player_3/idle/idle_player3_frame_2.png" id="20_i7g8u"]
+[ext_resource type="Texture2D" uid="uid://iax8cm47b6kq" path="res://art-visuals/player_3/idle/idle_player3_frame_3.png" id="21_bhbpf"]
+[ext_resource type="Texture2D" uid="uid://diwv1m21jd7tc" path="res://art-visuals/player_3/idle/idle_player3_frame_4.png" id="22_3juus"]
+[ext_resource type="Texture2D" uid="uid://dmcvhrhkiwmnb" path="res://art-visuals/player_4/idle/idle_player4_frame_2.png" id="24_8uaax"]
+[ext_resource type="Texture2D" uid="uid://c8uatye83km5" path="res://art-visuals/player_4/idle/idle_player4_frame_3.png" id="25_xnfyh"]
+[ext_resource type="Texture2D" uid="uid://c7k7nyxla6bmm" path="res://art-visuals/player_4/idle/idle_player4_frame_4.png" id="26_dg01t"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ekf4n"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_oestl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_kj87h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_jvn1f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_s5760")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 5.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nr37e"]
 size = Vector2(14, 56)
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_kj87h"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_xy2ov")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_alr0a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_acjl5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_pw28h")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 5.0
+}]
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6g1t1"]
 size = Vector2(14, 54)
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_jvn1f"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_qq2pt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_i7g8u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_bhbpf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_3juus")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 5.0
+}]
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sobt1"]
 size = Vector2(11, 53)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_s5760"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_oestl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_8uaax")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_xnfyh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_dg01t")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 5.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_viwgl"]
 size = Vector2(43, 57)
@@ -67,11 +159,17 @@ position = Vector2(240, 230)
 script = ExtResource("4_qq2pt")
 baseSpeed = 40.0
 skills_node_paths = Array[NodePath]([NodePath("skill1_player_1"), NodePath("skill2_player_1"), NodePath("skill3_player1_Node2D")])
+path_animation_controller = NodePath("player1_CharacterBody2D/player_SpriteRender/player1_AnimatedSprite2D")
 
 [node name="player1_CharacterBody2D" type="CharacterBody2D" parent="gameNode/playerController_Node/player1_Node2D" unique_id=1478620453]
 
 [node name="player_SpriteRender" type="Sprite2D" parent="gameNode/playerController_Node/player1_Node2D/player1_CharacterBody2D" unique_id=593470189]
 texture = ExtResource("5_oestl")
+
+[node name="player1_AnimatedSprite2D" type="AnimatedSprite2D" parent="gameNode/playerController_Node/player1_Node2D/player1_CharacterBody2D/player_SpriteRender" unique_id=1920963837]
+sprite_frames = SubResource("SpriteFrames_ekf4n")
+animation = &"idle"
+autoplay = "idle"
 
 [node name="player1_CollisionShape2D" type="CollisionShape2D" parent="gameNode/playerController_Node/player1_Node2D/player1_CharacterBody2D" unique_id=1112553368]
 position = Vector2(0, 4)
@@ -117,6 +215,11 @@ skills_node_paths = Array[NodePath]([NodePath("skill1_plyaer2_Node2D"), NodePath
 [node name="player_SpriteRender" type="Sprite2D" parent="gameNode/playerController_Node/player2_Node2D/player2_CharacterBody2D" unique_id=1949557825]
 texture = ExtResource("4_xy2ov")
 
+[node name="player2_AnimatedSprite2D" type="AnimatedSprite2D" parent="gameNode/playerController_Node/player2_Node2D/player2_CharacterBody2D/player_SpriteRender" unique_id=2076262531]
+sprite_frames = SubResource("SpriteFrames_kj87h")
+animation = &"idle"
+autoplay = "idle"
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="gameNode/playerController_Node/player2_Node2D/player2_CharacterBody2D" unique_id=372874980]
 position = Vector2(-1, 2)
 shape = SubResource("RectangleShape2D_6g1t1")
@@ -161,6 +264,11 @@ skills_node_paths = Array[NodePath]([NodePath("skill1_player3_Node2D"), NodePath
 [node name="player_SpriteRender" type="Sprite2D" parent="gameNode/playerController_Node/player3_Node2D/CharacterBody2D" unique_id=1354094665]
 texture = ExtResource("5_qq2pt")
 
+[node name="player3_AnimatedSprite2D" type="AnimatedSprite2D" parent="gameNode/playerController_Node/player3_Node2D/CharacterBody2D/player_SpriteRender" unique_id=568377659]
+sprite_frames = SubResource("SpriteFrames_jvn1f")
+animation = &"idle"
+autoplay = "idle"
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="gameNode/playerController_Node/player3_Node2D/CharacterBody2D" unique_id=120226561]
 position = Vector2(0.5, 3.5)
 shape = SubResource("RectangleShape2D_sobt1")
@@ -204,6 +312,11 @@ skills_node_paths = Array[NodePath]([NodePath("skill1_player4_Node2D"), NodePath
 
 [node name="player_SpriteRender" type="Sprite2D" parent="gameNode/playerController_Node/player4_Node2D/player4_CharacterBody2D" unique_id=1558608659]
 texture = ExtResource("6_oestl")
+
+[node name="player4_AnimatedSprite2D" type="AnimatedSprite2D" parent="gameNode/playerController_Node/player4_Node2D/player4_CharacterBody2D/player_SpriteRender" unique_id=603778354]
+sprite_frames = SubResource("SpriteFrames_s5760")
+animation = &"idle"
+autoplay = "idle"
 
 [node name="player4_CollisionShape2D" type="CollisionShape2D" parent="gameNode/playerController_Node/player4_Node2D/player4_CharacterBody2D" unique_id=2002224309]
 position = Vector2(-1.5, 2.5)
@@ -298,8 +411,6 @@ text = "JUNTOS"
 custom_minimum_size = Vector2(120, 10)
 layout_mode = 2
 size_flags_vertical = 4
-max_value = 100.0
-value = 0.0
 show_percentage = false
 
 [node name="spacing_Control" type="Control" parent="CanvasLayer/MarginContainer/VBoxContainer" unique_id=456048802]
@@ -435,9 +546,9 @@ text = "You survived the earthquake!"
 [connection signal="progressing_loading_scene_updated" from="sceneController_Node" to="." method="on_change_scene_controller_progressing_loading_scene_updated_listener"]
 [connection signal="on_character_health_change_notify" from="gameNode/playerController_Node" to="." method="on_character_health_change_listener"]
 [connection signal="on_current_character_change" from="gameNode/playerController_Node" to="." method="on_current_character_change_listener"]
-[connection signal="on_together_skill_requested" from="gameNode/playerController_Node" to="." method="on_together_skill_requested_listener"]
 [connection signal="on_press_pause_notify" from="gameNode/playerController_Node" to="." method="on_toggle_pause_listener"]
 [connection signal="on_recovery_skill_status" from="gameNode/playerController_Node" to="." method="on_update_skill_recovery_status_listener"]
+[connection signal="on_together_skill_requested" from="gameNode/playerController_Node" to="." method="on_together_skill_requested_listener"]
 [connection signal="debris_destroyed" from="gameNode/debrisSpawner_Node" to="." method="on_debris_destroyed_listener"]
 [connection signal="debris_landed" from="gameNode/debrisSpawner_Node" to="." method="on_debris_landed_listener"]
 [connection signal="button_down" from="CanvasLayer/pause_Panel/CenterContainer/VBoxContainer/quitGame_Button" to="." method="on_exit_game_click_listener"]
