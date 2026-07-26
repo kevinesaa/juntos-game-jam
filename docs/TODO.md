@@ -4,15 +4,18 @@ Items intentionally punted during the crunch build starting 2026-07-26.
 Revisit if time remains after the skill + falling-target loop is playable.
 
 ## Needs a decision from the user
-- **Theme tie-in for `together_skill` / `follow_me` / `unfollow_me`.**
-  These input actions are already bound in `project.godot` and read (unused)
-  in `PlayerController._process`. Proposed default, not yet approved: pressing
-  `together_skill` triggers a party-wide ultimate on its own cooldown that
-  destroys/damages every currently-falling debris target on screen — a direct,
-  cheap expression of the TOGETHER/JUNTOS jam theme reusing the
-  `SkillController` cooldown pattern. Needs explicit go-ahead before building.
-  `follow_me`/`unfollow_me` have no proposed use yet — open question whether
-  they're in scope at all for this jam build.
+- **`follow_me` / `unfollow_me` are still bound-but-dead.** No proposed use
+  yet — open question whether they're in scope at all for this jam build.
+  (`together_skill` is now implemented — see below.)
+- **`skill3` is an inert placeholder on all 4 characters.** It has a cooldown
+  that recovers and a HUD bar that fills, but `skillEffect()` does nothing
+  for it (no `path_shock_wave_node_2d`, not a subclass). Either give it an
+  effect or consider hiding the third HUD slot.
+- **The per-character `power_ProgressBar` in the HUD is still unused.**
+  Declared in `CharacterUiController` and present in `player-ui-layout.tscn`,
+  never written to. The shared JUNTOS meter deliberately went in the main HUD
+  instead. If you want per-character contribution visible, this is the bar
+  to drive.
 
 ## Resolved this session
 - **WIP shockwave effect on `SkillController.gd`** — decision made: kept and
@@ -54,6 +57,24 @@ Revisit if time remains after the skill + falling-target loop is playable.
   per-action pressed/not-pressed) and
   `skills-controller/ShockwaveRadiusDebug.gd` (always-on radius ring, debug
   builds only).
+- **TOGETHER/JUNTOS theme mechanic — built.** A single shared charge meter in
+  the main HUD (`togetherHBoxContainer`) fills by `togetherChargePerKill`
+  (default 10.0, `@export` on `LevelJamController`) for **every** debris
+  destroyed by **any** character — the whole party feeds one resource. At full
+  (100.0) the label reads `JUNTOS! [SPACE]` and pressing **Space** destroys
+  every falling debris on screen at once, then empties the meter. Space was
+  added as a second event on the existing `together_skill` action, so `L`
+  still works too. Input is routed the conventional way: `PlayerController`
+  emits `on_together_skill_requested` → `LevelJamController` decides whether
+  the meter is full. Note it's gated behind the existing pause/endGame early
+  returns in `PlayerController._process`, so it can't fire while paused or
+  after the run ends.
+- **Selected-character highlight** — a `ReferenceRect` (`selectionHighlight`)
+  over each portrait in `player-ui-layout.tscn`, toggled by
+  `CharacterUiController.set_selected()`. This required connecting
+  `PlayerController.on_current_character_change`, which existed and was
+  emitted but had **never been wired to anything** — so before this there was
+  no on-screen indication of which character you were controlling.
 - **Untested** — no Godot binary was available in the environment this was
   built in; every change above needs a manual run-through in the editor
   before this counts as actually working, not just plausible on a static
@@ -88,9 +109,11 @@ Revisit if time remains after the skill + falling-target loop is playable.
 - Several read-but-unused inputs in `PlayerController` (`togetherSkill`,
   `upgradeCurrentSkill`, `basicSkill`, `followme`, `unfollowme`) were dead
   scaffolding before this session.
-- `endPlay_Node/Timer.wait_time` is currently `3.0` (seconds) — clearly a
-  local test value, not tuned for an actual playtest. Bump it back up before
-  a real run-through.
+- `endPlay_Node/Timer.wait_time` is currently `3.0` (seconds) — a deliberate
+  local test value, kept for fast iteration. **Bump it up before submitting**,
+  and note that at 3s the JUNTOS meter can't reach full (needs ~10 debris
+  kills), so the together skill is untestable until you either raise the timer
+  or lower `togetherChargePerKill` in the editor.
 
 ## Explicitly out of scope for this build
 - Wave escalation / enemy AI.

@@ -13,6 +13,7 @@ signal on_current_character_change(indexId:int)
 signal on_selected_skill_change_notify(characterIndexId:int, skillIndexId:int)
 signal on_recovery_skill_status(characterIndexId:int, skillIndex:int, value:float)
 signal on_character_health_change_notify(characterIndexId:int, value:float)
+signal on_together_skill_requested()
 #endregion
 
 var endGame:bool = false
@@ -75,6 +76,9 @@ func  _process(delta: float) -> void:
 	var followme = Input.is_action_just_pressed("follow_me")
 	var unfollowme = Input.is_action_just_pressed("unfollow_me")
 	
+	if(togetherSkill):
+		self.on_together_skill_requested.emit()
+
 	if(specialSkill):
 		_skill_one()
 	

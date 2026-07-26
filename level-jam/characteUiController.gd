@@ -7,6 +7,8 @@ extends Node
 @onready var helth_progress_bar: ProgressBar = $VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer/helth_ProgressBar
 @onready var power_progress_bar: ProgressBar = $VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer/power_ProgressBar
 
+@onready var selection_highlight: ReferenceRect = $VBoxContainer/HBoxContainer/portrait_TextureRect/selectionHighlight
+
 @onready var skill_1_v_scroll_bar: VScrollBar = $VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer/HBoxContainer/skills_one_CenterContainer/PanelContainer/VScrollBar
 @onready var skill_2_v_scroll_bar: VScrollBar = $VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer/HBoxContainer/skills_two_CenterContainer/PanelContainer/VScrollBar
 @onready var skill_3_v_scroll_bar: VScrollBar = $VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer/HBoxContainer/skills_three_CenterContainer/PanelContainer/VScrollBar
@@ -31,3 +33,6 @@ func update_coldDown_status(skillIndexId:int, value:float) -> void:
 
 func update_health(value:float) -> void:
 	helth_progress_bar.value = value
+
+func set_selected(isSelected:bool) -> void:
+	selection_highlight.visible = isSelected

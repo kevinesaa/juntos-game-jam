@@ -38,10 +38,12 @@
    (`skills-controller/RangedShotSkill.gd`, a `SkillController` subclass —
    destroys the nearest debris in range), on all 4 `skills_node_paths`.
    skill3 remains an inert placeholder for every character.
-4. **Theme tie-in (`together_skill`, `follow_me`/`unfollow_me`) — deferred.**
-   These inputs exist in `project.godot` and are read in
-   `PlayerController._process` but not acted on. Not built in this pass.
-   See `docs/TODO.md`.
+4. **Theme tie-in = shared JUNTOS meter + party-wide clear.** One shared
+   charge bar in the HUD fills from *every* debris any character destroys;
+   when full, **Space** wipes all falling debris at once and empties it. The
+   whole party feeds one resource — the TOGETHER/JUNTOS theme expressed as a
+   mechanic. `follow_me`/`unfollow_me` remain unwired and undecided; see
+   `docs/TODO.md`.
 
 ## Lore context (VDD — condensed from `VDD LORE.pdf`)
 Dystopian city ruled by a corrupt aristocracy that uses radiation
