@@ -1,5 +1,5 @@
 class_name BandSlideshow
-extends Control
+extends VBoxContainer
 
 @export var auto_advance_seconds: float = 6.0
 @export var members: Array[Dictionary] = [
@@ -9,12 +9,12 @@ extends Control
 	{"name": "Shield Guard", "bio": "Ranged — guerrilla-raised, avenging a family killed by the Guardia Nocturna.", "color": Color(0.6, 0.5, 0.1)},
 ]
 
-@onready var photo_placeholder: ColorRect = $VBoxContainer/PhotoCenterContainer/photo_ColorRect
-@onready var photo_texture_rect: TextureRect = $VBoxContainer/PhotoCenterContainer/photo_TextureRect
-@onready var name_label: Label = $VBoxContainer/name_Label
-@onready var bio_label: Label = $VBoxContainer/bio_Label
-@onready var prev_button: Button = $VBoxContainer/NavHBoxContainer/prev_Button
-@onready var next_button: Button = $VBoxContainer/NavHBoxContainer/next_Button
+@onready var photo_placeholder: ColorRect = $PhotoCenterContainer/photo_ColorRect
+@onready var photo_texture_rect: TextureRect = $PhotoCenterContainer/photo_TextureRect
+@onready var name_label: Label = $name_Label
+@onready var bio_label: Label = $bio_Label
+@onready var prev_button: Button = $NavHBoxContainer/prev_Button
+@onready var next_button: Button = $NavHBoxContainer/next_Button
 @onready var auto_advance_timer: Timer = $AutoAdvanceTimer
 
 var current_index: int = 0
