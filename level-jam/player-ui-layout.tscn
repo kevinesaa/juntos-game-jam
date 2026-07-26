@@ -91,6 +91,8 @@ texture = ExtResource("2_3se0s")
 [node name="VScrollBar" type="VScrollBar" parent="VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer/HBoxContainer/skills_one_CenterContainer/PanelContainer" unique_id=365274339]
 layout_mode = 2
 size_flags_horizontal = 1
+offset_transform_enabled = true
+offset_transform_rotation = 3.1415927
 value = 100.0
 
 [node name="spaceControl" type="Control" parent="VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1958667455]
@@ -112,6 +114,8 @@ texture = ExtResource("2_3se0s")
 [node name="VScrollBar" type="VScrollBar" parent="VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer/HBoxContainer/skills_two_CenterContainer/PanelContainer" unique_id=2052829186]
 layout_mode = 2
 size_flags_horizontal = 1
+offset_transform_enabled = true
+offset_transform_rotation = 3.1415927
 value = 100.0
 
 [node name="space2Control" type="Control" parent="VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=561391679]
@@ -133,4 +137,6 @@ texture = ExtResource("2_3se0s")
 [node name="VScrollBar" type="VScrollBar" parent="VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer/HBoxContainer/skills_three_CenterContainer/PanelContainer" unique_id=167995633]
 layout_mode = 2
 size_flags_horizontal = 1
+offset_transform_enabled = true
+offset_transform_rotation = 3.1415927
 value = 100.0
