@@ -28,3 +28,6 @@ func setSkillMaxValue(skillIndexId:int, value:float) -> void:
 func update_coldDown_status(skillIndexId:int, value:float) -> void:
 	var progress = skill_charge.get(skillIndexId)
 	progress.value = value
+
+func update_health(value:float) -> void:
+	helth_progress_bar.value = value

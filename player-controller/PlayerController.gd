@@ -12,6 +12,7 @@ signal on_press_pause_notify(pauseStatus:bool)
 signal on_current_character_change(indexId:int)
 signal on_selected_skill_change_notify(characterIndexId:int, skillIndexId:int)
 signal on_recovery_skill_status(characterIndexId:int, skillIndex:int, value:float)
+signal on_character_health_change_notify(characterIndexId:int, value:float)
 #endregion
 
 var endGame:bool = false
@@ -31,6 +32,7 @@ func _ready() -> void:
 		c.setCharacterIndexId(i)
 		c.on_current_skill_change.connect(self._selectedSkillChangeListener)
 		c.on_recovery_skill_status.connect(self._update_skill_status_listener)
+		c.on_character_health_change.connect(self._characterHealthChangeListener)
 	
 func  _process(delta: float) -> void:
 	
@@ -127,3 +129,6 @@ func _update_skill_status_listener(characterIndexId:int, skillIndex:int, value:f
 	
 func on_end_game_listener() -> void:
 	endGame = true
+
+func _characterHealthChangeListener(characterIndexId:int, value:float) -> void:
+	self.on_character_health_change_notify.emit(characterIndexId, value)

@@ -12,6 +12,12 @@
 [ext_resource type="Texture2D" uid="uid://cvahwba2xh1u" path="res://art-visuals/player3.png" id="5_qq2pt"]
 [ext_resource type="Texture2D" uid="uid://clw1kaql6m8qs" path="res://art-visuals/player4.png" id="6_oestl"]
 [ext_resource type="Script" uid="uid://077dg2mjwp8t" path="res://skills-controller/SkillController.gd" id="7_r7tiq"]
+[ext_resource type="Script" uid="uid://c2cbfir0yxdst" path="res://skills-controller/RangedShotSkill.gd" id="8_rangedshot"]
+[ext_resource type="Script" uid="uid://bbajwn3ixpowo" path="res://falling-debris/DebrisSpawner.gd" id="9_spawner"]
+[ext_resource type="PackedScene" path="res://falling-debris/falling-debris.tscn" id="10_debris"]
+[ext_resource type="Script" uid="uid://ck146t6l34lhi" path="res://_commons/debug/InputDebugOverlay.gd" id="11_inputdbg"]
+[ext_resource type="Script" uid="uid://b31p2b2tb7y4a" path="res://skills-controller/ShockwaveRadiusDebug.gd" id="12_radiusdbg"]
+[ext_resource type="Script" uid="uid://bl2ypqeinp4cp" path="res://skills-controller/ShockwaveVisual.gd" id="13_wavevisual"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nr37e"]
 size = Vector2(14, 56)
@@ -75,11 +81,25 @@ shape = SubResource("RectangleShape2D_nr37e")
 script = ExtResource("7_r7tiq")
 recoverySpeed = 10.0
 baseColdDown = 100.0
+baseTimeSkillEffect = 0.5
+SpeedSkillEffectTime = 1.0
+path_shock_wave_node_2d = NodePath("shock_wave_player_1_Node2D")
+
+[node name="shock_wave_player_1_Node2D" type="Node2D" parent="gameNode/playerController_Node/player1_Node2D/skill1_player_1" unique_id=1393698771]
+script = ExtResource("13_wavevisual")
+
+[node name="ShockwaveRadiusDebug" type="Node2D" parent="gameNode/playerController_Node/player1_Node2D/skill1_player_1" unique_id=1393698772]
+script = ExtResource("12_radiusdbg")
 
 [node name="skill2_player_1" type="Node2D" parent="gameNode/playerController_Node/player1_Node2D" unique_id=1422970665]
-script = ExtResource("7_r7tiq")
-recoverySpeed = 2.0
+script = ExtResource("8_rangedshot")
+recoverySpeed = 25.0
 baseColdDown = 100.0
+
+[node name="ShotLine" type="Line2D" parent="gameNode/playerController_Node/player1_Node2D/skill2_player_1" unique_id=1422970666]
+visible = false
+width = 1.0
+default_color = Color(1, 0.9, 0.2, 1)
 
 [node name="skill3_player1_Node2D" type="Node2D" parent="gameNode/playerController_Node/player1_Node2D" unique_id=2143521350]
 script = ExtResource("7_r7tiq")
@@ -103,13 +123,27 @@ shape = SubResource("RectangleShape2D_6g1t1")
 
 [node name="skill1_plyaer2_Node2D" type="Node2D" parent="gameNode/playerController_Node/player2_Node2D" unique_id=1616884184]
 script = ExtResource("7_r7tiq")
-recoverySpeed = 15.0
+recoverySpeed = 10.0
 baseColdDown = 100.0
+baseTimeSkillEffect = 0.5
+SpeedSkillEffectTime = 1.0
+path_shock_wave_node_2d = NodePath("shock_wave_player_2_Node2D")
+
+[node name="shock_wave_player_2_Node2D" type="Node2D" parent="gameNode/playerController_Node/player2_Node2D/skill1_plyaer2_Node2D" unique_id=1616884185]
+script = ExtResource("13_wavevisual")
+
+[node name="ShockwaveRadiusDebug" type="Node2D" parent="gameNode/playerController_Node/player2_Node2D/skill1_plyaer2_Node2D" unique_id=1616884186]
+script = ExtResource("12_radiusdbg")
 
 [node name="skill2_player2_Node2D" type="Node2D" parent="gameNode/playerController_Node/player2_Node2D" unique_id=588517115]
-script = ExtResource("7_r7tiq")
-recoverySpeed = 3.0
+script = ExtResource("8_rangedshot")
+recoverySpeed = 25.0
 baseColdDown = 100.0
+
+[node name="ShotLine" type="Line2D" parent="gameNode/playerController_Node/player2_Node2D/skill2_player2_Node2D" unique_id=588517116]
+visible = false
+width = 1.0
+default_color = Color(1, 0.9, 0.2, 1)
 
 [node name="skill3_player2_Node2D" type="Node2D" parent="gameNode/playerController_Node/player2_Node2D" unique_id=343940793]
 script = ExtResource("7_r7tiq")
@@ -133,13 +167,27 @@ shape = SubResource("RectangleShape2D_sobt1")
 
 [node name="skill1_player3_Node2D" type="Node2D" parent="gameNode/playerController_Node/player3_Node2D" unique_id=1098852025]
 script = ExtResource("7_r7tiq")
-recoverySpeed = 9.0
+recoverySpeed = 10.0
 baseColdDown = 100.0
+baseTimeSkillEffect = 0.5
+SpeedSkillEffectTime = 1.0
+path_shock_wave_node_2d = NodePath("shock_wave_player_3_Node2D")
+
+[node name="shock_wave_player_3_Node2D" type="Node2D" parent="gameNode/playerController_Node/player3_Node2D/skill1_player3_Node2D" unique_id=1098852026]
+script = ExtResource("13_wavevisual")
+
+[node name="ShockwaveRadiusDebug" type="Node2D" parent="gameNode/playerController_Node/player3_Node2D/skill1_player3_Node2D" unique_id=1098852027]
+script = ExtResource("12_radiusdbg")
 
 [node name="skill2_player3_Node2D" type="Node2D" parent="gameNode/playerController_Node/player3_Node2D" unique_id=2127335319]
-script = ExtResource("7_r7tiq")
-recoverySpeed = 9.0
+script = ExtResource("8_rangedshot")
+recoverySpeed = 25.0
 baseColdDown = 100.0
+
+[node name="ShotLine" type="Line2D" parent="gameNode/playerController_Node/player3_Node2D/skill2_player3_Node2D" unique_id=2127335320]
+visible = false
+width = 1.0
+default_color = Color(1, 0.9, 0.2, 1)
 
 [node name="skill3_player3_Node2D" type="Node2D" parent="gameNode/playerController_Node/player3_Node2D" unique_id=1054662965]
 script = ExtResource("7_r7tiq")
@@ -163,17 +211,36 @@ shape = SubResource("RectangleShape2D_viwgl")
 
 [node name="skill1_player4_Node2D" type="Node2D" parent="gameNode/playerController_Node/player4_Node2D" unique_id=1126401925]
 script = ExtResource("7_r7tiq")
-recoverySpeed = 8.0
+recoverySpeed = 10.0
+baseColdDown = 100.0
+baseTimeSkillEffect = 0.5
+SpeedSkillEffectTime = 1.0
+path_shock_wave_node_2d = NodePath("shock_wave_player_4_Node2D")
+
+[node name="shock_wave_player_4_Node2D" type="Node2D" parent="gameNode/playerController_Node/player4_Node2D/skill1_player4_Node2D" unique_id=1126401927]
+script = ExtResource("13_wavevisual")
+
+[node name="ShockwaveRadiusDebug" type="Node2D" parent="gameNode/playerController_Node/player4_Node2D/skill1_player4_Node2D" unique_id=1126401928]
+script = ExtResource("12_radiusdbg")
 
 [node name="skill2_player4_Node2D" type="Node2D" parent="gameNode/playerController_Node/player4_Node2D" unique_id=687943995]
-script = ExtResource("7_r7tiq")
-recoverySpeed = 15.0
+script = ExtResource("8_rangedshot")
+recoverySpeed = 25.0
 baseColdDown = 100.0
+
+[node name="ShotLine" type="Line2D" parent="gameNode/playerController_Node/player4_Node2D/skill2_player4_Node2D" unique_id=687943996]
+visible = false
+width = 1.0
+default_color = Color(1, 0.9, 0.2, 1)
 
 [node name="skill3_player4_Node2D" type="Node2D" parent="gameNode/playerController_Node/player4_Node2D" unique_id=778069680]
 script = ExtResource("7_r7tiq")
 recoverySpeed = 16.0
 baseColdDown = 100.0
+
+[node name="debrisSpawner_Node" type="Node2D" parent="gameNode" unique_id=39951810]
+script = ExtResource("9_spawner")
+debrisScene = ExtResource("10_debris")
 
 [node name="ground_Node2D" type="Node2D" parent="gameNode" unique_id=39951809]
 position = Vector2(320, 275)
@@ -185,6 +252,20 @@ position = Vector2(-0.5, 0)
 shape = SubResource("RectangleShape2D_cw4k4")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1630577108]
+
+[node name="inputDebugLabel" type="Label" parent="CanvasLayer" unique_id=1630577109]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -180.0
+offset_top = 8.0
+offset_right = -8.0
+offset_bottom = 8.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 10
+text = "Input Debug"
+horizontal_alignment = 2
+script = ExtResource("11_inputdbg")
 
 [node name="MarginContainer" type="MarginContainer" parent="CanvasLayer" unique_id=517873449]
 anchors_preset = 15
@@ -199,6 +280,10 @@ theme_override_constants/margin_bottom = 16
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/MarginContainer" unique_id=754402209]
 layout_mode = 2
+
+[node name="scoreLabel" type="Label" parent="CanvasLayer/MarginContainer/VBoxContainer" unique_id=754402210]
+layout_mode = 2
+text = "Score: 0"
 
 [node name="spacing_Control" type="Control" parent="CanvasLayer/MarginContainer/VBoxContainer" unique_id=456048802]
 layout_mode = 2
@@ -296,7 +381,6 @@ layout_mode = 2
 max_value = 1.0
 
 [node name="endgame_container_PanelContainer" type="PanelContainer" parent="CanvasLayer" unique_id=807484433]
-visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -324,11 +408,18 @@ text = "Exit"
 [node name="CenterContainer" type="CenterContainer" parent="CanvasLayer/endgame_container_PanelContainer/VBoxContainer" unique_id=1776656618]
 layout_mode = 2
 
+[node name="resultLabel" type="Label" parent="CanvasLayer/endgame_container_PanelContainer/VBoxContainer/CenterContainer" unique_id=1776656619]
+layout_mode = 2
+text = "You survived the earthquake!"
+
 [connection signal="timeout" from="endPlay_Node/Timer" to="." method="on_end_game_listener"]
 [connection signal="timeout" from="endPlay_Node/Timer" to="gameNode/playerController_Node" method="on_end_game_listener"]
 [connection signal="progressing_loading_scene_completed" from="sceneController_Node" to="." method="on_load_scene_complete_listener"]
 [connection signal="progressing_loading_scene_updated" from="sceneController_Node" to="." method="on_change_scene_controller_progressing_loading_scene_updated_listener"]
+[connection signal="on_character_health_change_notify" from="gameNode/playerController_Node" to="." method="on_character_health_change_listener"]
 [connection signal="on_press_pause_notify" from="gameNode/playerController_Node" to="." method="on_toggle_pause_listener"]
 [connection signal="on_recovery_skill_status" from="gameNode/playerController_Node" to="." method="on_update_skill_recovery_status_listener"]
+[connection signal="debris_destroyed" from="gameNode/debrisSpawner_Node" to="." method="on_debris_destroyed_listener"]
+[connection signal="debris_landed" from="gameNode/debrisSpawner_Node" to="." method="on_debris_landed_listener"]
 [connection signal="button_down" from="CanvasLayer/pause_Panel/CenterContainer/VBoxContainer/quitGame_Button" to="." method="on_exit_game_click_listener"]
 [connection signal="button_down" from="CanvasLayer/endgame_container_PanelContainer/VBoxContainer/HBoxContainer/MarginContainer/Button" to="." method="on_exit_game_click_listener"]
