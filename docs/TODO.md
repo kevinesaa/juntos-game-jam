@@ -7,15 +7,11 @@ Revisit if time remains after the skill + falling-target loop is playable.
 - **`follow_me` / `unfollow_me` are still bound-but-dead.** No proposed use
   yet — open question whether they're in scope at all for this jam build.
   (`together_skill` is now implemented — see below.)
-- **`skill3` is an inert placeholder on all 4 characters.** It has a cooldown
-  that recovers and a HUD bar that fills, but `skillEffect()` does nothing
-  for it (no `path_shock_wave_node_2d`, not a subclass). Either give it an
-  effect or consider hiding the third HUD slot.
-- **The per-character `power_ProgressBar` in the HUD is still unused.**
-  Declared in `CharacterUiController` and present in `player-ui-layout.tscn`,
-  never written to. The shared JUNTOS meter deliberately went in the main HUD
-  instead. If you want per-character contribution visible, this is the bar
-  to drive.
+- **No death/game-over condition exists.** `MyCharacterController.takeDamage()`
+  clamps health at 0 with no further consequence — no game-over, no score
+  penalty. This was a pre-existing gap, made more visible now that debris
+  spawn faster (see "Resolved this session" below). Needs a design decision:
+  does hitting 0 health matter at all, or is health purely cosmetic pressure?
 
 ## Resolved this session
 - **WIP shockwave effect on `SkillController.gd`** — decision made: kept and
@@ -57,28 +53,69 @@ Revisit if time remains after the skill + falling-target loop is playable.
   per-action pressed/not-pressed) and
   `skills-controller/ShockwaveRadiusDebug.gd` (always-on radius ring, debug
   builds only).
-- **TOGETHER/JUNTOS theme mechanic — built.** A single shared charge meter in
-  the main HUD (`togetherHBoxContainer`) fills by `togetherChargePerKill`
-  (default 10.0, `@export` on `LevelJamController`) for **every** debris
-  destroyed by **any** character — the whole party feeds one resource. At full
-  (100.0) the label reads `JUNTOS! [SPACE]` and pressing **Space** destroys
-  every falling debris on screen at once, then empties the meter. Space was
-  added as a second event on the existing `together_skill` action, so `L`
-  still works too. Input is routed the conventional way: `PlayerController`
-  emits `on_together_skill_requested` → `LevelJamController` decides whether
-  the meter is full. Note it's gated behind the existing pause/endGame early
-  returns in `PlayerController._process`, so it can't fire while paused or
-  after the run ends.
+- **TOGETHER/JUNTOS theme mechanic — reworked to per-character (supersedes the
+  original shared-meter version).** Originally a single shared charge meter
+  filled by any character's kills. Now: each character's own (previously
+  unused) `power_ProgressBar` fills from kills *they personally* land, via a
+  new `debris_destroyed_by_character` signal bubbled skill → character →
+  player controller → scene (`@export powerPerKill` on `LevelJamController`,
+  default 25.0 — 4 kills/character to fill). The together-clear only unlocks
+  once **all 4** characters are full, gating `JUNTOS! [SPACE]` on
+  `_allCharactersFull()`. This structurally forces cycling through all 4
+  characters to ever unlock it — intentional for a mechanic named "together."
+  The old shared `together_ProgressBar` now shows aggregate readiness across
+  all 4 instead of an independent value.
 - **Selected-character highlight** — a `ReferenceRect` (`selectionHighlight`)
   over each portrait in `player-ui-layout.tscn`, toggled by
   `CharacterUiController.set_selected()`. This required connecting
   `PlayerController.on_current_character_change`, which existed and was
   emitted but had **never been wired to anything** — so before this there was
   no on-screen indication of which character you were controlling.
+- **Selected-skill highlight — same pattern, newly added.** A cyan
+  `ReferenceRect` over each of the 3 skill icons, toggled by
+  `CharacterUiController.set_selected_skill()`, wired to
+  `PlayerController.on_selected_skill_change_notify` (existed, emitted, had
+  zero listeners before this).
+- **Character on-screen order now matches HUD order.** Swapped
+  `player2_Node2D`/`player4_Node2D` x-positions only (240/320/370/420) so
+  ascending `characterIndexId` matches ascending on-screen x — screen order
+  is now VDD, Scorpio, Enigma, Shield Guard, same as the HUD panels.
+- **`skill3` is no longer an inert placeholder.** Now a temporary movement
+  speed boost (`skills-controller/SpeedBoostSkill.gd`, 2x speed for 3s by
+  default) on all 4 characters, via a new `speedMultiplier` field on
+  `MyCharacterController` (plain `var`, not `@export`, to avoid a 0.0 default
+  freezing movement on load).
+- **Shockwave enlarged and debris spawn rate tuned up.** `shockwave_radius`
+  default 72.0 → 110.0; `debrisSpawner_Node` spawn interval 1.0–2.5s →
+  0.8–2.0s. Playtest both — not final numbers.
+- **Basic camera shake added.** New `Camera2D` (didn't exist before) +
+  `_commons/camera/CameraShake.gd` (trauma-based decay), triggered on
+  shockwave use and debris landings.
+- **End-of-run screen split across two branches, deliberately.** A plain
+  donate-line placeholder (`donate_Label`, no photo dependency) merged to
+  `main` directly. A band-member slideshow (`band-slideshow/`, flat-color
+  placeholders standing in for VDD/Scorpio/Enigma/Shield Guard photos, one
+  member per lore character, auto-advance + manual arrows) lives on
+  `feat/band-slideshow-endgame`, pushed to origin but **intentionally not
+  merged to `main`** — it needs real photos and a real donation URL first.
+  Don't merge that branch until both exist; swapping in real photos only
+  needs a `photo` key added per entry in `band-slideshow.gd`'s `members`
+  array, no code changes.
 - **Untested** — no Godot binary was available in the environment this was
   built in; every change above needs a manual run-through in the editor
   before this counts as actually working, not just plausible on a static
   read.
+- **Concurrent teammate push, merged cleanly.** While this session's work was
+  in progress, a teammate (Kevin Esaa) pushed walk-animation support
+  (`feat: animation holders`) touching the same two files this session was
+  editing: `player-controller/MyCharacterController.gd` (their idle/walking
+  animation-state machine in `moveCharacter()`/`_process()`) and
+  `level-jam/level-jam.tscn` (walk `SpriteFrames` + `path_animation_controller`
+  wiring per character). Reconciled via a real `git merge` (not a rebase that
+  would've rewritten shared history): `moveCharacter()` now applies
+  `speedMultiplier` *and* runs their walking/idle state-and-flip logic in the
+  same function; the `.tscn` merge was conflict-free apart from one
+  `ext_resource` id line, resolved by keeping both entries.
 
 ## Two working copies exist — know which one you're in
 - `repos/juntosggm/juntos-game-jam` — **the current/canonical one.** HEAD at
