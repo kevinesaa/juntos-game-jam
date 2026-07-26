@@ -13,6 +13,8 @@ signal recovery_skill_status(characterIndexId:int,skillIndexId:int,curentValue:f
 var characterIndexId:int = 0
 var skillIndexId:int = 0
 
+func skillEffect
+
 func setCharacterOwnIndexId(characterIndex:int) -> void:
 	self.characterIndexId = characterIndex
 	

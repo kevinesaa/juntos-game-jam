@@ -7,10 +7,6 @@
 [node name="SplashScreen" type="Node2D" unique_id=997119350]
 script = ExtResource("1_acvsa")
 
-[node name="SplashLoading" type="Sprite2D" parent="." unique_id=1051157299]
-position = Vector2(323, 180)
-texture = ExtResource("1_l3rff")
-
 [node name="changeSceneController" type="Node2D" parent="." unique_id=1924880332]
 script = ExtResource("2_gdnlb")
 path_to_next_scene = "res://main-menu/main-menu.tscn"
@@ -19,5 +15,41 @@ path_to_next_scene = "res://main-menu/main-menu.tscn"
 wait_time = 3.0
 one_shot = true
 
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1046190757]
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="CanvasLayer" unique_id=1933435923]
+propagate_maximum_size = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+offset_transform_enabled = true
+offset_transform_pivot = Vector2(0.5, 0.5)
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/AspectRatioContainer" unique_id=1188048202]
+custom_maximum_size = Vector2(640, 360)
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("1_l3rff")
+stretch_mode = 5
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer" unique_id=1096471525]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 27.0
+grow_horizontal = 2
+alignment = 2
+
+[node name="Control" type="Control" parent="CanvasLayer/HBoxContainer" unique_id=1251909205]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="ProgressBar" type="ProgressBar" parent="CanvasLayer/HBoxContainer" unique_id=395128927]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+max_value = 1.0
+
 [connection signal="progressing_loading_scene_completed" from="changeSceneController" to="." method="on_next_scene_is_ready_listener"]
+[connection signal="progressing_loading_scene_updated" from="changeSceneController" to="." method="_update_progress_listener"]
 [connection signal="timeout" from="toMainTimer" to="." method="start_next_scene_load"]

@@ -60,6 +60,8 @@ shape = SubResource("RectangleShape2D_nr37e")
 
 [node name="skill1_player_1" type="Node2D" parent="gameNode/playerController_Node/player1_Node2D" unique_id=2086321377]
 script = ExtResource("7_r7tiq")
+recoverySpeed = null
+baseColdDown = null
 
 [node name="player2_Node2D" type="Node2D" parent="gameNode/playerController_Node" unique_id=1958795324]
 position = Vector2(420, 230)
@@ -78,6 +80,8 @@ shape = SubResource("RectangleShape2D_6g1t1")
 
 [node name="skill1_plyaer2_Node2D" type="Node2D" parent="gameNode/playerController_Node/player2_Node2D" unique_id=1616884184]
 script = ExtResource("7_r7tiq")
+recoverySpeed = null
+baseColdDown = null
 
 [node name="player3_Node2D" type="Node2D" parent="gameNode/playerController_Node" unique_id=350844624]
 position = Vector2(370, 230)
@@ -96,6 +100,8 @@ shape = SubResource("RectangleShape2D_sobt1")
 
 [node name="skill1_player3_Node2D" type="Node2D" parent="gameNode/playerController_Node/player3_Node2D" unique_id=1098852025]
 script = ExtResource("7_r7tiq")
+recoverySpeed = null
+baseColdDown = null
 
 [node name="player4_Node2D" type="Node2D" parent="gameNode/playerController_Node" unique_id=355279349]
 position = Vector2(320, 230)
@@ -114,6 +120,8 @@ shape = SubResource("RectangleShape2D_viwgl")
 
 [node name="skill1_player4_Node2D" type="Node2D" parent="gameNode/playerController_Node/player4_Node2D" unique_id=1126401925]
 script = ExtResource("7_r7tiq")
+recoverySpeed = null
+baseColdDown = null
 
 [node name="ground_Node2D" type="Node2D" parent="gameNode" unique_id=39951809]
 position = Vector2(320, 275)
