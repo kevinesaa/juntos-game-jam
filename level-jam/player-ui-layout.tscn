@@ -68,10 +68,18 @@ theme_override_constants/separation = 0
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="TextureRect" type="TextureRect" parent="VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer/HBoxContainer/skills_one_CenterContainer" unique_id=334713291]
+[node name="PanelContainer" type="PanelContainer" parent="VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer/HBoxContainer/skills_one_CenterContainer" unique_id=1372558264]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer/HBoxContainer/skills_one_CenterContainer/PanelContainer" unique_id=334713291]
 custom_maximum_size = Vector2(24, 24)
 layout_mode = 2
 texture = ExtResource("2_3se0s")
+
+[node name="VScrollBar" type="VScrollBar" parent="VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer/HBoxContainer/skills_one_CenterContainer/PanelContainer" unique_id=365274339]
+layout_mode = 2
+size_flags_horizontal = 1
+value = 100.0
 
 [node name="spaceControl" type="Control" parent="VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1958667455]
 custom_minimum_size = Vector2(9, 0)
@@ -81,10 +89,18 @@ layout_mode = 2
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="TextureRect" type="TextureRect" parent="VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer/HBoxContainer/skills_two_CenterContainer" unique_id=946895611]
+[node name="PanelContainer" type="PanelContainer" parent="VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer/HBoxContainer/skills_two_CenterContainer" unique_id=1497489912]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer/HBoxContainer/skills_two_CenterContainer/PanelContainer" unique_id=946895611]
 custom_maximum_size = Vector2(24, 24)
 layout_mode = 2
 texture = ExtResource("2_3se0s")
+
+[node name="VScrollBar" type="VScrollBar" parent="VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer/HBoxContainer/skills_two_CenterContainer/PanelContainer" unique_id=2052829186]
+layout_mode = 2
+size_flags_horizontal = 1
+value = 100.0
 
 [node name="space2Control" type="Control" parent="VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=561391679]
 custom_minimum_size = Vector2(9, 0)
@@ -94,7 +110,15 @@ layout_mode = 2
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="TextureRect" type="TextureRect" parent="VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer/HBoxContainer/skills_three_CenterContainer" unique_id=728246448]
+[node name="PanelContainer" type="PanelContainer" parent="VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer/HBoxContainer/skills_three_CenterContainer" unique_id=931806883]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer/HBoxContainer/skills_three_CenterContainer/PanelContainer" unique_id=728246448]
 custom_maximum_size = Vector2(24, 24)
 layout_mode = 2
 texture = ExtResource("2_3se0s")
+
+[node name="VScrollBar" type="VScrollBar" parent="VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer/HBoxContainer/skills_three_CenterContainer/PanelContainer" unique_id=167995633]
+layout_mode = 2
+size_flags_horizontal = 1
+value = 100.0

@@ -23,18 +23,20 @@ func setCharacterOwnIndexId(characterIndex:int) -> void:
 func setSkillIndexId(skillId:int):
 	self.skillIndexId = skillId
 
-func canExecute() -> bool:
+func isCanExecute() -> bool:
 	return self.currentColdDownStatus >= self.baseColdDown
 	
 func executeSkill() -> void:
 	
-	if(canExecute()):
+	if(not isCanExecute()):
 		execute_without_power.emit()
 	else:
+		
 		self.skillEffect()
 		self.execute_skill.emit(self.characterIndexId,self.skillIndexId)
 		self.currentColdDownStatus = 0
 		self.recovery_skill_status.emit(self.characterIndexId,self.skillIndexId,currentColdDownStatus)
+		
 
 func  _ready() -> void:
 	self.currentColdDownStatus = self.baseColdDown

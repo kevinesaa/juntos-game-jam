@@ -46,6 +46,7 @@ script = ExtResource("3_xy2ov")
 [node name="player1_Node2D" type="Node2D" parent="gameNode/playerController_Node" unique_id=271839000]
 position = Vector2(240, 230)
 script = ExtResource("4_qq2pt")
+baseHealth = null
 baseSpeed = 40.0
 skills_node_paths = Array[NodePath]([NodePath("skill1_player_1"), NodePath("skill2_player_1"), NodePath("skill3_player1_Node2D")])
 
@@ -65,17 +66,14 @@ baseColdDown = 100.0
 
 [node name="skill2_player_1" type="Node2D" parent="gameNode/playerController_Node/player1_Node2D" unique_id=1422970665]
 script = ExtResource("7_r7tiq")
-recoverySpeed = 2.0
-baseColdDown = 100.0
 
 [node name="skill3_player1_Node2D" type="Node2D" parent="gameNode/playerController_Node/player1_Node2D" unique_id=2143521350]
 script = ExtResource("7_r7tiq")
-recoverySpeed = 5.0
-baseColdDown = 100.0
 
 [node name="player2_Node2D" type="Node2D" parent="gameNode/playerController_Node" unique_id=1958795324]
 position = Vector2(420, 230)
 script = ExtResource("4_qq2pt")
+baseHealth = null
 baseSpeed = 40.0
 skills_node_paths = Array[NodePath]([NodePath("skill1_plyaer2_Node2D"), NodePath("skill2_player2_Node2D"), NodePath("skill3_player2_Node2D")])
 
@@ -95,17 +93,14 @@ baseColdDown = 100.0
 
 [node name="skill2_player2_Node2D" type="Node2D" parent="gameNode/playerController_Node/player2_Node2D" unique_id=588517115]
 script = ExtResource("7_r7tiq")
-recoverySpeed = 3.0
-baseColdDown = 100.0
 
 [node name="skill3_player2_Node2D" type="Node2D" parent="gameNode/playerController_Node/player2_Node2D" unique_id=343940793]
 script = ExtResource("7_r7tiq")
-recoverySpeed = 5.0
-baseColdDown = 100.0
 
 [node name="player3_Node2D" type="Node2D" parent="gameNode/playerController_Node" unique_id=350844624]
 position = Vector2(370, 230)
 script = ExtResource("4_qq2pt")
+baseHealth = null
 baseSpeed = 50.0
 skills_node_paths = Array[NodePath]([NodePath("skill1_player3_Node2D"), NodePath("skill2_player3_Node2D"), NodePath("skill3_player3_Node2D")])
 
@@ -125,17 +120,14 @@ baseColdDown = 100.0
 
 [node name="skill2_player3_Node2D" type="Node2D" parent="gameNode/playerController_Node/player3_Node2D" unique_id=2127335319]
 script = ExtResource("7_r7tiq")
-recoverySpeed = 9.0
-baseColdDown = 100.0
 
 [node name="skill3_player3_Node2D" type="Node2D" parent="gameNode/playerController_Node/player3_Node2D" unique_id=1054662965]
 script = ExtResource("7_r7tiq")
-recoverySpeed = 12.0
-baseColdDown = 100.0
 
 [node name="player4_Node2D" type="Node2D" parent="gameNode/playerController_Node" unique_id=355279349]
 position = Vector2(320, 230)
 script = ExtResource("4_qq2pt")
+baseHealth = null
 baseSpeed = 30.0
 skills_node_paths = Array[NodePath]([NodePath("skill1_player4_Node2D"), NodePath("skill2_player4_Node2D"), NodePath("skill3_player4_Node2D")])
 
@@ -154,13 +146,9 @@ recoverySpeed = 8.0
 
 [node name="skill2_player4_Node2D" type="Node2D" parent="gameNode/playerController_Node/player4_Node2D" unique_id=687943995]
 script = ExtResource("7_r7tiq")
-recoverySpeed = 15.0
-baseColdDown = 100.0
 
 [node name="skill3_player4_Node2D" type="Node2D" parent="gameNode/playerController_Node/player4_Node2D" unique_id=778069680]
 script = ExtResource("7_r7tiq")
-recoverySpeed = 16.0
-baseColdDown = 100.0
 
 [node name="ground_Node2D" type="Node2D" parent="gameNode" unique_id=39951809]
 position = Vector2(320, 275)

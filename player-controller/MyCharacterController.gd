@@ -9,6 +9,7 @@ extends Node2D
 signal on_current_skill_change(characterIndexId:int, skillIndex:int)
 signal on_character_health_change(currentHealth:float)
 signal on_skill_execute_notify(characterIndexId:int, skillIndex:int)
+signal on_recovery_skill_status(characterIndexId:int, skillIndex:int, value:float)
 #endregion
 
 var currentHealth:float
@@ -25,6 +26,7 @@ func _ready() -> void:
 		var skill = skillNode as SkillController
 		skill.setSkillIndexId(i)
 		skill.setCharacterOwnIndexId(characterIndexId)
+		skill.recovery_skill_status.connect(_update_skill_status_listener)
 		charaterSkills.append(skill)
 	
 func _process(delta: float) -> void:
@@ -50,6 +52,7 @@ func selectPreviusSkill() -> void:
 	if(self.currentSkillIndex < 0):
 		self.currentSkillIndex = self.charaterSkills.size() - 1
 	
+	
 	on_current_skill_change.emit(self.characterIndexId,self.currentSkillIndex)
 	
 func selectNextSkill() -> void:
@@ -59,10 +62,13 @@ func selectNextSkill() -> void:
 	if(self.currentSkillIndex > maxIndex):
 		self.currentSkillIndex = 0
 	
+	
 	on_current_skill_change.emit(self.characterIndexId,self.currentSkillIndex)
 
 
 func executeSkill() -> void:
-	
 	var currentSkill:SkillController = charaterSkills.get(self.currentSkillIndex)
 	currentSkill.executeSkill()
+
+func _update_skill_status_listener(characterIndexId:int, skillIndex:int, value:float) -> void:
+	self.on_recovery_skill_status.emit(characterIndexId,skillIndex,value)
