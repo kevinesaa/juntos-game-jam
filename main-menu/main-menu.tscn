@@ -35,7 +35,8 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.25
 theme = ExtResource("3_1nbid")
-alignment = 2
+theme_override_constants/separation = 48
+alignment = 1
 
 [node name="about_Button" type="Button" parent="CanvasLayer/MarginContainer/HBoxContainer/buttonsZone_VBoxContainer" unique_id=1580640494]
 layout_mode = 2
@@ -118,8 +119,8 @@ text = "This game is free, but the need for help is real.
 Please consider supporting the victims of the recent earthquakes in Venezuela by donating to a trusted relief organization working in the region. Every contribution helps communities rebuild and recover.
 
 [donation link goes here]"
-autowrap_mode = 3
 vertical_alignment = 1
+autowrap_mode = 3
 
 [node name="donateRow" type="HBoxContainer" parent="CanvasLayer/MarginContainer/HBoxContainer/PanelContainer/support_Content/VBoxContainer/bodyPanel/bodyMargin/bodyVBox" unique_id=1879914726]
 layout_mode = 2
