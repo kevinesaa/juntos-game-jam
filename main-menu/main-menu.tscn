@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://l8di6o87hbaj" path="res://main-menu/main-menu-controller.gd" id="1_6u48k"]
 [ext_resource type="Script" uid="uid://dn1vx62hd863p" path="res://_commons/scene-manager/change-scene-controller.gd" id="2_6u48k"]
+[ext_resource type="Theme" uid="uid://c8t4gy3m7o4jn" path="res://resources/themes/tema_menus.tres" id="3_1nbid"]
 
 [node name="MainMenu" type="Node2D" unique_id=1442265409]
 script = ExtResource("1_6u48k")
@@ -33,6 +34,7 @@ layout_mode = 2
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.25
+theme = ExtResource("3_1nbid")
 alignment = 2
 
 [node name="about_Button" type="Button" parent="CanvasLayer/MarginContainer/HBoxContainer/buttonsZone_VBoxContainer" unique_id=1580640494]
@@ -122,6 +124,7 @@ Raúl Gonzalez
 Peipol..."
 
 [node name="loadingPanel" type="Panel" parent="CanvasLayer" unique_id=1375120956]
+visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -135,6 +138,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+rotation = -0.008838127
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/loadingPanel/CenterContainer" unique_id=1742961675]
 layout_mode = 2

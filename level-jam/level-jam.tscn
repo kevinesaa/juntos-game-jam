@@ -28,7 +28,7 @@
 [ext_resource type="Script" uid="uid://5xlk7iso76px" path="res://skills-controller/SpeedBoostSkill.gd" id="14_speedboost"]
 [ext_resource type="Script" uid="uid://nsq5t34n3jjl" path="res://_commons/camera/CameraShake.gd" id="15_camerashake"]
 [ext_resource type="Texture2D" uid="uid://ce711sdndn3ew" path="res://art-visuals/player_2/idle/idle_player2_frame_2.png" id="16_alr0a"]
-[ext_resource type="PackedScene" path="res://band-slideshow/band-slideshow.tscn" id="16_bandslide"]
+[ext_resource type="PackedScene" uid="uid://dmmsj4wng0tij" path="res://band-slideshow/band-slideshow.tscn" id="16_bandslide"]
 [ext_resource type="Texture2D" uid="uid://dr2stciwxsj5m" path="res://art-visuals/player_2/idle/idle_player2_frame_3.png" id="17_acjl5"]
 [ext_resource type="Texture2D" uid="uid://dxm7wcfc10ign" path="res://art-visuals/player_2/idle/idle_player2_frame_4.png" id="18_pw28h"]
 [ext_resource type="Texture2D" uid="uid://bbrejl7o60a25" path="res://art-visuals/player_3/idle/idle_player3_frame_2.png" id="20_i7g8u"]
@@ -284,6 +284,7 @@ texture = ExtResource("5_oestl")
 
 [node name="player1_AnimatedSprite2D" type="AnimatedSprite2D" parent="gameNode/playerController_Node/player1_Node2D/player1_CharacterBody2D/player_SpriteRender" unique_id=1920963837]
 material = SubResource("ShaderMaterial_p1outline")
+rotation = 0.00061939366
 sprite_frames = SubResource("SpriteFrames_ekf4n")
 animation = &"walk"
 autoplay = "idle"
