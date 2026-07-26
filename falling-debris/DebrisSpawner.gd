@@ -4,10 +4,10 @@ extends Node2D
 @export var debrisScene: PackedScene
 @export var spawnIntervalMin: float = 1.0
 @export var spawnIntervalMax: float = 2.5
-@export var arenaMinX: float = 60.0
-@export var arenaMaxX: float = 580.0
-@export var spawnY: float = -20.0
-@export var landingY: float = 260.0
+@export var arenaMinX: float = 120.0
+@export var arenaMaxX: float = 1160.0
+@export var spawnY: float = -40.0
+@export var landingY: float = 520.0
 
 signal debris_destroyed(scoreValue: int)
 signal debris_landed(x: float, damage: float)

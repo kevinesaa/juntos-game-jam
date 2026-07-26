@@ -18,7 +18,7 @@ extends CustomScene
 @onready var player_three_layout: CharacterUiController = $CanvasLayer/MarginContainer/VBoxContainer/PanelContainer/HBoxContainer/PlayerThreeLayout
 @onready var player_four_layout: CharacterUiController = $CanvasLayer/MarginContainer/VBoxContainer/PanelContainer/HBoxContainer/PlayerFourLayout
 
-const LANE_HALF_WIDTH := 90.0
+const LANE_HALF_WIDTH := 180.0
 ## Matches the ProgressBar's default max_value, same reasoning as baseColdDown.
 const POWER_MAX := 100.0
 

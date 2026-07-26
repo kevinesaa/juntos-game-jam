@@ -1,7 +1,7 @@
 class_name CameraShake
 extends Camera2D
 
-@export var maxOffset: float = 8.0
+@export var maxOffset: float = 16.0
 @export var traumaDecayPerSecond: float = 2.0
 
 var trauma: float = 0.0

@@ -1,11 +1,11 @@
 class_name FallingDebris
 extends Node2D
 
-@export var fallSpeed: float = 80.0
+@export var fallSpeed: float = 160.0
 @export var damage: float = 10.0
 @export var scoreValue: int = 10
 
-var landingY: float = 260.0
+var landingY: float = 520.0
 
 signal destroyed(scoreValue: int)
 signal landed(x: float, damage: float)

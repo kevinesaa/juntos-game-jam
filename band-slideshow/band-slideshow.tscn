@@ -5,7 +5,7 @@
 [node name="BandSlideshow" type="VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_constants/separation = 4
+theme_override_constants/separation = 8
 script = ExtResource("1_bandslide")
 
 [node name="AutoAdvanceTimer" type="Timer" parent="."]
@@ -21,12 +21,12 @@ text = "Name"
 layout_mode = 2
 
 [node name="photo_ColorRect" type="ColorRect" parent="PhotoCenterContainer"]
-custom_minimum_size = Vector2(96, 96)
+custom_minimum_size = Vector2(192, 192)
 layout_mode = 2
 color = Color(0.5, 0.5, 0.5, 1)
 
 [node name="photo_TextureRect" type="TextureRect" parent="PhotoCenterContainer"]
-custom_minimum_size = Vector2(96, 96)
+custom_minimum_size = Vector2(192, 192)
 layout_mode = 2
 visible = false
 expand_mode = 1

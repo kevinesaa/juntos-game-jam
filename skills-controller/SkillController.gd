@@ -5,7 +5,7 @@ extends Node
 @export var baseTimeSkillEffect:float
 @export var SpeedSkillEffectTime:float
 @export var path_shock_wave_node_2d: NodePath
-@export var shockwave_radius: float = 110.0
+@export var shockwave_radius: float = 220.0
 var currentColdDownStatus:float
 var currentTimeSkillEffect:float
 var shock_wave_node_2d: Node2D

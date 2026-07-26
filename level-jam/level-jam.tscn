@@ -95,7 +95,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nr37e"]
-size = Vector2(14, 56)
+size = Vector2(28, 112)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_p2outline"]
 shader = ExtResource("43_outline")
@@ -141,7 +141,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6g1t1"]
-size = Vector2(14, 54)
+size = Vector2(28, 108)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_p3outline"]
 shader = ExtResource("43_outline")
@@ -187,7 +187,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sobt1"]
-size = Vector2(11, 53)
+size = Vector2(22, 106)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_p4outline"]
 shader = ExtResource("43_outline")
@@ -233,10 +233,10 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_viwgl"]
-size = Vector2(43, 57)
+size = Vector2(86, 114)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cw4k4"]
-size = Vector2(655, 20)
+size = Vector2(1310, 40)
 
 [node name="LevelJam" type="Node2D" unique_id=917062658]
 script = ExtResource("1_dgymi")
@@ -260,26 +260,28 @@ path_to_next_scene = "res://main-menu/main-menu.tscn"
 [node name="gameNode" type="Node" parent="." unique_id=871327871]
 
 [node name="Camera2D" type="Camera2D" parent="gameNode" unique_id=871327872]
-position = Vector2(320, 180)
+position = Vector2(640, 360)
 script = ExtResource("15_camerashake")
 
 [node name="GamePlayHolder" type="Sprite2D" parent="gameNode" unique_id=1449437486]
-position = Vector2(322, 181)
+position = Vector2(644, 362)
+scale = Vector2(2, 2)
 texture = ExtResource("3_r7tiq")
 
 [node name="playerController_Node" type="Node" parent="gameNode" unique_id=687942859]
 script = ExtResource("3_xy2ov")
 
 [node name="player1_Node2D" type="Node2D" parent="gameNode/playerController_Node" unique_id=271839000]
-position = Vector2(240, 230)
+position = Vector2(480, 460)
 script = ExtResource("4_qq2pt")
-baseSpeed = 40.0
+baseSpeed = 80.0
 skills_node_paths = Array[NodePath]([NodePath("skill1_player_1"), NodePath("skill2_player_1"), NodePath("skill3_player1_Node2D")])
 path_animation_controller = NodePath("player1_CharacterBody2D/player_SpriteRender/player1_AnimatedSprite2D")
 
 [node name="player1_CharacterBody2D" type="CharacterBody2D" parent="gameNode/playerController_Node/player1_Node2D" unique_id=1478620453]
 
 [node name="player_SpriteRender" type="Sprite2D" parent="gameNode/playerController_Node/player1_Node2D/player1_CharacterBody2D" unique_id=593470189]
+scale = Vector2(2, 2)
 texture = ExtResource("5_oestl")
 
 [node name="player1_AnimatedSprite2D" type="AnimatedSprite2D" parent="gameNode/playerController_Node/player1_Node2D/player1_CharacterBody2D/player_SpriteRender" unique_id=1920963837]
@@ -290,10 +292,11 @@ animation = &"walk"
 autoplay = "idle"
 
 [node name="player1_CollisionShape2D" type="CollisionShape2D" parent="gameNode/playerController_Node/player1_Node2D/player1_CharacterBody2D" unique_id=1112553368]
-position = Vector2(0, 4)
+position = Vector2(0, 8)
 shape = SubResource("RectangleShape2D_nr37e")
 
 [node name="skill1_player_1" type="Node2D" parent="gameNode/playerController_Node/player1_Node2D" unique_id=2086321377]
+rotation = 0.0020755983
 script = ExtResource("7_r7tiq")
 recoverySpeed = 10.0
 baseColdDown = 100.0
@@ -326,8 +329,8 @@ explosiveness = 1.0
 direction = Vector2(0, -1)
 spread = 180.0
 gravity = Vector2(0, 0)
-initial_velocity_min = 40.0
-initial_velocity_max = 90.0
+initial_velocity_min = 80.0
+initial_velocity_max = 180.0
 scale_amount_max = 2.0
 color = Color(1, 0.9, 0.2, 1)
 
@@ -339,19 +342,21 @@ baseColdDown = 100.0
 
 [node name="speedBoostVisual_Polygon2D" type="Polygon2D" parent="gameNode/playerController_Node/player1_Node2D/skill3_player1_Node2D" unique_id=2143521351]
 visible = false
+scale = Vector2(2, 2)
 color = Color(0.2, 0.9, 1, 0.8)
 polygon = PackedVector2Array(0, -20, 6, -8, 0, -12, 6, 4, 0, 0, 6, 16)
 
 [node name="player2_Node2D" type="Node2D" parent="gameNode/playerController_Node" unique_id=1958795324]
-position = Vector2(320, 230)
+position = Vector2(640, 460)
 script = ExtResource("4_qq2pt")
-baseSpeed = 40.0
+baseSpeed = 80.0
 skills_node_paths = Array[NodePath]([NodePath("skill1_plyaer2_Node2D"), NodePath("skill2_player2_Node2D"), NodePath("skill3_player2_Node2D")])
 path_animation_controller = NodePath("player2_CharacterBody2D/player_SpriteRender/player2_AnimatedSprite2D")
 
 [node name="player2_CharacterBody2D" type="CharacterBody2D" parent="gameNode/playerController_Node/player2_Node2D" unique_id=1397011205]
 
 [node name="player_SpriteRender" type="Sprite2D" parent="gameNode/playerController_Node/player2_Node2D/player2_CharacterBody2D" unique_id=1949557825]
+scale = Vector2(2, 2)
 texture = ExtResource("4_xy2ov")
 
 [node name="player2_AnimatedSprite2D" type="AnimatedSprite2D" parent="gameNode/playerController_Node/player2_Node2D/player2_CharacterBody2D/player_SpriteRender" unique_id=2076262531]
@@ -361,7 +366,7 @@ animation = &"idle"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="gameNode/playerController_Node/player2_Node2D/player2_CharacterBody2D" unique_id=372874980]
-position = Vector2(-1, 2)
+position = Vector2(-2, 4)
 shape = SubResource("RectangleShape2D_6g1t1")
 
 [node name="skill1_plyaer2_Node2D" type="Node2D" parent="gameNode/playerController_Node/player2_Node2D" unique_id=1616884184]
@@ -397,8 +402,8 @@ explosiveness = 1.0
 direction = Vector2(0, -1)
 spread = 180.0
 gravity = Vector2(0, 0)
-initial_velocity_min = 40.0
-initial_velocity_max = 90.0
+initial_velocity_min = 80.0
+initial_velocity_max = 180.0
 scale_amount_max = 2.0
 color = Color(1, 0.9, 0.2, 1)
 
@@ -410,19 +415,21 @@ baseColdDown = 100.0
 
 [node name="speedBoostVisual_Polygon2D" type="Polygon2D" parent="gameNode/playerController_Node/player2_Node2D/skill3_player2_Node2D" unique_id=343940794]
 visible = false
+scale = Vector2(2, 2)
 color = Color(0.2, 0.9, 1, 0.8)
 polygon = PackedVector2Array(0, -20, 6, -8, 0, -12, 6, 4, 0, 0, 6, 16)
 
 [node name="player3_Node2D" type="Node2D" parent="gameNode/playerController_Node" unique_id=350844624]
-position = Vector2(370, 230)
+position = Vector2(740, 460)
 script = ExtResource("4_qq2pt")
-baseSpeed = 50.0
+baseSpeed = 100.0
 skills_node_paths = Array[NodePath]([NodePath("skill1_player3_Node2D"), NodePath("skill2_player3_Node2D"), NodePath("skill3_player3_Node2D")])
 path_animation_controller = NodePath("CharacterBody2D/player_SpriteRender/player3_AnimatedSprite2D")
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="gameNode/playerController_Node/player3_Node2D" unique_id=1291829239]
 
 [node name="player_SpriteRender" type="Sprite2D" parent="gameNode/playerController_Node/player3_Node2D/CharacterBody2D" unique_id=1354094665]
+scale = Vector2(2, 2)
 texture = ExtResource("5_qq2pt")
 
 [node name="player3_AnimatedSprite2D" type="AnimatedSprite2D" parent="gameNode/playerController_Node/player3_Node2D/CharacterBody2D/player_SpriteRender" unique_id=568377659]
@@ -432,7 +439,7 @@ animation = &"walk"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="gameNode/playerController_Node/player3_Node2D/CharacterBody2D" unique_id=120226561]
-position = Vector2(0.5, 3.5)
+position = Vector2(1, 7)
 shape = SubResource("RectangleShape2D_sobt1")
 
 [node name="skill1_player3_Node2D" type="Node2D" parent="gameNode/playerController_Node/player3_Node2D" unique_id=1098852025]
@@ -468,8 +475,8 @@ explosiveness = 1.0
 direction = Vector2(0, -1)
 spread = 180.0
 gravity = Vector2(0, 0)
-initial_velocity_min = 40.0
-initial_velocity_max = 90.0
+initial_velocity_min = 80.0
+initial_velocity_max = 180.0
 scale_amount_max = 2.0
 color = Color(1, 0.9, 0.2, 1)
 
@@ -481,19 +488,21 @@ baseColdDown = 100.0
 
 [node name="speedBoostVisual_Polygon2D" type="Polygon2D" parent="gameNode/playerController_Node/player3_Node2D/skill3_player3_Node2D" unique_id=1054662966]
 visible = false
+scale = Vector2(2, 2)
 color = Color(0.2, 0.9, 1, 0.8)
 polygon = PackedVector2Array(0, -20, 6, -8, 0, -12, 6, 4, 0, 0, 6, 16)
 
 [node name="player4_Node2D" type="Node2D" parent="gameNode/playerController_Node" unique_id=355279349]
-position = Vector2(420, 230)
+position = Vector2(840, 460)
 script = ExtResource("4_qq2pt")
-baseSpeed = 30.0
+baseSpeed = 60.0
 skills_node_paths = Array[NodePath]([NodePath("skill1_player4_Node2D"), NodePath("skill2_player4_Node2D"), NodePath("skill3_player4_Node2D")])
 path_animation_controller = NodePath("player4_CharacterBody2D/player_SpriteRender/player4_AnimatedSprite2D")
 
 [node name="player4_CharacterBody2D" type="CharacterBody2D" parent="gameNode/playerController_Node/player4_Node2D" unique_id=473400376]
 
 [node name="player_SpriteRender" type="Sprite2D" parent="gameNode/playerController_Node/player4_Node2D/player4_CharacterBody2D" unique_id=1558608659]
+scale = Vector2(2, 2)
 texture = ExtResource("6_oestl")
 
 [node name="player4_AnimatedSprite2D" type="AnimatedSprite2D" parent="gameNode/playerController_Node/player4_Node2D/player4_CharacterBody2D/player_SpriteRender" unique_id=603778354]
@@ -503,7 +512,7 @@ animation = &"walk"
 autoplay = "idle"
 
 [node name="player4_CollisionShape2D" type="CollisionShape2D" parent="gameNode/playerController_Node/player4_Node2D/player4_CharacterBody2D" unique_id=2002224309]
-position = Vector2(-1.5, 2.5)
+position = Vector2(-3, 5)
 shape = SubResource("RectangleShape2D_viwgl")
 
 [node name="skill1_player4_Node2D" type="Node2D" parent="gameNode/playerController_Node/player4_Node2D" unique_id=1126401925]
@@ -539,8 +548,8 @@ explosiveness = 1.0
 direction = Vector2(0, -1)
 spread = 180.0
 gravity = Vector2(0, 0)
-initial_velocity_min = 40.0
-initial_velocity_max = 90.0
+initial_velocity_min = 80.0
+initial_velocity_max = 180.0
 scale_amount_max = 2.0
 color = Color(1, 0.9, 0.2, 1)
 
@@ -552,6 +561,7 @@ baseColdDown = 100.0
 
 [node name="speedBoostVisual_Polygon2D" type="Polygon2D" parent="gameNode/playerController_Node/player4_Node2D/skill3_player4_Node2D" unique_id=778069681]
 visible = false
+scale = Vector2(2, 2)
 color = Color(0.2, 0.9, 1, 0.8)
 polygon = PackedVector2Array(0, -20, 6, -8, 0, -12, 6, 4, 0, 0, 6, 16)
 
@@ -562,12 +572,12 @@ spawnIntervalMin = 0.8
 spawnIntervalMax = 2.0
 
 [node name="ground_Node2D" type="Node2D" parent="gameNode" unique_id=39951809]
-position = Vector2(320, 275)
+position = Vector2(640, 550)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="gameNode/ground_Node2D" unique_id=1745784022]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="gameNode/ground_Node2D/StaticBody2D" unique_id=1764556378]
-position = Vector2(-0.5, 0)
+position = Vector2(-1, 0)
 shape = SubResource("RectangleShape2D_cw4k4")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1630577108]
@@ -576,12 +586,12 @@ shape = SubResource("RectangleShape2D_cw4k4")
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -180.0
-offset_top = 8.0
-offset_right = -8.0
-offset_bottom = 8.0
+offset_left = -360.0
+offset_top = 16.0
+offset_right = -16.0
+offset_bottom = 16.0
 grow_horizontal = 0
-theme_override_font_sizes/font_size = 10
+theme_override_font_sizes/font_size = 20
 text = "Input Debug"
 horizontal_alignment = 2
 script = ExtResource("11_inputdbg")
@@ -592,10 +602,10 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/margin_left = 16
-theme_override_constants/margin_top = 16
-theme_override_constants/margin_right = 16
-theme_override_constants/margin_bottom = 16
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 32
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/MarginContainer" unique_id=754402209]
 layout_mode = 2
@@ -623,7 +633,7 @@ size_flags_horizontal = 3
 nameText = "VDD"
 
 [node name="space1_Control" type="Control" parent="CanvasLayer/MarginContainer/VBoxContainer/PanelContainer/HBoxContainer" unique_id=1177596036]
-custom_minimum_size = Vector2(32, 0)
+custom_minimum_size = Vector2(64, 0)
 layout_mode = 2
 
 [node name="PlayerTwoLayout" parent="CanvasLayer/MarginContainer/VBoxContainer/PanelContainer/HBoxContainer" unique_id=1880116095 instance=ExtResource("2_dgymi")]
@@ -632,7 +642,7 @@ size_flags_horizontal = 3
 nameText = "Scorpio"
 
 [node name="space2_Control" type="Control" parent="CanvasLayer/MarginContainer/VBoxContainer/PanelContainer/HBoxContainer" unique_id=312282163]
-custom_minimum_size = Vector2(32, 0)
+custom_minimum_size = Vector2(64, 0)
 layout_mode = 2
 
 [node name="PlayerThreeLayout" parent="CanvasLayer/MarginContainer/VBoxContainer/PanelContainer/HBoxContainer" unique_id=1046926634 instance=ExtResource("2_dgymi")]
@@ -641,7 +651,7 @@ size_flags_horizontal = 3
 nameText = "Enigma"
 
 [node name="space3_Control" type="Control" parent="CanvasLayer/MarginContainer/VBoxContainer/PanelContainer/HBoxContainer" unique_id=19572423]
-custom_minimum_size = Vector2(32, 0)
+custom_minimum_size = Vector2(64, 0)
 layout_mode = 2
 
 [node name="PlayerFourLayout" parent="CanvasLayer/MarginContainer/VBoxContainer/PanelContainer/HBoxContainer" unique_id=1569786280 instance=ExtResource("2_dgymi")]
@@ -709,7 +719,7 @@ grow_vertical = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/endgame_container_PanelContainer" unique_id=54613161]
 layout_mode = 2
-theme_override_constants/separation = 12
+theme_override_constants/separation = 24
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/endgame_container_PanelContainer/VBoxContainer" unique_id=2011761979]
 layout_mode = 2
@@ -717,10 +727,10 @@ alignment = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/endgame_container_PanelContainer/VBoxContainer/HBoxContainer" unique_id=1257098786]
 layout_mode = 2
-theme_override_constants/margin_left = 16
-theme_override_constants/margin_top = 16
-theme_override_constants/margin_right = 16
-theme_override_constants/margin_bottom = 16
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 32
 
 [node name="Button" type="Button" parent="CanvasLayer/endgame_container_PanelContainer/VBoxContainer/HBoxContainer/MarginContainer" unique_id=1099871896]
 layout_mode = 2
@@ -738,7 +748,7 @@ auto_advance_seconds = 2.0
 
 [node name="donate_MarginContainer" type="MarginContainer" parent="CanvasLayer/endgame_container_PanelContainer/VBoxContainer" unique_id=1776656620]
 layout_mode = 2
-theme_override_constants/margin_top = 16
+theme_override_constants/margin_top = 32
 
 [node name="donate_Label" type="Label" parent="CanvasLayer/endgame_container_PanelContainer/VBoxContainer/donate_MarginContainer" unique_id=1776656621]
 layout_mode = 2

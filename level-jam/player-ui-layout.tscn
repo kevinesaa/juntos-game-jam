@@ -5,16 +5,20 @@
 [ext_resource type="Texture2D" uid="uid://gwe0tkq54bdg" path="res://art-visuals/skill_place-holder.png" id="2_3se0s"]
 
 [node name="PlayerLayout" type="Control" unique_id=1557586174]
-custom_minimum_size = Vector2(128, 64)
-custom_maximum_size = Vector2(128, 64)
+custom_minimum_size = Vector2(256, 128)
+custom_maximum_size = Vector2(256, 128)
 layout_mode = 3
 anchors_preset = 0
+offset_left = 58.0
+offset_top = 173.0
+offset_right = 314.0
+offset_bottom = 301.0
 script = ExtResource("1_3se0s")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=2032768151]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 80.0
+offset_bottom = 80.0
 theme_override_constants/separation = 0
 
 [node name="nameLabel" type="Label" parent="VBoxContainer" unique_id=386310880]
@@ -28,7 +32,7 @@ size_flags_vertical = 3
 theme_override_constants/separation = 0
 
 [node name="portrait_TextureRect" type="TextureRect" parent="VBoxContainer/HBoxContainer" unique_id=1617202784]
-custom_maximum_size = Vector2(32, 48)
+custom_maximum_size = Vector2(64, 96)
 layout_mode = 2
 size_flags_horizontal = 3
 texture = ExtResource("1_fw2xj")
@@ -44,13 +48,13 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 border_color = Color(1, 0.9, 0.2, 1)
-border_width = 2.0
+border_width = 4.0
 editor_only = false
 
 [node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/HBoxContainer" unique_id=33685284]
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_constants/margin_left = 4
+theme_override_constants/margin_left = 8
 
 [node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/HBoxContainer/MarginContainer" unique_id=1296333036]
 layout_mode = 2
@@ -61,7 +65,7 @@ layout_mode = 2
 show_percentage = false
 
 [node name="space_Control" type="Control" parent="VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer" unique_id=1080651700]
-custom_minimum_size = Vector2(0, 2)
+custom_minimum_size = Vector2(0, 4)
 layout_mode = 2
 
 [node name="helth_ProgressBar" type="ProgressBar" parent="VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer" unique_id=469408522]
@@ -69,7 +73,7 @@ layout_mode = 2
 show_percentage = false
 
 [node name="space2_Control" type="Control" parent="VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer" unique_id=1616365690]
-custom_minimum_size = Vector2(0, 2)
+custom_minimum_size = Vector2(0, 4)
 layout_mode = 2
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer" unique_id=824376250]
@@ -84,7 +88,7 @@ size_flags_horizontal = 3
 layout_mode = 2
 
 [node name="TextureRect" type="TextureRect" parent="VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer/HBoxContainer/skills_one_CenterContainer/PanelContainer" unique_id=334713291]
-custom_maximum_size = Vector2(24, 24)
+custom_maximum_size = Vector2(48, 48)
 layout_mode = 2
 texture = ExtResource("2_3se0s")
 
@@ -98,17 +102,12 @@ value = 100.0
 [node name="skillSelectionHighlight" type="ReferenceRect" parent="VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer/HBoxContainer/skills_one_CenterContainer/PanelContainer" unique_id=365274340]
 visible = false
 layout_mode = 2
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
 border_color = Color(0.2, 0.9, 1, 1)
-border_width = 2.0
+border_width = 4.0
 editor_only = false
 
 [node name="spaceControl" type="Control" parent="VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1958667455]
-custom_minimum_size = Vector2(9, 0)
+custom_minimum_size = Vector2(18, 0)
 layout_mode = 2
 
 [node name="skills_two_CenterContainer" type="CenterContainer" parent="VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1279546566]
@@ -119,7 +118,7 @@ size_flags_horizontal = 3
 layout_mode = 2
 
 [node name="TextureRect" type="TextureRect" parent="VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer/HBoxContainer/skills_two_CenterContainer/PanelContainer" unique_id=946895611]
-custom_maximum_size = Vector2(24, 24)
+custom_maximum_size = Vector2(48, 48)
 layout_mode = 2
 texture = ExtResource("2_3se0s")
 
@@ -133,17 +132,12 @@ value = 100.0
 [node name="skillSelectionHighlight" type="ReferenceRect" parent="VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer/HBoxContainer/skills_two_CenterContainer/PanelContainer" unique_id=2052829187]
 visible = false
 layout_mode = 2
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
 border_color = Color(0.2, 0.9, 1, 1)
-border_width = 2.0
+border_width = 4.0
 editor_only = false
 
 [node name="space2Control" type="Control" parent="VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=561391679]
-custom_minimum_size = Vector2(9, 0)
+custom_minimum_size = Vector2(18, 0)
 layout_mode = 2
 
 [node name="skills_three_CenterContainer" type="CenterContainer" parent="VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=138806023]
@@ -154,7 +148,7 @@ size_flags_horizontal = 3
 layout_mode = 2
 
 [node name="TextureRect" type="TextureRect" parent="VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer/HBoxContainer/skills_three_CenterContainer/PanelContainer" unique_id=728246448]
-custom_maximum_size = Vector2(24, 24)
+custom_maximum_size = Vector2(48, 48)
 layout_mode = 2
 texture = ExtResource("2_3se0s")
 
@@ -168,11 +162,6 @@ value = 100.0
 [node name="skillSelectionHighlight" type="ReferenceRect" parent="VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer/HBoxContainer/skills_three_CenterContainer/PanelContainer" unique_id=167995634]
 visible = false
 layout_mode = 2
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
 border_color = Color(0.2, 0.9, 1, 1)
-border_width = 2.0
+border_width = 4.0
 editor_only = false

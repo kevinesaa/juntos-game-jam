@@ -5,6 +5,19 @@ final art, without breaking scene references. Read the "General workflow"
 section first — it explains the two ways to replace a file and when each
 applies, so you don't need to repeat that reasoning per asset below.
 
+## Native resolution: 1280×720
+
+The game now renders natively at **1280×720** (up from an original
+640×360 canvas upscaled 2x). Every position, margin, collision shape, and
+UI size in the project was doubled to match. The still-low-res placeholder
+art (character sprites, debris, portrait, skill icon) is compensated with
+a `scale = Vector2(2, 2)` override on the relevant node — the underlying
+PNGs are still their original small size, just rendered bigger. **When you
+drop in real higher-resolution art, remove that node's `scale` override**
+(or adjust it) — doubling an already-correctly-sized new image via node
+scale would make it twice as big as intended. Each section below flags
+which nodes currently carry this `scale = Vector2(2, 2)` workaround.
+
 ## General workflow
 
 Every visual resource in this project is referenced by **path** from a
@@ -41,8 +54,11 @@ import — don't delete these, and don't worry about editing them by hand.
 
 ## 1. Character sprites (idle + walk animations)
 
-**Current:** flat pixel-art frames, one folder per character.
-**Dimensions:** 32×64 px per frame.
+**Current:** flat pixel-art frames, one folder per character, native size
+32×64 px per frame — displayed at **2x** via `scale = Vector2(2, 2)` on
+each character's `player_SpriteRender` `Sprite2D` node (the
+`AnimatedSprite2D` is its child, so it inherits the same scale) to look
+right-sized on the new 1280×720 canvas.
 **Location pattern:** `art-visuals/player_<N>/idle/idle_player<N>_frame_<1-4>.png`
 and `art-visuals/player_<N>/walk/walk_player<N>_frame_<1-4>.png`, for
 `N` = 1 (VDD), 2 (Scorpio), 3 (Enigma), 4 (Shield Guard).
@@ -53,6 +69,14 @@ sub-resources inside `level-jam/level-jam.tscn`. If you add new
 animations (e.g. an attack animation) or change frame counts, you'll need
 to edit the `SpriteFrames` resource for that character directly in the
 editor (Animation panel on the character's `AnimatedSprite2D` node).
+
+**Higher-resolution replacements (recommended path forward):** new art
+already exists in `art-visuals/player_1/idle/EnigmaIdle-*.png` at native
+303×606 — much higher-res than the 32×64 placeholders, sized to look
+correct on the new canvas *without* the ×2 node scale. Once real art like
+this is wired into a character's `SpriteFrames`, **remove that
+character's `scale = Vector2(2, 2)` override** on its `player_SpriteRender`
+node — leaving it in would double an already-correctly-sized image.
 
 **Selection outline:** each character's `AnimatedSprite2D` has a
 `ShaderMaterial` (`_commons/shaders/sprite_outline.gdshader`) that draws a
@@ -65,7 +89,8 @@ outline, since there's no alpha edge to trace.
 ## 2. Character portraits (HUD)
 
 **Current:** one shared placeholder image for all 4 characters.
-**Dimensions:** 80×80 px.
+**Dimensions:** 80×80 px native, displayed in a 64×96 max box (doubled
+from 32×48) — provide art around 128×192 or larger for a crisp fit.
 **Location:** `art-visuals/player_portrait.png`.
 **Used by:** `level-jam/player-ui-layout.tscn` (`portrait_TextureRect` node).
 
@@ -80,7 +105,8 @@ filename" path above).
 
 **Current:** one shared placeholder icon for all 3 skill slots, all 4
 characters.
-**Dimensions:** 24×24 px.
+**Dimensions:** displayed in a 48×48 max box (doubled from 24×24) — provide
+art around 96×96 for a crisp fit.
 **Location:** `art-visuals/skill_place-holder.png`.
 **Used by:** `level-jam/player-ui-layout.tscn` (`TextureRect` nodes under
 each `skills_*_CenterContainer/PanelContainer`).
@@ -92,14 +118,16 @@ file today — repoint each of the 3 `TextureRect` nodes individually in
 
 ## 4. Falling debris
 
-**Current:** a flat brown `Polygon2D` diamond — **no PNG asset at all**.
+**Current:** a flat brown `Polygon2D` diamond (16×16, displayed at
+`scale = Vector2(2, 2)`) — **no PNG asset at all**.
 **Location:** `falling-debris/falling-debris.tscn`.
 
 To use real art here, replace the `Polygon2D` node with a `Sprite2D` (or
-`AnimatedSprite2D`) pointing at your new texture, keeping the node name
-referenced by `FallingDebris.gd` intact (the script doesn't reference the
-visual node directly, so this is a pure scene-file edit — no code
-changes needed).
+`AnimatedSprite2D`) pointing at your new texture (remove the `scale`
+override if your new art is already sized correctly), keeping the node
+name referenced by `FallingDebris.gd` intact (the script doesn't
+reference the visual node directly, so this is a pure scene-file edit —
+no code changes needed).
 
 ## 5. Ranged-shot VFX
 
@@ -123,21 +151,22 @@ asset. If you want a sprite-based shockwave effect instead, replace the
 
 ## 7. Backgrounds
 
-| Asset | Dimensions | Location | Used by |
-|---|---|---|---|
-| Gameplay background | 640×360 | `art-visuals/game-play-background.png` | `level-jam/level-jam.tscn` (`GamePlayHolder` `Sprite2D`) |
-| Splash/loading background | 1920×1080 | `art-visuals/splash_loading.png` | `splash-screen/splash-screen.tscn` |
+| Asset | Native dimensions | Displayed at | Location | Used by |
+|---|---|---|---|---|
+| Gameplay background | 640×360 | 1280×720 (via `scale = Vector2(2, 2)` on `GamePlayHolder`) | `art-visuals/game-play-background.png` | `level-jam/level-jam.tscn` |
+| Splash/loading background | 1920×1080 | fits a 1280×720 box (`stretch_mode` keeps aspect) | `art-visuals/splash_loading.png` | `splash-screen/splash-screen.tscn` |
 
-Same-filename replacement covers both. Main menu currently has **no**
-background image — it renders on the default UI theme background only
-(see section 9).
+Same-filename replacement covers both. If you replace the gameplay
+background with a native 1280×720 (or larger) image, **remove the
+`scale = Vector2(2, 2)` override on `GamePlayHolder`** so it isn't doubled
+again. Main menu currently has **no** background image — it renders on
+the default UI theme background only (see section 9).
 
-## 8. Band-member end-screen slideshow (branch-only, not yet on `main`)
+## 8. Band-member end-screen slideshow (merged to `main`)
 
-**Current:** flat-color placeholder squares (96×96 `ColorRect`), one per
-band member, defined entirely in code — **no image files exist yet.**
-Lives on the `feat/band-slideshow-endgame` branch (`band-slideshow/`),
-intentionally not merged to `main` until real photos exist.
+**Current:** flat-color placeholder squares (192×192 `ColorRect`, doubled
+from 96×96), one per band member, defined entirely in code — **no image
+files exist yet.**
 
 To drop in a real photo per member, edit the `members` array at the top
 of `band-slideshow/band-slideshow.gd` and add a `"photo"` key to that
@@ -147,21 +176,23 @@ member's dictionary, e.g.:
 ```
 No scene changes needed — the script automatically shows the photo
 instead of the color placeholder once a `"photo"` key is present. Photos
-should be square-ish (the placeholder box is 96×96) with transparency if
-you want a non-rectangular crop.
+should be square-ish (the placeholder box is 192×192) with transparency
+if you want a non-rectangular crop.
 
 ## 9. Fonts / UI theme
 
 **Current:** `assets/3rd Man.ttf` + `resources/themes/tema_menus.tres`
-(a `Theme` resource defining Button/Label font + button style states).
-**Status: not yet assigned anywhere** — no scene or `project.godot`
-currently applies this theme, so it has no visible effect yet. To use
-it, either set it as the project's default theme
-(Project Settings → GUI → Theme → Custom Theme) or assign it to a
-specific scene's root `Control`/`CanvasLayer` node's `theme` property.
+(a `Theme` resource defining Button/Label font, font size 32 for both —
+doubled from Godot's 16px default — and button style states with
+correspondingly doubled border widths/corner radii).
+**Status: applied project-wide** via `gui/theme/custom` in `project.godot`,
+so every scene's Buttons/Labels pick it up automatically — no per-scene
+wiring needed.
 
 To swap the font itself, replace `assets/3rd Man.ttf` (same filename) or
-point `tema_menus.tres`'s `FontFile` ext_resource at a new file.
+point `tema_menus.tres`'s `FontFile` ext_resource at a new file. To change
+the global text size, edit `default_font_size` /
+`Button|Label/font_sizes/font_size` in `tema_menus.tres`.
 
 ## 10. Debug-only visuals (safe to ignore for asset swaps)
 
@@ -182,4 +213,4 @@ nothing to replace.
 | `art-visuals/game-play-background.png` | `level-jam/level-jam.tscn` |
 | `art-visuals/splash_loading.png` | `splash-screen/splash-screen.tscn` |
 | `assets/3rd Man.ttf` | `resources/themes/tema_menus.tres` |
-| `band-slideshow/band-slideshow.gd` (`members` array) | `band-slideshow/band-slideshow.tscn` (branch-only) |
+| `band-slideshow/band-slideshow.gd` (`members` array) | `band-slideshow/band-slideshow.tscn` |

@@ -28,7 +28,7 @@ offset_transform_enabled = true
 offset_transform_pivot = Vector2(0.5, 0.5)
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer/AspectRatioContainer" unique_id=1188048202]
-custom_maximum_size = Vector2(640, 360)
+custom_maximum_size = Vector2(1280, 720)
 layout_mode = 2
 size_flags_horizontal = 4
 texture = ExtResource("1_l3rff")
@@ -37,7 +37,7 @@ stretch_mode = 5
 [node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer" unique_id=1096471525]
 anchors_preset = 10
 anchor_right = 1.0
-offset_bottom = 27.0
+offset_bottom = 54.0
 grow_horizontal = 2
 alignment = 2
 
@@ -46,7 +46,7 @@ layout_mode = 2
 size_flags_vertical = 4
 
 [node name="ProgressBar" type="ProgressBar" parent="CanvasLayer/HBoxContainer" unique_id=395128927]
-custom_minimum_size = Vector2(200, 0)
+custom_minimum_size = Vector2(400, 0)
 layout_mode = 2
 max_value = 1.0
 

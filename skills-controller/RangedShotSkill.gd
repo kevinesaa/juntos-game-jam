@@ -1,7 +1,7 @@
 class_name RangedShotSkill
 extends SkillController
 
-@export var skillRange: float = 200.0
+@export var skillRange: float = 400.0
 
 @onready var shotLine: Line2D = $ShotLine
 @onready var impact_vfx: CPUParticles2D = $ImpactVfx
