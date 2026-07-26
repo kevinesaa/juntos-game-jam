@@ -112,3 +112,7 @@ func _on_debris_destroyed_by_character_listener(characterIndexId:int) -> void:
 func takeDamage(amount:float) -> void:
 	self.currentHealth = max(self.currentHealth - amount, 0.0)
 	on_character_health_change.emit(self.characterIndexId, self.currentHealth)
+
+func setSelected(isSelected:bool) -> void:
+	if animationController != null and animationController.material != null:
+		animationController.material.set_shader_parameter("enabled", isSelected)

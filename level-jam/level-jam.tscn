@@ -48,6 +48,7 @@
 [ext_resource type="Texture2D" uid="uid://kflkrag0nnf0" path="res://art-visuals/player_4/walk/walk_player4_frame_2.png" id="40_51fms"]
 [ext_resource type="Texture2D" uid="uid://ltobymxm8fah" path="res://art-visuals/player_4/walk/walk_player4_frame_3.png" id="41_q4uqp"]
 [ext_resource type="Texture2D" uid="uid://kcnipxpwf3wn" path="res://art-visuals/player_4/walk/walk_player4_frame_4.png" id="42_f4xta"]
+[ext_resource type="Shader" path="res://_commons/shaders/sprite_outline.gdshader" id="43_outline"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ekf4n"]
 animations = [{
@@ -212,6 +213,18 @@ size = Vector2(43, 57)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cw4k4"]
 size = Vector2(655, 20)
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_p1outline"]
+shader = ExtResource("43_outline")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_p2outline"]
+shader = ExtResource("43_outline")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_p3outline"]
+shader = ExtResource("43_outline")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_p4outline"]
+shader = ExtResource("43_outline")
+
 [node name="LevelJam" type="Node2D" unique_id=917062658]
 script = ExtResource("1_dgymi")
 
@@ -257,6 +270,7 @@ path_animation_controller = NodePath("player1_CharacterBody2D/player_SpriteRende
 texture = ExtResource("5_oestl")
 
 [node name="player1_AnimatedSprite2D" type="AnimatedSprite2D" parent="gameNode/playerController_Node/player1_Node2D/player1_CharacterBody2D/player_SpriteRender" unique_id=1920963837]
+material = SubResource("ShaderMaterial_p1outline")
 sprite_frames = SubResource("SpriteFrames_ekf4n")
 animation = &"walk"
 autoplay = "idle"
@@ -289,6 +303,21 @@ visible = false
 width = 1.0
 default_color = Color(1, 0.9, 0.2, 1)
 
+[node name="ImpactVfx" type="CPUParticles2D" parent="gameNode/playerController_Node/player1_Node2D/skill2_player_1" unique_id=1422970667]
+emitting = false
+amount = 12
+lifetime = 0.3
+one_shot = true
+explosiveness = 1.0
+direction = Vector2(0, -1)
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 40.0
+initial_velocity_max = 90.0
+scale_amount_min = 1.0
+scale_amount_max = 2.0
+color = Color(1, 0.9, 0.2, 1)
+
 [node name="skill3_player1_Node2D" type="Node2D" parent="gameNode/playerController_Node/player1_Node2D" unique_id=2143521350]
 script = ExtResource("14_speedboost")
 recoverySpeed = 5.0
@@ -313,6 +342,7 @@ path_animation_controller = NodePath("player2_CharacterBody2D/player_SpriteRende
 texture = ExtResource("4_xy2ov")
 
 [node name="player2_AnimatedSprite2D" type="AnimatedSprite2D" parent="gameNode/playerController_Node/player2_Node2D/player2_CharacterBody2D/player_SpriteRender" unique_id=2076262531]
+material = SubResource("ShaderMaterial_p2outline")
 sprite_frames = SubResource("SpriteFrames_kj87h")
 animation = &"idle"
 autoplay = "idle"
@@ -345,6 +375,21 @@ visible = false
 width = 1.0
 default_color = Color(1, 0.9, 0.2, 1)
 
+[node name="ImpactVfx" type="CPUParticles2D" parent="gameNode/playerController_Node/player2_Node2D/skill2_player2_Node2D" unique_id=588517117]
+emitting = false
+amount = 12
+lifetime = 0.3
+one_shot = true
+explosiveness = 1.0
+direction = Vector2(0, -1)
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 40.0
+initial_velocity_max = 90.0
+scale_amount_min = 1.0
+scale_amount_max = 2.0
+color = Color(1, 0.9, 0.2, 1)
+
 [node name="skill3_player2_Node2D" type="Node2D" parent="gameNode/playerController_Node/player2_Node2D" unique_id=343940793]
 script = ExtResource("14_speedboost")
 recoverySpeed = 5.0
@@ -369,6 +414,7 @@ path_animation_controller = NodePath("CharacterBody2D/player_SpriteRender/player
 texture = ExtResource("5_qq2pt")
 
 [node name="player3_AnimatedSprite2D" type="AnimatedSprite2D" parent="gameNode/playerController_Node/player3_Node2D/CharacterBody2D/player_SpriteRender" unique_id=568377659]
+material = SubResource("ShaderMaterial_p3outline")
 sprite_frames = SubResource("SpriteFrames_jvn1f")
 animation = &"walk"
 autoplay = "idle"
@@ -401,6 +447,21 @@ visible = false
 width = 1.0
 default_color = Color(1, 0.9, 0.2, 1)
 
+[node name="ImpactVfx" type="CPUParticles2D" parent="gameNode/playerController_Node/player3_Node2D/skill2_player3_Node2D" unique_id=2127335321]
+emitting = false
+amount = 12
+lifetime = 0.3
+one_shot = true
+explosiveness = 1.0
+direction = Vector2(0, -1)
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 40.0
+initial_velocity_max = 90.0
+scale_amount_min = 1.0
+scale_amount_max = 2.0
+color = Color(1, 0.9, 0.2, 1)
+
 [node name="skill3_player3_Node2D" type="Node2D" parent="gameNode/playerController_Node/player3_Node2D" unique_id=1054662965]
 script = ExtResource("14_speedboost")
 recoverySpeed = 12.0
@@ -425,6 +486,7 @@ path_animation_controller = NodePath("player4_CharacterBody2D/player_SpriteRende
 texture = ExtResource("6_oestl")
 
 [node name="player4_AnimatedSprite2D" type="AnimatedSprite2D" parent="gameNode/playerController_Node/player4_Node2D/player4_CharacterBody2D/player_SpriteRender" unique_id=603778354]
+material = SubResource("ShaderMaterial_p4outline")
 sprite_frames = SubResource("SpriteFrames_s5760")
 animation = &"walk"
 autoplay = "idle"
@@ -456,6 +518,21 @@ baseColdDown = 100.0
 visible = false
 width = 1.0
 default_color = Color(1, 0.9, 0.2, 1)
+
+[node name="ImpactVfx" type="CPUParticles2D" parent="gameNode/playerController_Node/player4_Node2D/skill2_player4_Node2D" unique_id=687943997]
+emitting = false
+amount = 12
+lifetime = 0.3
+one_shot = true
+explosiveness = 1.0
+direction = Vector2(0, -1)
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 40.0
+initial_velocity_max = 90.0
+scale_amount_min = 1.0
+scale_amount_max = 2.0
+color = Color(1, 0.9, 0.2, 1)
 
 [node name="skill3_player4_Node2D" type="Node2D" parent="gameNode/playerController_Node/player4_Node2D" unique_id=778069680]
 script = ExtResource("14_speedboost")

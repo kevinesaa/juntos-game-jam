@@ -36,6 +36,7 @@ func _ready() -> void:
 		c.on_recovery_skill_status.connect(self._update_skill_status_listener)
 		c.on_character_health_change.connect(self._characterHealthChangeListener)
 		c.on_debris_destroyed_by_character.connect(self._debrisDestroyedByCharacterListener)
+	_updateSelectedCharacterOutline()
 	
 func  _process(delta: float) -> void:
 	
@@ -96,17 +97,23 @@ func  _previusCharater() -> void:
 	self.currentSelectedIndex = self.currentSelectedIndex - 1
 	if(self.currentSelectedIndex < 0):
 		self.currentSelectedIndex = self.characters.size() - 1
-	
-	on_current_character_change.emit(self.currentSelectedIndex)		
-	
+
+	on_current_character_change.emit(self.currentSelectedIndex)
+	_updateSelectedCharacterOutline()
+
 func _nextCharacter() -> void:
 	self.currentSelectedIndex = self.currentSelectedIndex + 1
 	var maxIndex:int = characters.size() - 1
 	if(self.currentSelectedIndex > maxIndex):
 		self.currentSelectedIndex = 0
-	
+
 	on_current_character_change.emit(self.currentSelectedIndex)
-	
+	_updateSelectedCharacterOutline()
+
+func _updateSelectedCharacterOutline() -> void:
+	for i in self.characters.size():
+		self.characters.get(i).setSelected(i == self.currentSelectedIndex)
+
 	
 func _move(deltaTime:float, moveInput:float) -> void:
 	var currentCharacter:MyCharacterController = self.characters.get(self.currentSelectedIndex)

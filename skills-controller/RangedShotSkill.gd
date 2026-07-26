@@ -4,6 +4,7 @@ extends SkillController
 @export var skillRange: float = 200.0
 
 @onready var shotLine: Line2D = $ShotLine
+@onready var impact_vfx: CPUParticles2D = $ImpactVfx
 
 func skillEffect() -> void:
 	var anchor := get_parent() as Node2D
@@ -13,6 +14,7 @@ func skillEffect() -> void:
 	if target == null:
 		return
 	_flashShot(anchor, target)
+	_playImpactVfx(target.global_position)
 	target.destroy()
 	debris_destroyed_by_character.emit(self.characterIndexId)
 
@@ -37,3 +39,7 @@ func _flashShot(anchor: Node2D, target: Node2D) -> void:
 	shotLine.visible = true
 	await get_tree().create_timer(0.08).timeout
 	shotLine.visible = false
+
+func _playImpactVfx(at_position: Vector2) -> void:
+	impact_vfx.global_position = at_position
+	impact_vfx.restart()
