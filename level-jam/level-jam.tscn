@@ -60,8 +60,8 @@ shape = SubResource("RectangleShape2D_nr37e")
 
 [node name="skill1_player_1" type="Node2D" parent="gameNode/playerController_Node/player1_Node2D" unique_id=2086321377]
 script = ExtResource("7_r7tiq")
-recoverySpeed = null
-baseColdDown = null
+
+[node name="skill2_player_1" type="Node2D" parent="gameNode/playerController_Node/player1_Node2D" unique_id=1422970665]
 
 [node name="player2_Node2D" type="Node2D" parent="gameNode/playerController_Node" unique_id=1958795324]
 position = Vector2(420, 230)
@@ -80,8 +80,8 @@ shape = SubResource("RectangleShape2D_6g1t1")
 
 [node name="skill1_plyaer2_Node2D" type="Node2D" parent="gameNode/playerController_Node/player2_Node2D" unique_id=1616884184]
 script = ExtResource("7_r7tiq")
-recoverySpeed = null
-baseColdDown = null
+
+[node name="skill2_player2_Node2D" type="Node2D" parent="gameNode/playerController_Node/player2_Node2D" unique_id=588517115]
 
 [node name="player3_Node2D" type="Node2D" parent="gameNode/playerController_Node" unique_id=350844624]
 position = Vector2(370, 230)
@@ -100,8 +100,8 @@ shape = SubResource("RectangleShape2D_sobt1")
 
 [node name="skill1_player3_Node2D" type="Node2D" parent="gameNode/playerController_Node/player3_Node2D" unique_id=1098852025]
 script = ExtResource("7_r7tiq")
-recoverySpeed = null
-baseColdDown = null
+
+[node name="skill2_player3_Node2D" type="Node2D" parent="gameNode/playerController_Node/player3_Node2D" unique_id=2127335319]
 
 [node name="player4_Node2D" type="Node2D" parent="gameNode/playerController_Node" unique_id=355279349]
 position = Vector2(320, 230)
@@ -120,8 +120,8 @@ shape = SubResource("RectangleShape2D_viwgl")
 
 [node name="skill1_player4_Node2D" type="Node2D" parent="gameNode/playerController_Node/player4_Node2D" unique_id=1126401925]
 script = ExtResource("7_r7tiq")
-recoverySpeed = null
-baseColdDown = null
+
+[node name="skill2_player4_Node2D" type="Node2D" parent="gameNode/playerController_Node/player4_Node2D" unique_id=687943995]
 
 [node name="ground_Node2D" type="Node2D" parent="gameNode" unique_id=39951809]
 position = Vector2(320, 275)
@@ -152,41 +152,49 @@ layout_mode = 2
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/MarginContainer/VBoxContainer" unique_id=1278755472]
+[node name="PanelContainer" type="PanelContainer" parent="CanvasLayer/MarginContainer/VBoxContainer" unique_id=632932515]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/MarginContainer/VBoxContainer/PanelContainer" unique_id=1278755472]
 layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.25
 theme_override_constants/separation = 0
 
-[node name="PlayerOneLayout" parent="CanvasLayer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1557586174 instance=ExtResource("2_dgymi")]
+[node name="PlayerOneLayout" parent="CanvasLayer/MarginContainer/VBoxContainer/PanelContainer/HBoxContainer" unique_id=1557586174 instance=ExtResource("2_dgymi")]
 layout_mode = 2
 size_flags_horizontal = 3
+nameText = "VDD"
 
-[node name="space1_Control" type="Control" parent="CanvasLayer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1177596036]
+[node name="space1_Control" type="Control" parent="CanvasLayer/MarginContainer/VBoxContainer/PanelContainer/HBoxContainer" unique_id=1177596036]
 custom_minimum_size = Vector2(32, 0)
 layout_mode = 2
 
-[node name="PlayerTwoLayout" parent="CanvasLayer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1880116095 instance=ExtResource("2_dgymi")]
+[node name="PlayerTwoLayout" parent="CanvasLayer/MarginContainer/VBoxContainer/PanelContainer/HBoxContainer" unique_id=1880116095 instance=ExtResource("2_dgymi")]
 layout_mode = 2
 size_flags_horizontal = 3
+nameText = "Scorpio"
 
-[node name="space2_Control" type="Control" parent="CanvasLayer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=312282163]
+[node name="space2_Control" type="Control" parent="CanvasLayer/MarginContainer/VBoxContainer/PanelContainer/HBoxContainer" unique_id=312282163]
 custom_minimum_size = Vector2(32, 0)
 layout_mode = 2
 
-[node name="PlayerThreeLayout" parent="CanvasLayer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1046926634 instance=ExtResource("2_dgymi")]
+[node name="PlayerThreeLayout" parent="CanvasLayer/MarginContainer/VBoxContainer/PanelContainer/HBoxContainer" unique_id=1046926634 instance=ExtResource("2_dgymi")]
 layout_mode = 2
 size_flags_horizontal = 3
+nameText = "Enigma"
 
-[node name="space3_Control" type="Control" parent="CanvasLayer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=19572423]
+[node name="space3_Control" type="Control" parent="CanvasLayer/MarginContainer/VBoxContainer/PanelContainer/HBoxContainer" unique_id=19572423]
 custom_minimum_size = Vector2(32, 0)
 layout_mode = 2
 
-[node name="PlayerFourLayout" parent="CanvasLayer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1569786280 instance=ExtResource("2_dgymi")]
+[node name="PlayerFourLayout" parent="CanvasLayer/MarginContainer/VBoxContainer/PanelContainer/HBoxContainer" unique_id=1569786280 instance=ExtResource("2_dgymi")]
 layout_mode = 2
 size_flags_horizontal = 3
+nameText = "Shield Guard"
 
 [node name="pause_Panel" type="Panel" parent="CanvasLayer" unique_id=1243917536]
+visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -209,6 +217,7 @@ layout_mode = 2
 text = "Exit"
 
 [node name="loadingPanel" type="Panel" parent="CanvasLayer" unique_id=31131447]
+visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0

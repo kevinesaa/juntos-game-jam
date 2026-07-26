@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://bcfwgr42yj4bi"]
 
+[ext_resource type="Script" uid="uid://dqgxajhcohxgq" path="res://level-jam/characteUiController.gd" id="1_3se0s"]
 [ext_resource type="Texture2D" uid="uid://cm27tw11hwgyp" path="res://art-visuals/player_portrait.png" id="1_fw2xj"]
 [ext_resource type="Texture2D" uid="uid://gwe0tkq54bdg" path="res://art-visuals/skill_place-holder.png" id="2_3se0s"]
 
@@ -8,6 +9,7 @@ custom_minimum_size = Vector2(128, 64)
 custom_maximum_size = Vector2(128, 64)
 layout_mode = 3
 anchors_preset = 0
+script = ExtResource("1_3se0s")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=2032768151]
 layout_mode = 0

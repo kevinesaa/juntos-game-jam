@@ -13,7 +13,8 @@ signal recovery_skill_status(characterIndexId:int,skillIndexId:int,curentValue:f
 var characterIndexId:int = 0
 var skillIndexId:int = 0
 
-func skillEffect
+func skillEffect()-> void:
+	pass
 
 func setCharacterOwnIndexId(characterIndex:int) -> void:
 	self.characterIndexId = characterIndex
@@ -30,6 +31,7 @@ func executeSkill() -> void:
 	if(canExecute()):
 		execute_without_power.emit()
 	else:
+		self.skillEffect()
 		self.execute_skill.emit(self.characterIndexId,self.skillIndexId)
 		self.currentColdDownStatus = 0
 		self.recovery_skill_status.emit(self.characterIndexId,self.skillIndexId,currentColdDownStatus)
