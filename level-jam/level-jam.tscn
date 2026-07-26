@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://b7ad4c60fa2ks" path="res://level-jam/level-jam-controller.gd" id="1_dgymi"]
 [ext_resource type="PackedScene" uid="uid://bcfwgr42yj4bi" path="res://level-jam/player-ui-layout.tscn" id="2_dgymi"]
 [ext_resource type="Script" uid="uid://dn1vx62hd863p" path="res://_commons/scene-manager/change-scene-controller.gd" id="2_oestl"]
+[ext_resource type="AudioStream" uid="uid://ca0b0781wxehu" path="res://audio-music/gameplay.mp3" id="2_q5mgh"]
 [ext_resource type="Texture2D" uid="uid://b1opabpolh8q8" path="res://art-visuals/game-play-background.png" id="3_r7tiq"]
 [ext_resource type="Script" uid="uid://g16hbx7227jf" path="res://player-controller/PlayerController.gd" id="3_xy2ov"]
 [ext_resource type="Script" uid="uid://dnnobjaro3ye8" path="res://player-controller/MyCharacterController.gd" id="4_qq2pt"]
@@ -29,6 +30,12 @@ size = Vector2(655, 20)
 
 [node name="LevelJam" type="Node2D" unique_id=917062658]
 script = ExtResource("1_dgymi")
+
+[node name="music_Node" type="Node" parent="." unique_id=891149835]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="music_Node" unique_id=109400901]
+stream = ExtResource("2_q5mgh")
+autoplay = true
 
 [node name="sceneController_Node" type="Node" parent="." unique_id=134762211]
 script = ExtResource("2_oestl")
