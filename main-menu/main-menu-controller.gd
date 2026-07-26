@@ -14,7 +14,43 @@ extends CustomScene
 @onready var settings_content: Control = $CanvasLayer/MarginContainer/HBoxContainer/PanelContainer/settings_Content
 @onready var credits_content: Control = $CanvasLayer/MarginContainer/HBoxContainer/PanelContainer/credits_Content
 
+@onready var boton_about = $CanvasLayer/MarginContainer/HBoxContainer/buttonsZone_VBoxContainer/about_Button
+@onready var boton_support = $CanvasLayer/MarginContainer/HBoxContainer/buttonsZone_VBoxContainer/support_Button
+@onready var boton_controls = $CanvasLayer/MarginContainer/HBoxContainer/buttonsZone_VBoxContainer/controls_Button
+@onready var boton_play = $CanvasLayer/MarginContainer/HBoxContainer/buttonsZone_VBoxContainer/play_Button
+@onready var boton_settings = $CanvasLayer/MarginContainer/HBoxContainer/buttonsZone_VBoxContainer/settings_Button
+@onready var boton_credits = $CanvasLayer/MarginContainer/HBoxContainer/buttonsZone_VBoxContainer/credits_Button
+@onready var boton_quit = $CanvasLayer/MarginContainer/HBoxContainer/buttonsZone_VBoxContainer/quit_Button
+
+# 1. Creamos la instancia del ButtonGroup
+var mi_grupo = ButtonGroup.new()
+
 func _ready() -> void:
+	
+	# 2. Asignamos el mismo grupo a cada botón
+	boton_about.button_group = mi_grupo
+	boton_support.button_group = mi_grupo
+	boton_controls.button_group = mi_grupo
+	boton_play.button_group = mi_grupo
+	boton_settings.button_group = mi_grupo
+	boton_credits.button_group = mi_grupo
+	boton_quit.button_group = mi_grupo 
+	
+	# 3. (Opcional) Forzar toggle_mode, aunque Godot lo activa solo al asignar el grupo.
+	boton_about.toggle_mode = true
+	boton_support.toggle_mode = true
+	boton_controls.toggle_mode = true
+	boton_play.toggle_mode = true
+	boton_settings.toggle_mode = true
+	boton_credits.toggle_mode = true
+	boton_quit.toggle_mode = true
+	
+	# 4. Conectar la señal del GRUPO (se dispara cuando cambia la selección)
+	mi_grupo.pressed.connect(_on_grupo_cambio)
+	
+	# 5. Acerca empieza presionado por defecto
+	boton_about.button_pressed = true
+	
 	#loading_panel.visible.bind(false) # Oculto al iniciar
 	loading_panel.visible = false
 	_hide_all_contents()
@@ -56,7 +92,7 @@ func _on_about_button_pressed() -> void:
 
 func _on_support_button_pressed() -> void:
 	_toggle_content(support_content)
-
+	
 func _on_controls_button_pressed() -> void:
 	_toggle_content(controls_content)
 
@@ -65,3 +101,12 @@ func _on_settings_button_pressed() -> void:
 
 func _on_credits_button_pressed() -> void:
 	_toggle_content(credits_content)
+
+func _on_grupo_cambio(boton_presionado: Button):
+	# El parámetro es el botón que acaba de ser presionado
+	print("Se seleccionó: ", boton_presionado.text)
+	
+	# Si solo quieres saber cuál está activo en cualquier momento:
+	var activo = mi_grupo.get_pressed_button()
+	if activo:
+		print("El botón activo actual es: ", activo.text)
