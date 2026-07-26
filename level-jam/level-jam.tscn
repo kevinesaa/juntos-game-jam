@@ -17,7 +17,6 @@
 [ext_resource type="Texture2D" uid="uid://bor468sdc3wa1" path="res://art-visuals/player_1/idle/idle_player1_frame_3.png" id="9_jvn1f"]
 [ext_resource type="Script" uid="uid://bbajwn3ixpowo" path="res://falling-debris/DebrisSpawner.gd" id="9_spawner"]
 [ext_resource type="PackedScene" path="res://falling-debris/falling-debris.tscn" id="10_debris"]
-[ext_resource type="PackedScene" path="res://band-slideshow/band-slideshow.tscn" id="16_bandslide"]
 [ext_resource type="Texture2D" uid="uid://d00yrgs2p7skf" path="res://art-visuals/player_1/idle/idle_player1_frame_4.png" id="10_s5760"]
 [ext_resource type="Texture2D" uid="uid://b6ob8a0kjyyjg" path="res://art-visuals/player_1/walk/walk_player1_frame_1.png" id="11_dg01t"]
 [ext_resource type="Script" uid="uid://ck146t6l34lhi" path="res://_commons/debug/InputDebugOverlay.gd" id="11_inputdbg"]
@@ -26,9 +25,10 @@
 [ext_resource type="Texture2D" uid="uid://dwjeb8a5dw4t8" path="res://art-visuals/player_1/walk/walk_player1_frame_3.png" id="13_gotef"]
 [ext_resource type="Script" uid="uid://bl2ypqeinp4cp" path="res://skills-controller/ShockwaveVisual.gd" id="13_wavevisual"]
 [ext_resource type="Texture2D" uid="uid://dnoqjwu8xyxem" path="res://art-visuals/player_1/walk/walk_player1_frame_4.png" id="14_8tge8"]
-[ext_resource type="Script" path="res://skills-controller/SpeedBoostSkill.gd" id="14_speedboost"]
-[ext_resource type="Script" path="res://_commons/camera/CameraShake.gd" id="15_camerashake"]
+[ext_resource type="Script" uid="uid://5xlk7iso76px" path="res://skills-controller/SpeedBoostSkill.gd" id="14_speedboost"]
+[ext_resource type="Script" uid="uid://nsq5t34n3jjl" path="res://_commons/camera/CameraShake.gd" id="15_camerashake"]
 [ext_resource type="Texture2D" uid="uid://ce711sdndn3ew" path="res://art-visuals/player_2/idle/idle_player2_frame_2.png" id="16_alr0a"]
+[ext_resource type="PackedScene" path="res://band-slideshow/band-slideshow.tscn" id="16_bandslide"]
 [ext_resource type="Texture2D" uid="uid://dr2stciwxsj5m" path="res://art-visuals/player_2/idle/idle_player2_frame_3.png" id="17_acjl5"]
 [ext_resource type="Texture2D" uid="uid://dxm7wcfc10ign" path="res://art-visuals/player_2/idle/idle_player2_frame_4.png" id="18_pw28h"]
 [ext_resource type="Texture2D" uid="uid://bbrejl7o60a25" path="res://art-visuals/player_3/idle/idle_player3_frame_2.png" id="20_i7g8u"]
@@ -321,9 +321,9 @@ color = Color(1, 0.9, 0.2, 1)
 
 [node name="skill3_player1_Node2D" type="Node2D" parent="gameNode/playerController_Node/player1_Node2D" unique_id=2143521350]
 script = ExtResource("14_speedboost")
+path_boost_visual_node = NodePath("speedBoostVisual_Polygon2D")
 recoverySpeed = 5.0
 baseColdDown = 100.0
-path_boost_visual_node = NodePath("speedBoostVisual_Polygon2D")
 
 [node name="speedBoostVisual_Polygon2D" type="Polygon2D" parent="gameNode/playerController_Node/player1_Node2D/skill3_player1_Node2D" unique_id=2143521351]
 visible = false
@@ -393,9 +393,9 @@ color = Color(1, 0.9, 0.2, 1)
 
 [node name="skill3_player2_Node2D" type="Node2D" parent="gameNode/playerController_Node/player2_Node2D" unique_id=343940793]
 script = ExtResource("14_speedboost")
+path_boost_visual_node = NodePath("speedBoostVisual_Polygon2D")
 recoverySpeed = 5.0
 baseColdDown = 100.0
-path_boost_visual_node = NodePath("speedBoostVisual_Polygon2D")
 
 [node name="speedBoostVisual_Polygon2D" type="Polygon2D" parent="gameNode/playerController_Node/player2_Node2D/skill3_player2_Node2D" unique_id=343940794]
 visible = false
@@ -465,9 +465,9 @@ color = Color(1, 0.9, 0.2, 1)
 
 [node name="skill3_player3_Node2D" type="Node2D" parent="gameNode/playerController_Node/player3_Node2D" unique_id=1054662965]
 script = ExtResource("14_speedboost")
+path_boost_visual_node = NodePath("speedBoostVisual_Polygon2D")
 recoverySpeed = 12.0
 baseColdDown = 100.0
-path_boost_visual_node = NodePath("speedBoostVisual_Polygon2D")
 
 [node name="speedBoostVisual_Polygon2D" type="Polygon2D" parent="gameNode/playerController_Node/player3_Node2D/skill3_player3_Node2D" unique_id=1054662966]
 visible = false
@@ -537,9 +537,9 @@ color = Color(1, 0.9, 0.2, 1)
 
 [node name="skill3_player4_Node2D" type="Node2D" parent="gameNode/playerController_Node/player4_Node2D" unique_id=778069680]
 script = ExtResource("14_speedboost")
+path_boost_visual_node = NodePath("speedBoostVisual_Polygon2D")
 recoverySpeed = 16.0
 baseColdDown = 100.0
-path_boost_visual_node = NodePath("speedBoostVisual_Polygon2D")
 
 [node name="speedBoostVisual_Polygon2D" type="Polygon2D" parent="gameNode/playerController_Node/player4_Node2D/skill3_player4_Node2D" unique_id=778069681]
 visible = false
@@ -700,6 +700,7 @@ grow_vertical = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/endgame_container_PanelContainer" unique_id=54613161]
 layout_mode = 2
+theme_override_constants/separation = 12
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/endgame_container_PanelContainer/VBoxContainer" unique_id=2011761979]
 layout_mode = 2
@@ -721,10 +722,10 @@ layout_mode = 2
 
 [node name="resultLabel" type="Label" parent="CanvasLayer/endgame_container_PanelContainer/VBoxContainer/CenterContainer" unique_id=1776656619]
 layout_mode = 2
-text = "You survived the earthquake!"
+text = "Thank you for playing"
 
 [node name="bandSlideshow" parent="CanvasLayer/endgame_container_PanelContainer/VBoxContainer" unique_id=1776656622 instance=ExtResource("16_bandslide")]
-layout_mode = 2
+auto_advance_seconds = 2.0
 
 [node name="donate_MarginContainer" type="MarginContainer" parent="CanvasLayer/endgame_container_PanelContainer/VBoxContainer" unique_id=1776656620]
 layout_mode = 2
@@ -732,9 +733,9 @@ theme_override_constants/margin_top = 16
 
 [node name="donate_Label" type="Label" parent="CanvasLayer/endgame_container_PanelContainer/VBoxContainer/donate_MarginContainer" unique_id=1776656621]
 layout_mode = 2
+text = "Support Venezuela earthquake relief: [donation link goes here]"
 horizontal_alignment = 1
 autowrap_mode = 3
-text = "Support Venezuela earthquake relief: [donation link goes here]"
 
 [connection signal="timeout" from="endPlay_Node/Timer" to="." method="on_end_game_listener"]
 [connection signal="timeout" from="endPlay_Node/Timer" to="gameNode/playerController_Node" method="on_end_game_listener"]
@@ -742,10 +743,10 @@ text = "Support Venezuela earthquake relief: [donation link goes here]"
 [connection signal="progressing_loading_scene_updated" from="sceneController_Node" to="." method="on_change_scene_controller_progressing_loading_scene_updated_listener"]
 [connection signal="on_character_health_change_notify" from="gameNode/playerController_Node" to="." method="on_character_health_change_listener"]
 [connection signal="on_current_character_change" from="gameNode/playerController_Node" to="." method="on_current_character_change_listener"]
-[connection signal="on_selected_skill_change_notify" from="gameNode/playerController_Node" to="." method="on_selected_skill_change_notify_listener"]
 [connection signal="on_debris_destroyed_by_character_notify" from="gameNode/playerController_Node" to="." method="on_debris_destroyed_by_character_listener"]
 [connection signal="on_press_pause_notify" from="gameNode/playerController_Node" to="." method="on_toggle_pause_listener"]
 [connection signal="on_recovery_skill_status" from="gameNode/playerController_Node" to="." method="on_update_skill_recovery_status_listener"]
+[connection signal="on_selected_skill_change_notify" from="gameNode/playerController_Node" to="." method="on_selected_skill_change_notify_listener"]
 [connection signal="on_together_skill_requested" from="gameNode/playerController_Node" to="." method="on_together_skill_requested_listener"]
 [connection signal="debris_destroyed" from="gameNode/debrisSpawner_Node" to="." method="on_debris_destroyed_listener"]
 [connection signal="debris_landed" from="gameNode/debrisSpawner_Node" to="." method="on_debris_landed_listener"]
