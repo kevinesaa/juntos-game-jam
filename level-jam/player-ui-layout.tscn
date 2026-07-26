@@ -95,6 +95,18 @@ offset_transform_enabled = true
 offset_transform_rotation = 3.1415927
 value = 100.0
 
+[node name="skillSelectionHighlight" type="ReferenceRect" parent="VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer/HBoxContainer/skills_one_CenterContainer/PanelContainer" unique_id=365274340]
+visible = false
+layout_mode = 2
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+border_color = Color(0.2, 0.9, 1, 1)
+border_width = 2.0
+editor_only = false
+
 [node name="spaceControl" type="Control" parent="VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1958667455]
 custom_minimum_size = Vector2(9, 0)
 layout_mode = 2
@@ -118,6 +130,18 @@ offset_transform_enabled = true
 offset_transform_rotation = 3.1415927
 value = 100.0
 
+[node name="skillSelectionHighlight" type="ReferenceRect" parent="VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer/HBoxContainer/skills_two_CenterContainer/PanelContainer" unique_id=2052829187]
+visible = false
+layout_mode = 2
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+border_color = Color(0.2, 0.9, 1, 1)
+border_width = 2.0
+editor_only = false
+
 [node name="space2Control" type="Control" parent="VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=561391679]
 custom_minimum_size = Vector2(9, 0)
 layout_mode = 2
@@ -140,3 +164,15 @@ size_flags_horizontal = 1
 offset_transform_enabled = true
 offset_transform_rotation = 3.1415927
 value = 100.0
+
+[node name="skillSelectionHighlight" type="ReferenceRect" parent="VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer/HBoxContainer/skills_three_CenterContainer/PanelContainer" unique_id=167995634]
+visible = false
+layout_mode = 2
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+border_color = Color(0.2, 0.9, 1, 1)
+border_width = 2.0
+editor_only = false

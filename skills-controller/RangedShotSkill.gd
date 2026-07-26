@@ -14,6 +14,7 @@ func skillEffect() -> void:
 		return
 	_flashShot(anchor, target)
 	target.destroy()
+	debris_destroyed_by_character.emit(self.characterIndexId)
 
 func _find_nearest_debris(origin: Vector2) -> Node2D:
 	var nearest: Node2D = null

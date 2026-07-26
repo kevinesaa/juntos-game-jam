@@ -11,6 +11,7 @@ signal on_current_skill_change(characterIndexId:int, skillIndex:int)
 signal on_character_health_change(characterIndexId:int, currentHealth:float)
 signal on_skill_execute_notify(characterIndexId:int, skillIndex:int)
 signal on_recovery_skill_status(characterIndexId:int, skillIndex:int, value:float)
+signal on_debris_destroyed_by_character(characterIndexId:int)
 #endregion
 
 var currentHealth:float
@@ -19,6 +20,7 @@ var newPosition:Vector2 = Vector2.ZERO
 var currentSkillIndex:int = 0
 var charaterSkills: Array[SkillController] = []
 var animationController:AnimatedSprite2D
+var speedMultiplier:float = 1.0
 
 
 func _ready() -> void:
@@ -31,6 +33,7 @@ func _ready() -> void:
 		skill.setSkillIndexId(i)
 		skill.setCharacterOwnIndexId(characterIndexId)
 		skill.recovery_skill_status.connect(_update_skill_status_listener)
+		skill.debris_destroyed_by_character.connect(_on_debris_destroyed_by_character_listener)
 		charaterSkills.append(skill)
 
 func _process(delta: float) -> void:
@@ -46,7 +49,7 @@ func setCharacterIndexId(id:int) -> void:
 
 func moveCharacter(deltaTime:float,moveVector:Vector2) -> void:
 
-	self.newPosition = (deltaTime * self.baseSpeed) * moveVector
+	self.newPosition = (deltaTime * self.baseSpeed * self.speedMultiplier) * moveVector
 	var position:Vector2 = self.position + self.newPosition
 	self.position = position
 
@@ -76,6 +79,9 @@ func executeSkill() -> void:
 
 func _update_skill_status_listener(characterIndexId:int, skillIndex:int, value:float) -> void:
 	self.on_recovery_skill_status.emit(characterIndexId,skillIndex,value)
+
+func _on_debris_destroyed_by_character_listener(characterIndexId:int) -> void:
+	self.on_debris_destroyed_by_character.emit(characterIndexId)
 
 func takeDamage(amount:float) -> void:
 	self.currentHealth = max(self.currentHealth - amount, 0.0)
