@@ -31,6 +31,7 @@ func on_toggle_pause_listener(statusPause:bool) -> void:
 func on_exit_game_click_listener() -> void:
 	loading_panel.visible = true
 	pause_panel.visible = false
+	endgame_container_panel_container.visible = false
 	scene_controller_node.load_next_scene()
 
 func on_load_scene_complete_listener() -> void:
