@@ -1,0 +1,64 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://band-slideshow/band-slideshow.gd" id="1_bandslide"]
+
+[node name="BandSlideshow" type="Control"]
+custom_minimum_size = Vector2(200, 140)
+layout_mode = 2
+size_flags_horizontal = 3
+script = ExtResource("1_bandslide")
+
+[node name="AutoAdvanceTimer" type="Timer" parent="."]
+wait_time = 6.0
+autostart = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="name_Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+horizontal_alignment = 1
+text = "Name"
+
+[node name="PhotoCenterContainer" type="CenterContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="photo_ColorRect" type="ColorRect" parent="VBoxContainer/PhotoCenterContainer"]
+custom_minimum_size = Vector2(96, 96)
+layout_mode = 2
+color = Color(0.5, 0.5, 0.5, 1)
+
+[node name="photo_TextureRect" type="TextureRect" parent="VBoxContainer/PhotoCenterContainer"]
+custom_minimum_size = Vector2(96, 96)
+layout_mode = 2
+visible = false
+expand_mode = 1
+stretch_mode = 5
+
+[node name="bio_Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+horizontal_alignment = 1
+autowrap_mode = 3
+text = "Bio"
+
+[node name="NavHBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="prev_Button" type="Button" parent="VBoxContainer/NavHBoxContainer"]
+layout_mode = 2
+text = "◀"
+
+[node name="next_Button" type="Button" parent="VBoxContainer/NavHBoxContainer"]
+layout_mode = 2
+text = "▶"
+
+[connection signal="pressed" from="VBoxContainer/NavHBoxContainer/prev_Button" to="." method="_on_prev_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/NavHBoxContainer/next_Button" to="." method="_on_next_button_pressed"]
+[connection signal="timeout" from="AutoAdvanceTimer" to="." method="_on_auto_advance_timer_timeout"]
