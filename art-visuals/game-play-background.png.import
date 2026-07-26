@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://7v287sn2ae03"
-path="res://.godot/imported/game-play-holder.png-ca8707c76827c6150090a0e1523cd35e.ctex"
+uid="uid://b1opabpolh8q8"
+path="res://.godot/imported/game-play-background.png-fafe6c1bb178cbe7bfb70996e146413d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art-visuals/game-play-holder.png"
-dest_files=["res://.godot/imported/game-play-holder.png-ca8707c76827c6150090a0e1523cd35e.ctex"]
+source_file="res://art-visuals/game-play-background.png"
+dest_files=["res://.godot/imported/game-play-background.png-fafe6c1bb178cbe7bfb70996e146413d.ctex"]
 
 [params]
 

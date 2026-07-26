@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://b7ad4c60fa2ks" path="res://level-jam/level-jam-controller.gd" id="1_dgymi"]
 [ext_resource type="PackedScene" uid="uid://bcfwgr42yj4bi" path="res://level-jam/player-ui-layout.tscn" id="2_dgymi"]
 [ext_resource type="Script" uid="uid://dn1vx62hd863p" path="res://_commons/scene-manager/change-scene-controller.gd" id="2_oestl"]
-[ext_resource type="Texture2D" uid="uid://7v287sn2ae03" path="res://art-visuals/game-play-holder.png" id="2_xxrfw"]
+[ext_resource type="Texture2D" uid="uid://b1opabpolh8q8" path="res://art-visuals/game-play-background.png" id="3_r7tiq"]
 [ext_resource type="Script" uid="uid://g16hbx7227jf" path="res://player-controller/PlayerController.gd" id="3_xy2ov"]
 [ext_resource type="Script" uid="uid://dnnobjaro3ye8" path="res://player-controller/MyCharacterController.gd" id="4_qq2pt"]
 [ext_resource type="Texture2D" uid="uid://dxlgyitjvulnr" path="res://art-visuals/player2.png" id="4_xy2ov"]
@@ -38,13 +38,13 @@ path_to_next_scene = "res://main-menu/main-menu.tscn"
 
 [node name="GamePlayHolder" type="Sprite2D" parent="gameNode" unique_id=1449437486]
 position = Vector2(322, 181)
-texture = ExtResource("2_xxrfw")
+texture = ExtResource("3_r7tiq")
 
 [node name="playerController_Node" type="Node" parent="gameNode" unique_id=687942859]
 script = ExtResource("3_xy2ov")
 
 [node name="player1_Node2D" type="Node2D" parent="gameNode/playerController_Node" unique_id=271839000]
-position = Vector2(240, 240)
+position = Vector2(240, 230)
 script = ExtResource("4_qq2pt")
 baseSpeed = 40.0
 skills_node_paths = Array[NodePath]([NodePath("skill1_player_1")])
@@ -62,7 +62,7 @@ shape = SubResource("RectangleShape2D_nr37e")
 script = ExtResource("7_r7tiq")
 
 [node name="player2_Node2D" type="Node2D" parent="gameNode/playerController_Node" unique_id=1958795324]
-position = Vector2(420, 240)
+position = Vector2(420, 230)
 script = ExtResource("4_qq2pt")
 baseSpeed = 40.0
 skills_node_paths = Array[NodePath]([NodePath("skill1_plyaer2_Node2D")])
@@ -80,7 +80,7 @@ shape = SubResource("RectangleShape2D_6g1t1")
 script = ExtResource("7_r7tiq")
 
 [node name="player3_Node2D" type="Node2D" parent="gameNode/playerController_Node" unique_id=350844624]
-position = Vector2(370, 240)
+position = Vector2(370, 230)
 script = ExtResource("4_qq2pt")
 baseSpeed = 50.0
 skills_node_paths = Array[NodePath]([NodePath("skill1_player3_Node2D")])
@@ -98,7 +98,7 @@ shape = SubResource("RectangleShape2D_sobt1")
 script = ExtResource("7_r7tiq")
 
 [node name="player4_Node2D" type="Node2D" parent="gameNode/playerController_Node" unique_id=355279349]
-position = Vector2(320, 240)
+position = Vector2(320, 230)
 script = ExtResource("4_qq2pt")
 baseSpeed = 30.0
 skills_node_paths = Array[NodePath]([NodePath("skill1_player4_Node2D")])
@@ -116,7 +116,7 @@ shape = SubResource("RectangleShape2D_viwgl")
 script = ExtResource("7_r7tiq")
 
 [node name="ground_Node2D" type="Node2D" parent="gameNode" unique_id=39951809]
-position = Vector2(320, 285)
+position = Vector2(320, 275)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="gameNode/ground_Node2D" unique_id=1745784022]
 

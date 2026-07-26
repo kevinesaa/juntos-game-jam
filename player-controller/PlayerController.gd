@@ -57,7 +57,20 @@ func  _process(delta: float) -> void:
 	
 	if(nextSkill):
 		self._nextSkill()
-		
+	
+	var togetherSkill = Input.is_action_just_pressed("together_skill")
+	var upgradeCurrentSkill = Input.is_action_just_pressed("upgrade_skill")
+	
+	
+	var specialSkill = Input.is_action_just_pressed("use_skill")
+	var basicSkill = Input.is_action_just_pressed("basic_attack")
+	
+	var followme = Input.is_action_just_pressed("follow_me")
+	var unfollowme = Input.is_action_just_pressed("unfollow_me")
+	
+	if(specialSkill):
+		_skill_one()
+	
 	_move(delta,moveInput)
 	
 	
@@ -98,3 +111,8 @@ func _nextSkill() -> void:
 func _selectedSkillChangeListener(characterIndexId:int, skillIndexId:int) -> void:
 	
 	self.on_selected_skill_change_notify.emit(characterIndexId,skillIndexId)
+
+func _skill_one() -> void:
+	var currentCharacter:MyCharacterController = self.characters.get(self.currentSelectedIndex)
+	currentCharacter.executeSkill()
+	
