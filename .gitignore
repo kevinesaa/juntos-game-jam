@@ -4,6 +4,9 @@
 builds/*
 /build
 
+# Claude Code project memory (local only)
+/CLAUDE.md
+
 ### Godot ###
 # Godot 4+ specific ignores
 .godot/

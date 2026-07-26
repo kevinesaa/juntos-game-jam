@@ -3,23 +3,208 @@
 [ext_resource type="Script" uid="uid://b7ad4c60fa2ks" path="res://level-jam/level-jam-controller.gd" id="1_dgymi"]
 [ext_resource type="PackedScene" uid="uid://bcfwgr42yj4bi" path="res://level-jam/player-ui-layout.tscn" id="2_dgymi"]
 [ext_resource type="Script" uid="uid://dn1vx62hd863p" path="res://_commons/scene-manager/change-scene-controller.gd" id="2_oestl"]
+[ext_resource type="AudioStream" uid="uid://ca0b0781wxehu" path="res://audio-music/gameplay.mp3" id="2_q5mgh"]
 [ext_resource type="Texture2D" uid="uid://b1opabpolh8q8" path="res://art-visuals/game-play-background.png" id="3_r7tiq"]
 [ext_resource type="Script" uid="uid://g16hbx7227jf" path="res://player-controller/PlayerController.gd" id="3_xy2ov"]
 [ext_resource type="Script" uid="uid://dnnobjaro3ye8" path="res://player-controller/MyCharacterController.gd" id="4_qq2pt"]
-[ext_resource type="Texture2D" uid="uid://dxlgyitjvulnr" path="res://art-visuals/player2.png" id="4_xy2ov"]
-[ext_resource type="Texture2D" uid="uid://cln65aqyty84m" path="res://art-visuals/player1.png" id="5_oestl"]
-[ext_resource type="Texture2D" uid="uid://cvahwba2xh1u" path="res://art-visuals/player3.png" id="5_qq2pt"]
-[ext_resource type="Texture2D" uid="uid://clw1kaql6m8qs" path="res://art-visuals/player4.png" id="6_oestl"]
+[ext_resource type="Texture2D" uid="uid://dxlgyitjvulnr" path="res://art-visuals/player_2/idle/idle_player2_frame_1.png" id="4_xy2ov"]
+[ext_resource type="Texture2D" uid="uid://cln65aqyty84m" path="res://art-visuals/player_1/idle/idle_player1_frame_1.png" id="5_oestl"]
+[ext_resource type="Texture2D" uid="uid://cvahwba2xh1u" path="res://art-visuals/player_3/idle/idle_player3_frame_1.png" id="5_qq2pt"]
+[ext_resource type="Texture2D" uid="uid://clw1kaql6m8qs" path="res://art-visuals/player_4/idle/idle_player4_frame_1.png" id="6_oestl"]
 [ext_resource type="Script" uid="uid://077dg2mjwp8t" path="res://skills-controller/SkillController.gd" id="7_r7tiq"]
+[ext_resource type="Texture2D" uid="uid://cb7qgab22neif" path="res://art-visuals/player_1/idle/idle_player1_frame_2.png" id="8_kj87h"]
+[ext_resource type="Script" uid="uid://c2cbfir0yxdst" path="res://skills-controller/RangedShotSkill.gd" id="8_rangedshot"]
+[ext_resource type="Texture2D" uid="uid://bor468sdc3wa1" path="res://art-visuals/player_1/idle/idle_player1_frame_3.png" id="9_jvn1f"]
+[ext_resource type="Script" uid="uid://bbajwn3ixpowo" path="res://falling-debris/DebrisSpawner.gd" id="9_spawner"]
+[ext_resource type="PackedScene" path="res://falling-debris/falling-debris.tscn" id="10_debris"]
+[ext_resource type="Texture2D" uid="uid://d00yrgs2p7skf" path="res://art-visuals/player_1/idle/idle_player1_frame_4.png" id="10_s5760"]
+[ext_resource type="Texture2D" uid="uid://b6ob8a0kjyyjg" path="res://art-visuals/player_1/walk/walk_player1_frame_1.png" id="11_dg01t"]
+[ext_resource type="Script" uid="uid://ck146t6l34lhi" path="res://_commons/debug/InputDebugOverlay.gd" id="11_inputdbg"]
+[ext_resource type="Texture2D" uid="uid://bkjv24jbt7mgj" path="res://art-visuals/player_1/walk/walk_player1_frame_2.png" id="12_nl8aj"]
+[ext_resource type="Script" uid="uid://b31p2b2tb7y4a" path="res://skills-controller/ShockwaveRadiusDebug.gd" id="12_radiusdbg"]
+[ext_resource type="Texture2D" uid="uid://dwjeb8a5dw4t8" path="res://art-visuals/player_1/walk/walk_player1_frame_3.png" id="13_gotef"]
+[ext_resource type="Script" uid="uid://bl2ypqeinp4cp" path="res://skills-controller/ShockwaveVisual.gd" id="13_wavevisual"]
+[ext_resource type="Texture2D" uid="uid://dnoqjwu8xyxem" path="res://art-visuals/player_1/walk/walk_player1_frame_4.png" id="14_8tge8"]
+[ext_resource type="Script" path="res://skills-controller/SpeedBoostSkill.gd" id="14_speedboost"]
+[ext_resource type="Script" path="res://_commons/camera/CameraShake.gd" id="15_camerashake"]
+[ext_resource type="Texture2D" uid="uid://ce711sdndn3ew" path="res://art-visuals/player_2/idle/idle_player2_frame_2.png" id="16_alr0a"]
+[ext_resource type="Texture2D" uid="uid://dr2stciwxsj5m" path="res://art-visuals/player_2/idle/idle_player2_frame_3.png" id="17_acjl5"]
+[ext_resource type="Texture2D" uid="uid://dxm7wcfc10ign" path="res://art-visuals/player_2/idle/idle_player2_frame_4.png" id="18_pw28h"]
+[ext_resource type="Texture2D" uid="uid://bbrejl7o60a25" path="res://art-visuals/player_3/idle/idle_player3_frame_2.png" id="20_i7g8u"]
+[ext_resource type="Texture2D" uid="uid://iax8cm47b6kq" path="res://art-visuals/player_3/idle/idle_player3_frame_3.png" id="21_bhbpf"]
+[ext_resource type="Texture2D" uid="uid://diwv1m21jd7tc" path="res://art-visuals/player_3/idle/idle_player3_frame_4.png" id="22_3juus"]
+[ext_resource type="Texture2D" uid="uid://bi0tv0wixf5am" path="res://art-visuals/player_2/walk/walk_player2_frame_1.png" id="23_nwhcu"]
+[ext_resource type="Texture2D" uid="uid://dij7n5hi10q1q" path="res://art-visuals/player_2/walk/walk_player2_frame_2.png" id="24_7flsn"]
+[ext_resource type="Texture2D" uid="uid://dmcvhrhkiwmnb" path="res://art-visuals/player_4/idle/idle_player4_frame_2.png" id="24_8uaax"]
+[ext_resource type="Texture2D" uid="uid://ctj1daxe1vxj1" path="res://art-visuals/player_2/walk/walk_player2_frame_3.png" id="25_egubo"]
+[ext_resource type="Texture2D" uid="uid://c8uatye83km5" path="res://art-visuals/player_4/idle/idle_player4_frame_3.png" id="25_xnfyh"]
+[ext_resource type="Texture2D" uid="uid://c7k7nyxla6bmm" path="res://art-visuals/player_4/idle/idle_player4_frame_4.png" id="26_dg01t"]
+[ext_resource type="Texture2D" uid="uid://dmng8decb4ich" path="res://art-visuals/player_2/walk/walk_player2_frame_4.png" id="26_xk365"]
+[ext_resource type="Texture2D" uid="uid://b1hfj721epyvn" path="res://art-visuals/player_3/walk/walk_player3_frame_1.png" id="31_bbsa6"]
+[ext_resource type="Texture2D" uid="uid://cska8bixervfi" path="res://art-visuals/player_3/walk/walk_player3_frame_2.png" id="32_rmvcq"]
+[ext_resource type="Texture2D" uid="uid://7y8qdjsr3rwr" path="res://art-visuals/player_3/walk/walk_player3_frame_3.png" id="33_jiklv"]
+[ext_resource type="Texture2D" uid="uid://ck0lwnbq1hnds" path="res://art-visuals/player_3/walk/walk_player3_frame_4.png" id="34_dhfr4"]
+[ext_resource type="Texture2D" uid="uid://cntys2ukkb4ak" path="res://art-visuals/player_4/walk/walk_player4_frame_1.png" id="39_2njb2"]
+[ext_resource type="Texture2D" uid="uid://kflkrag0nnf0" path="res://art-visuals/player_4/walk/walk_player4_frame_2.png" id="40_51fms"]
+[ext_resource type="Texture2D" uid="uid://ltobymxm8fah" path="res://art-visuals/player_4/walk/walk_player4_frame_3.png" id="41_q4uqp"]
+[ext_resource type="Texture2D" uid="uid://kcnipxpwf3wn" path="res://art-visuals/player_4/walk/walk_player4_frame_4.png" id="42_f4xta"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ekf4n"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_oestl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_kj87h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_jvn1f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_s5760")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_dg01t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_nl8aj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_gotef")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_8tge8")
+}],
+"loop": 1,
+"name": &"walk",
+"speed": 5.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nr37e"]
 size = Vector2(14, 56)
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_kj87h"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_xy2ov")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_alr0a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_acjl5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_pw28h")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("23_nwhcu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_7flsn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_egubo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_xk365")
+}],
+"loop": 1,
+"name": &"walk",
+"speed": 5.0
+}]
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6g1t1"]
 size = Vector2(14, 54)
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_jvn1f"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_qq2pt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_i7g8u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_bhbpf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_3juus")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("31_bbsa6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_rmvcq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_jiklv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_dhfr4")
+}],
+"loop": 1,
+"name": &"walk",
+"speed": 5.0
+}]
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sobt1"]
 size = Vector2(11, 53)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_s5760"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_oestl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_8uaax")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_xnfyh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_dg01t")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("39_2njb2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_51fms")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_q4uqp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_f4xta")
+}],
+"loop": 1,
+"name": &"walk",
+"speed": 5.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_viwgl"]
 size = Vector2(43, 57)
@@ -30,11 +215,27 @@ size = Vector2(655, 20)
 [node name="LevelJam" type="Node2D" unique_id=917062658]
 script = ExtResource("1_dgymi")
 
+[node name="endPlay_Node" type="Node" parent="." unique_id=61854873]
+
+[node name="Timer" type="Timer" parent="endPlay_Node" unique_id=1264476296]
+wait_time = 155.0
+autostart = true
+
+[node name="music_Node" type="Node" parent="." unique_id=891149835]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="music_Node" unique_id=109400901]
+stream = ExtResource("2_q5mgh")
+autoplay = true
+
 [node name="sceneController_Node" type="Node" parent="." unique_id=134762211]
 script = ExtResource("2_oestl")
 path_to_next_scene = "res://main-menu/main-menu.tscn"
 
 [node name="gameNode" type="Node" parent="." unique_id=871327871]
+
+[node name="Camera2D" type="Camera2D" parent="gameNode" unique_id=871327872]
+position = Vector2(320, 180)
+script = ExtResource("15_camerashake")
 
 [node name="GamePlayHolder" type="Sprite2D" parent="gameNode" unique_id=1449437486]
 position = Vector2(322, 181)
@@ -48,11 +249,17 @@ position = Vector2(240, 230)
 script = ExtResource("4_qq2pt")
 baseSpeed = 40.0
 skills_node_paths = Array[NodePath]([NodePath("skill1_player_1"), NodePath("skill2_player_1"), NodePath("skill3_player1_Node2D")])
+path_animation_controller = NodePath("player1_CharacterBody2D/player_SpriteRender/player1_AnimatedSprite2D")
 
 [node name="player1_CharacterBody2D" type="CharacterBody2D" parent="gameNode/playerController_Node/player1_Node2D" unique_id=1478620453]
 
 [node name="player_SpriteRender" type="Sprite2D" parent="gameNode/playerController_Node/player1_Node2D/player1_CharacterBody2D" unique_id=593470189]
 texture = ExtResource("5_oestl")
+
+[node name="player1_AnimatedSprite2D" type="AnimatedSprite2D" parent="gameNode/playerController_Node/player1_Node2D/player1_CharacterBody2D/player_SpriteRender" unique_id=1920963837]
+sprite_frames = SubResource("SpriteFrames_ekf4n")
+animation = &"walk"
+autoplay = "idle"
 
 [node name="player1_CollisionShape2D" type="CollisionShape2D" parent="gameNode/playerController_Node/player1_Node2D/player1_CharacterBody2D" unique_id=1112553368]
 position = Vector2(0, 4)
@@ -62,27 +269,53 @@ shape = SubResource("RectangleShape2D_nr37e")
 script = ExtResource("7_r7tiq")
 recoverySpeed = 10.0
 baseColdDown = 100.0
+baseTimeSkillEffect = 0.5
+SpeedSkillEffectTime = 1.0
+path_shock_wave_node_2d = NodePath("shock_wave_player_1_Node2D")
+
+[node name="shock_wave_player_1_Node2D" type="Node2D" parent="gameNode/playerController_Node/player1_Node2D/skill1_player_1" unique_id=1393698771]
+script = ExtResource("13_wavevisual")
+
+[node name="ShockwaveRadiusDebug" type="Node2D" parent="gameNode/playerController_Node/player1_Node2D/skill1_player_1" unique_id=1393698772]
+script = ExtResource("12_radiusdbg")
 
 [node name="skill2_player_1" type="Node2D" parent="gameNode/playerController_Node/player1_Node2D" unique_id=1422970665]
-script = ExtResource("7_r7tiq")
-recoverySpeed = 2.0
+script = ExtResource("8_rangedshot")
+recoverySpeed = 25.0
 baseColdDown = 100.0
+
+[node name="ShotLine" type="Line2D" parent="gameNode/playerController_Node/player1_Node2D/skill2_player_1" unique_id=1422970666]
+visible = false
+width = 1.0
+default_color = Color(1, 0.9, 0.2, 1)
 
 [node name="skill3_player1_Node2D" type="Node2D" parent="gameNode/playerController_Node/player1_Node2D" unique_id=2143521350]
-script = ExtResource("7_r7tiq")
+script = ExtResource("14_speedboost")
 recoverySpeed = 5.0
 baseColdDown = 100.0
+path_boost_visual_node = NodePath("speedBoostVisual_Polygon2D")
+
+[node name="speedBoostVisual_Polygon2D" type="Polygon2D" parent="gameNode/playerController_Node/player1_Node2D/skill3_player1_Node2D" unique_id=2143521351]
+visible = false
+color = Color(0.2, 0.9, 1, 0.8)
+polygon = PackedVector2Array(0, -20, 6, -8, 0, -12, 6, 4, 0, 0, 6, 16)
 
 [node name="player2_Node2D" type="Node2D" parent="gameNode/playerController_Node" unique_id=1958795324]
-position = Vector2(420, 230)
+position = Vector2(320, 230)
 script = ExtResource("4_qq2pt")
 baseSpeed = 40.0
 skills_node_paths = Array[NodePath]([NodePath("skill1_plyaer2_Node2D"), NodePath("skill2_player2_Node2D"), NodePath("skill3_player2_Node2D")])
+path_animation_controller = NodePath("player2_CharacterBody2D/player_SpriteRender/player2_AnimatedSprite2D")
 
 [node name="player2_CharacterBody2D" type="CharacterBody2D" parent="gameNode/playerController_Node/player2_Node2D" unique_id=1397011205]
 
 [node name="player_SpriteRender" type="Sprite2D" parent="gameNode/playerController_Node/player2_Node2D/player2_CharacterBody2D" unique_id=1949557825]
 texture = ExtResource("4_xy2ov")
+
+[node name="player2_AnimatedSprite2D" type="AnimatedSprite2D" parent="gameNode/playerController_Node/player2_Node2D/player2_CharacterBody2D/player_SpriteRender" unique_id=2076262531]
+sprite_frames = SubResource("SpriteFrames_kj87h")
+animation = &"idle"
+autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="gameNode/playerController_Node/player2_Node2D/player2_CharacterBody2D" unique_id=372874980]
 position = Vector2(-1, 2)
@@ -90,29 +323,55 @@ shape = SubResource("RectangleShape2D_6g1t1")
 
 [node name="skill1_plyaer2_Node2D" type="Node2D" parent="gameNode/playerController_Node/player2_Node2D" unique_id=1616884184]
 script = ExtResource("7_r7tiq")
-recoverySpeed = 15.0
+recoverySpeed = 10.0
 baseColdDown = 100.0
+baseTimeSkillEffect = 0.5
+SpeedSkillEffectTime = 1.0
+path_shock_wave_node_2d = NodePath("shock_wave_player_2_Node2D")
+
+[node name="shock_wave_player_2_Node2D" type="Node2D" parent="gameNode/playerController_Node/player2_Node2D/skill1_plyaer2_Node2D" unique_id=1616884185]
+script = ExtResource("13_wavevisual")
+
+[node name="ShockwaveRadiusDebug" type="Node2D" parent="gameNode/playerController_Node/player2_Node2D/skill1_plyaer2_Node2D" unique_id=1616884186]
+script = ExtResource("12_radiusdbg")
 
 [node name="skill2_player2_Node2D" type="Node2D" parent="gameNode/playerController_Node/player2_Node2D" unique_id=588517115]
-script = ExtResource("7_r7tiq")
-recoverySpeed = 3.0
+script = ExtResource("8_rangedshot")
+recoverySpeed = 25.0
 baseColdDown = 100.0
 
+[node name="ShotLine" type="Line2D" parent="gameNode/playerController_Node/player2_Node2D/skill2_player2_Node2D" unique_id=588517116]
+visible = false
+width = 1.0
+default_color = Color(1, 0.9, 0.2, 1)
+
 [node name="skill3_player2_Node2D" type="Node2D" parent="gameNode/playerController_Node/player2_Node2D" unique_id=343940793]
-script = ExtResource("7_r7tiq")
+script = ExtResource("14_speedboost")
 recoverySpeed = 5.0
 baseColdDown = 100.0
+path_boost_visual_node = NodePath("speedBoostVisual_Polygon2D")
+
+[node name="speedBoostVisual_Polygon2D" type="Polygon2D" parent="gameNode/playerController_Node/player2_Node2D/skill3_player2_Node2D" unique_id=343940794]
+visible = false
+color = Color(0.2, 0.9, 1, 0.8)
+polygon = PackedVector2Array(0, -20, 6, -8, 0, -12, 6, 4, 0, 0, 6, 16)
 
 [node name="player3_Node2D" type="Node2D" parent="gameNode/playerController_Node" unique_id=350844624]
 position = Vector2(370, 230)
 script = ExtResource("4_qq2pt")
 baseSpeed = 50.0
 skills_node_paths = Array[NodePath]([NodePath("skill1_player3_Node2D"), NodePath("skill2_player3_Node2D"), NodePath("skill3_player3_Node2D")])
+path_animation_controller = NodePath("CharacterBody2D/player_SpriteRender/player3_AnimatedSprite2D")
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="gameNode/playerController_Node/player3_Node2D" unique_id=1291829239]
 
 [node name="player_SpriteRender" type="Sprite2D" parent="gameNode/playerController_Node/player3_Node2D/CharacterBody2D" unique_id=1354094665]
 texture = ExtResource("5_qq2pt")
+
+[node name="player3_AnimatedSprite2D" type="AnimatedSprite2D" parent="gameNode/playerController_Node/player3_Node2D/CharacterBody2D/player_SpriteRender" unique_id=568377659]
+sprite_frames = SubResource("SpriteFrames_jvn1f")
+animation = &"walk"
+autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="gameNode/playerController_Node/player3_Node2D/CharacterBody2D" unique_id=120226561]
 position = Vector2(0.5, 3.5)
@@ -120,29 +379,55 @@ shape = SubResource("RectangleShape2D_sobt1")
 
 [node name="skill1_player3_Node2D" type="Node2D" parent="gameNode/playerController_Node/player3_Node2D" unique_id=1098852025]
 script = ExtResource("7_r7tiq")
-recoverySpeed = 9.0
+recoverySpeed = 10.0
 baseColdDown = 100.0
+baseTimeSkillEffect = 0.5
+SpeedSkillEffectTime = 1.0
+path_shock_wave_node_2d = NodePath("shock_wave_player_3_Node2D")
+
+[node name="shock_wave_player_3_Node2D" type="Node2D" parent="gameNode/playerController_Node/player3_Node2D/skill1_player3_Node2D" unique_id=1098852026]
+script = ExtResource("13_wavevisual")
+
+[node name="ShockwaveRadiusDebug" type="Node2D" parent="gameNode/playerController_Node/player3_Node2D/skill1_player3_Node2D" unique_id=1098852027]
+script = ExtResource("12_radiusdbg")
 
 [node name="skill2_player3_Node2D" type="Node2D" parent="gameNode/playerController_Node/player3_Node2D" unique_id=2127335319]
-script = ExtResource("7_r7tiq")
-recoverySpeed = 9.0
+script = ExtResource("8_rangedshot")
+recoverySpeed = 25.0
 baseColdDown = 100.0
+
+[node name="ShotLine" type="Line2D" parent="gameNode/playerController_Node/player3_Node2D/skill2_player3_Node2D" unique_id=2127335320]
+visible = false
+width = 1.0
+default_color = Color(1, 0.9, 0.2, 1)
 
 [node name="skill3_player3_Node2D" type="Node2D" parent="gameNode/playerController_Node/player3_Node2D" unique_id=1054662965]
-script = ExtResource("7_r7tiq")
+script = ExtResource("14_speedboost")
 recoverySpeed = 12.0
 baseColdDown = 100.0
+path_boost_visual_node = NodePath("speedBoostVisual_Polygon2D")
+
+[node name="speedBoostVisual_Polygon2D" type="Polygon2D" parent="gameNode/playerController_Node/player3_Node2D/skill3_player3_Node2D" unique_id=1054662966]
+visible = false
+color = Color(0.2, 0.9, 1, 0.8)
+polygon = PackedVector2Array(0, -20, 6, -8, 0, -12, 6, 4, 0, 0, 6, 16)
 
 [node name="player4_Node2D" type="Node2D" parent="gameNode/playerController_Node" unique_id=355279349]
-position = Vector2(320, 230)
+position = Vector2(420, 230)
 script = ExtResource("4_qq2pt")
 baseSpeed = 30.0
 skills_node_paths = Array[NodePath]([NodePath("skill1_player4_Node2D"), NodePath("skill2_player4_Node2D"), NodePath("skill3_player4_Node2D")])
+path_animation_controller = NodePath("player4_CharacterBody2D/player_SpriteRender/player4_AnimatedSprite2D")
 
 [node name="player4_CharacterBody2D" type="CharacterBody2D" parent="gameNode/playerController_Node/player4_Node2D" unique_id=473400376]
 
 [node name="player_SpriteRender" type="Sprite2D" parent="gameNode/playerController_Node/player4_Node2D/player4_CharacterBody2D" unique_id=1558608659]
 texture = ExtResource("6_oestl")
+
+[node name="player4_AnimatedSprite2D" type="AnimatedSprite2D" parent="gameNode/playerController_Node/player4_Node2D/player4_CharacterBody2D/player_SpriteRender" unique_id=603778354]
+sprite_frames = SubResource("SpriteFrames_s5760")
+animation = &"walk"
+autoplay = "idle"
 
 [node name="player4_CollisionShape2D" type="CollisionShape2D" parent="gameNode/playerController_Node/player4_Node2D/player4_CharacterBody2D" unique_id=2002224309]
 position = Vector2(-1.5, 2.5)
@@ -150,17 +435,44 @@ shape = SubResource("RectangleShape2D_viwgl")
 
 [node name="skill1_player4_Node2D" type="Node2D" parent="gameNode/playerController_Node/player4_Node2D" unique_id=1126401925]
 script = ExtResource("7_r7tiq")
-recoverySpeed = 8.0
+recoverySpeed = 10.0
+baseColdDown = 100.0
+baseTimeSkillEffect = 0.5
+SpeedSkillEffectTime = 1.0
+path_shock_wave_node_2d = NodePath("shock_wave_player_4_Node2D")
+
+[node name="shock_wave_player_4_Node2D" type="Node2D" parent="gameNode/playerController_Node/player4_Node2D/skill1_player4_Node2D" unique_id=1126401927]
+script = ExtResource("13_wavevisual")
+
+[node name="ShockwaveRadiusDebug" type="Node2D" parent="gameNode/playerController_Node/player4_Node2D/skill1_player4_Node2D" unique_id=1126401928]
+script = ExtResource("12_radiusdbg")
 
 [node name="skill2_player4_Node2D" type="Node2D" parent="gameNode/playerController_Node/player4_Node2D" unique_id=687943995]
-script = ExtResource("7_r7tiq")
-recoverySpeed = 15.0
+script = ExtResource("8_rangedshot")
+recoverySpeed = 25.0
 baseColdDown = 100.0
 
+[node name="ShotLine" type="Line2D" parent="gameNode/playerController_Node/player4_Node2D/skill2_player4_Node2D" unique_id=687943996]
+visible = false
+width = 1.0
+default_color = Color(1, 0.9, 0.2, 1)
+
 [node name="skill3_player4_Node2D" type="Node2D" parent="gameNode/playerController_Node/player4_Node2D" unique_id=778069680]
-script = ExtResource("7_r7tiq")
+script = ExtResource("14_speedboost")
 recoverySpeed = 16.0
 baseColdDown = 100.0
+path_boost_visual_node = NodePath("speedBoostVisual_Polygon2D")
+
+[node name="speedBoostVisual_Polygon2D" type="Polygon2D" parent="gameNode/playerController_Node/player4_Node2D/skill3_player4_Node2D" unique_id=778069681]
+visible = false
+color = Color(0.2, 0.9, 1, 0.8)
+polygon = PackedVector2Array(0, -20, 6, -8, 0, -12, 6, 4, 0, 0, 6, 16)
+
+[node name="debrisSpawner_Node" type="Node2D" parent="gameNode" unique_id=39951810]
+script = ExtResource("9_spawner")
+debrisScene = ExtResource("10_debris")
+spawnIntervalMin = 0.8
+spawnIntervalMax = 2.0
 
 [node name="ground_Node2D" type="Node2D" parent="gameNode" unique_id=39951809]
 position = Vector2(320, 275)
@@ -172,6 +484,20 @@ position = Vector2(-0.5, 0)
 shape = SubResource("RectangleShape2D_cw4k4")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1630577108]
+
+[node name="inputDebugLabel" type="Label" parent="CanvasLayer" unique_id=1630577109]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -180.0
+offset_top = 8.0
+offset_right = -8.0
+offset_bottom = 8.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 10
+text = "Input Debug"
+horizontal_alignment = 2
+script = ExtResource("11_inputdbg")
 
 [node name="MarginContainer" type="MarginContainer" parent="CanvasLayer" unique_id=517873449]
 anchors_preset = 15
@@ -186,6 +512,25 @@ theme_override_constants/margin_bottom = 16
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/MarginContainer" unique_id=754402209]
 layout_mode = 2
+
+[node name="scoreLabel" type="Label" parent="CanvasLayer/MarginContainer/VBoxContainer" unique_id=754402210]
+layout_mode = 2
+text = "Score: 0"
+
+[node name="togetherHBoxContainer" type="HBoxContainer" parent="CanvasLayer/MarginContainer/VBoxContainer" unique_id=754402211]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_constants/separation = 6
+
+[node name="togetherLabel" type="Label" parent="CanvasLayer/MarginContainer/VBoxContainer/togetherHBoxContainer" unique_id=754402212]
+layout_mode = 2
+text = "JUNTOS"
+
+[node name="together_ProgressBar" type="ProgressBar" parent="CanvasLayer/MarginContainer/VBoxContainer/togetherHBoxContainer" unique_id=754402213]
+custom_minimum_size = Vector2(120, 10)
+layout_mode = 2
+size_flags_vertical = 4
+show_percentage = false
 
 [node name="spacing_Control" type="Control" parent="CanvasLayer/MarginContainer/VBoxContainer" unique_id=456048802]
 layout_mode = 2
@@ -282,8 +627,61 @@ text = "Loading"
 layout_mode = 2
 max_value = 1.0
 
+[node name="endgame_container_PanelContainer" type="PanelContainer" parent="CanvasLayer" unique_id=807484433]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/endgame_container_PanelContainer" unique_id=54613161]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/endgame_container_PanelContainer/VBoxContainer" unique_id=2011761979]
+layout_mode = 2
+alignment = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/endgame_container_PanelContainer/VBoxContainer/HBoxContainer" unique_id=1257098786]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="Button" type="Button" parent="CanvasLayer/endgame_container_PanelContainer/VBoxContainer/HBoxContainer/MarginContainer" unique_id=1099871896]
+layout_mode = 2
+text = "Exit"
+
+[node name="CenterContainer" type="CenterContainer" parent="CanvasLayer/endgame_container_PanelContainer/VBoxContainer" unique_id=1776656618]
+layout_mode = 2
+
+[node name="resultLabel" type="Label" parent="CanvasLayer/endgame_container_PanelContainer/VBoxContainer/CenterContainer" unique_id=1776656619]
+layout_mode = 2
+text = "You survived the earthquake!"
+
+[node name="donate_MarginContainer" type="MarginContainer" parent="CanvasLayer/endgame_container_PanelContainer/VBoxContainer" unique_id=1776656620]
+layout_mode = 2
+theme_override_constants/margin_top = 16
+
+[node name="donate_Label" type="Label" parent="CanvasLayer/endgame_container_PanelContainer/VBoxContainer/donate_MarginContainer" unique_id=1776656621]
+layout_mode = 2
+horizontal_alignment = 1
+autowrap_mode = 3
+text = "Support Venezuela earthquake relief: [donation link goes here]"
+
+[connection signal="timeout" from="endPlay_Node/Timer" to="." method="on_end_game_listener"]
+[connection signal="timeout" from="endPlay_Node/Timer" to="gameNode/playerController_Node" method="on_end_game_listener"]
 [connection signal="progressing_loading_scene_completed" from="sceneController_Node" to="." method="on_load_scene_complete_listener"]
 [connection signal="progressing_loading_scene_updated" from="sceneController_Node" to="." method="on_change_scene_controller_progressing_loading_scene_updated_listener"]
+[connection signal="on_character_health_change_notify" from="gameNode/playerController_Node" to="." method="on_character_health_change_listener"]
+[connection signal="on_current_character_change" from="gameNode/playerController_Node" to="." method="on_current_character_change_listener"]
+[connection signal="on_selected_skill_change_notify" from="gameNode/playerController_Node" to="." method="on_selected_skill_change_notify_listener"]
+[connection signal="on_debris_destroyed_by_character_notify" from="gameNode/playerController_Node" to="." method="on_debris_destroyed_by_character_listener"]
 [connection signal="on_press_pause_notify" from="gameNode/playerController_Node" to="." method="on_toggle_pause_listener"]
 [connection signal="on_recovery_skill_status" from="gameNode/playerController_Node" to="." method="on_update_skill_recovery_status_listener"]
+[connection signal="on_together_skill_requested" from="gameNode/playerController_Node" to="." method="on_together_skill_requested_listener"]
+[connection signal="debris_destroyed" from="gameNode/debrisSpawner_Node" to="." method="on_debris_destroyed_listener"]
+[connection signal="debris_landed" from="gameNode/debrisSpawner_Node" to="." method="on_debris_landed_listener"]
 [connection signal="button_down" from="CanvasLayer/pause_Panel/CenterContainer/VBoxContainer/quitGame_Button" to="." method="on_exit_game_click_listener"]
+[connection signal="button_down" from="CanvasLayer/endgame_container_PanelContainer/VBoxContainer/HBoxContainer/MarginContainer/Button" to="." method="on_exit_game_click_listener"]
