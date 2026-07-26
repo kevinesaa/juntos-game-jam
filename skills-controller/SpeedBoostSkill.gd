@@ -11,6 +11,9 @@ var _boostedCharacter: MyCharacterController
 var _boostTimeRemaining: float = 0.0
 var _isBoosting: bool = false
 
+func _ready() -> void:
+	super._ready()
+
 func skillEffect() -> void:
 	var character := get_parent() as MyCharacterController
 	if character == null:
