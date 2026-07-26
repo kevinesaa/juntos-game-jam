@@ -573,6 +573,16 @@ layout_mode = 2
 layout_mode = 2
 text = "You survived the earthquake!"
 
+[node name="donate_MarginContainer" type="MarginContainer" parent="CanvasLayer/endgame_container_PanelContainer/VBoxContainer" unique_id=1776656620]
+layout_mode = 2
+theme_override_constants/margin_top = 16
+
+[node name="donate_Label" type="Label" parent="CanvasLayer/endgame_container_PanelContainer/VBoxContainer/donate_MarginContainer" unique_id=1776656621]
+layout_mode = 2
+horizontal_alignment = 1
+autowrap_mode = 3
+text = "Support Venezuela earthquake relief: [donation link goes here]"
+
 [connection signal="timeout" from="endPlay_Node/Timer" to="." method="on_end_game_listener"]
 [connection signal="timeout" from="endPlay_Node/Timer" to="gameNode/playerController_Node" method="on_end_game_listener"]
 [connection signal="progressing_loading_scene_completed" from="sceneController_Node" to="." method="on_load_scene_complete_listener"]
