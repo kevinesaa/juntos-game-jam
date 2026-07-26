@@ -18,18 +18,34 @@
 [ext_resource type="Script" uid="uid://bbajwn3ixpowo" path="res://falling-debris/DebrisSpawner.gd" id="9_spawner"]
 [ext_resource type="PackedScene" path="res://falling-debris/falling-debris.tscn" id="10_debris"]
 [ext_resource type="Texture2D" uid="uid://d00yrgs2p7skf" path="res://art-visuals/player_1/idle/idle_player1_frame_4.png" id="10_s5760"]
+[ext_resource type="Texture2D" uid="uid://b6ob8a0kjyyjg" path="res://art-visuals/player_1/walk/walk_player1_frame_1.png" id="11_dg01t"]
 [ext_resource type="Script" uid="uid://ck146t6l34lhi" path="res://_commons/debug/InputDebugOverlay.gd" id="11_inputdbg"]
+[ext_resource type="Texture2D" uid="uid://bkjv24jbt7mgj" path="res://art-visuals/player_1/walk/walk_player1_frame_2.png" id="12_nl8aj"]
 [ext_resource type="Script" uid="uid://b31p2b2tb7y4a" path="res://skills-controller/ShockwaveRadiusDebug.gd" id="12_radiusdbg"]
+[ext_resource type="Texture2D" uid="uid://dwjeb8a5dw4t8" path="res://art-visuals/player_1/walk/walk_player1_frame_3.png" id="13_gotef"]
 [ext_resource type="Script" uid="uid://bl2ypqeinp4cp" path="res://skills-controller/ShockwaveVisual.gd" id="13_wavevisual"]
+[ext_resource type="Texture2D" uid="uid://dnoqjwu8xyxem" path="res://art-visuals/player_1/walk/walk_player1_frame_4.png" id="14_8tge8"]
 [ext_resource type="Texture2D" uid="uid://ce711sdndn3ew" path="res://art-visuals/player_2/idle/idle_player2_frame_2.png" id="16_alr0a"]
 [ext_resource type="Texture2D" uid="uid://dr2stciwxsj5m" path="res://art-visuals/player_2/idle/idle_player2_frame_3.png" id="17_acjl5"]
 [ext_resource type="Texture2D" uid="uid://dxm7wcfc10ign" path="res://art-visuals/player_2/idle/idle_player2_frame_4.png" id="18_pw28h"]
 [ext_resource type="Texture2D" uid="uid://bbrejl7o60a25" path="res://art-visuals/player_3/idle/idle_player3_frame_2.png" id="20_i7g8u"]
 [ext_resource type="Texture2D" uid="uid://iax8cm47b6kq" path="res://art-visuals/player_3/idle/idle_player3_frame_3.png" id="21_bhbpf"]
 [ext_resource type="Texture2D" uid="uid://diwv1m21jd7tc" path="res://art-visuals/player_3/idle/idle_player3_frame_4.png" id="22_3juus"]
+[ext_resource type="Texture2D" uid="uid://bi0tv0wixf5am" path="res://art-visuals/player_2/walk/walk_player2_frame_1.png" id="23_nwhcu"]
+[ext_resource type="Texture2D" uid="uid://dij7n5hi10q1q" path="res://art-visuals/player_2/walk/walk_player2_frame_2.png" id="24_7flsn"]
 [ext_resource type="Texture2D" uid="uid://dmcvhrhkiwmnb" path="res://art-visuals/player_4/idle/idle_player4_frame_2.png" id="24_8uaax"]
+[ext_resource type="Texture2D" uid="uid://ctj1daxe1vxj1" path="res://art-visuals/player_2/walk/walk_player2_frame_3.png" id="25_egubo"]
 [ext_resource type="Texture2D" uid="uid://c8uatye83km5" path="res://art-visuals/player_4/idle/idle_player4_frame_3.png" id="25_xnfyh"]
 [ext_resource type="Texture2D" uid="uid://c7k7nyxla6bmm" path="res://art-visuals/player_4/idle/idle_player4_frame_4.png" id="26_dg01t"]
+[ext_resource type="Texture2D" uid="uid://dmng8decb4ich" path="res://art-visuals/player_2/walk/walk_player2_frame_4.png" id="26_xk365"]
+[ext_resource type="Texture2D" uid="uid://b1hfj721epyvn" path="res://art-visuals/player_3/walk/walk_player3_frame_1.png" id="31_bbsa6"]
+[ext_resource type="Texture2D" uid="uid://cska8bixervfi" path="res://art-visuals/player_3/walk/walk_player3_frame_2.png" id="32_rmvcq"]
+[ext_resource type="Texture2D" uid="uid://7y8qdjsr3rwr" path="res://art-visuals/player_3/walk/walk_player3_frame_3.png" id="33_jiklv"]
+[ext_resource type="Texture2D" uid="uid://ck0lwnbq1hnds" path="res://art-visuals/player_3/walk/walk_player3_frame_4.png" id="34_dhfr4"]
+[ext_resource type="Texture2D" uid="uid://cntys2ukkb4ak" path="res://art-visuals/player_4/walk/walk_player4_frame_1.png" id="39_2njb2"]
+[ext_resource type="Texture2D" uid="uid://kflkrag0nnf0" path="res://art-visuals/player_4/walk/walk_player4_frame_2.png" id="40_51fms"]
+[ext_resource type="Texture2D" uid="uid://ltobymxm8fah" path="res://art-visuals/player_4/walk/walk_player4_frame_3.png" id="41_q4uqp"]
+[ext_resource type="Texture2D" uid="uid://kcnipxpwf3wn" path="res://art-visuals/player_4/walk/walk_player4_frame_4.png" id="42_f4xta"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ekf4n"]
 animations = [{
@@ -48,6 +64,23 @@ animations = [{
 }],
 "loop": 1,
 "name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_dg01t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_nl8aj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_gotef")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_8tge8")
+}],
+"loop": 1,
+"name": &"walk",
 "speed": 5.0
 }]
 
@@ -72,6 +105,23 @@ animations = [{
 "loop": 1,
 "name": &"idle",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("23_nwhcu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_7flsn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_egubo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_xk365")
+}],
+"loop": 1,
+"name": &"walk",
+"speed": 5.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6g1t1"]
@@ -95,6 +145,23 @@ animations = [{
 "loop": 1,
 "name": &"idle",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("31_bbsa6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_rmvcq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_jiklv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_dhfr4")
+}],
+"loop": 1,
+"name": &"walk",
+"speed": 5.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sobt1"]
@@ -117,6 +184,23 @@ animations = [{
 }],
 "loop": 1,
 "name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("39_2njb2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_51fms")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_q4uqp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_f4xta")
+}],
+"loop": 1,
+"name": &"walk",
 "speed": 5.0
 }]
 
@@ -168,7 +252,7 @@ texture = ExtResource("5_oestl")
 
 [node name="player1_AnimatedSprite2D" type="AnimatedSprite2D" parent="gameNode/playerController_Node/player1_Node2D/player1_CharacterBody2D/player_SpriteRender" unique_id=1920963837]
 sprite_frames = SubResource("SpriteFrames_ekf4n")
-animation = &"idle"
+animation = &"walk"
 autoplay = "idle"
 
 [node name="player1_CollisionShape2D" type="CollisionShape2D" parent="gameNode/playerController_Node/player1_Node2D/player1_CharacterBody2D" unique_id=1112553368]
@@ -209,6 +293,7 @@ position = Vector2(420, 230)
 script = ExtResource("4_qq2pt")
 baseSpeed = 40.0
 skills_node_paths = Array[NodePath]([NodePath("skill1_plyaer2_Node2D"), NodePath("skill2_player2_Node2D"), NodePath("skill3_player2_Node2D")])
+path_animation_controller = NodePath("player2_CharacterBody2D/player_SpriteRender/player2_AnimatedSprite2D")
 
 [node name="player2_CharacterBody2D" type="CharacterBody2D" parent="gameNode/playerController_Node/player2_Node2D" unique_id=1397011205]
 
@@ -258,6 +343,7 @@ position = Vector2(370, 230)
 script = ExtResource("4_qq2pt")
 baseSpeed = 50.0
 skills_node_paths = Array[NodePath]([NodePath("skill1_player3_Node2D"), NodePath("skill2_player3_Node2D"), NodePath("skill3_player3_Node2D")])
+path_animation_controller = NodePath("CharacterBody2D/player_SpriteRender/player3_AnimatedSprite2D")
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="gameNode/playerController_Node/player3_Node2D" unique_id=1291829239]
 
@@ -266,7 +352,7 @@ texture = ExtResource("5_qq2pt")
 
 [node name="player3_AnimatedSprite2D" type="AnimatedSprite2D" parent="gameNode/playerController_Node/player3_Node2D/CharacterBody2D/player_SpriteRender" unique_id=568377659]
 sprite_frames = SubResource("SpriteFrames_jvn1f")
-animation = &"idle"
+animation = &"walk"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="gameNode/playerController_Node/player3_Node2D/CharacterBody2D" unique_id=120226561]
@@ -307,6 +393,7 @@ position = Vector2(320, 230)
 script = ExtResource("4_qq2pt")
 baseSpeed = 30.0
 skills_node_paths = Array[NodePath]([NodePath("skill1_player4_Node2D"), NodePath("skill2_player4_Node2D"), NodePath("skill3_player4_Node2D")])
+path_animation_controller = NodePath("player4_CharacterBody2D/player_SpriteRender/player4_AnimatedSprite2D")
 
 [node name="player4_CharacterBody2D" type="CharacterBody2D" parent="gameNode/playerController_Node/player4_Node2D" unique_id=473400376]
 
@@ -315,7 +402,7 @@ texture = ExtResource("6_oestl")
 
 [node name="player4_AnimatedSprite2D" type="AnimatedSprite2D" parent="gameNode/playerController_Node/player4_Node2D/player4_CharacterBody2D/player_SpriteRender" unique_id=603778354]
 sprite_frames = SubResource("SpriteFrames_s5760")
-animation = &"idle"
+animation = &"walk"
 autoplay = "idle"
 
 [node name="player4_CollisionShape2D" type="CollisionShape2D" parent="gameNode/playerController_Node/player4_Node2D/player4_CharacterBody2D" unique_id=2002224309]

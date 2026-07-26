@@ -20,8 +20,13 @@ var currentSkillIndex:int = 0
 var charaterSkills: Array[SkillController] = []
 var animationController:AnimatedSprite2D
 
+var facing:int = 1
+enum state {idle,walking}
+var animaitionChange:bool=false
+var myState:state
 
 func _ready() -> void:
+	myState = state.idle
 	self.currentHealth = self.baseHealth
 	animationController = get_node_or_null(path_animation_controller) as AnimatedSprite2D
 	for i in skills_node_paths.size():
@@ -34,7 +39,20 @@ func _ready() -> void:
 		charaterSkills.append(skill)
 
 func _process(delta: float) -> void:
-	pass
+	
+	if(animaitionChange):
+		animaitionChange = false
+		if(myState == state.idle):
+			animationController.play("idle")
+		if(myState == state.walking):
+			animationController.play("walk")
+			if self.newPosition.x < 0:
+				
+				animationController.flip_h = true  
+			elif self.newPosition.x > 0:
+				
+				animationController.flip_h = false
+	
 
 
 func setCharacterIndexId(id:int) -> void:
@@ -45,10 +63,18 @@ func setCharacterIndexId(id:int) -> void:
 
 
 func moveCharacter(deltaTime:float,moveVector:Vector2) -> void:
-
+	
 	self.newPosition = (deltaTime * self.baseSpeed) * moveVector
 	var position:Vector2 = self.position + self.newPosition
 	self.position = position
+	if(self.newPosition.x == 0):
+		if(myState != state.idle and not animaitionChange):
+			myState = state.idle
+			animaitionChange = true
+	else:
+		if(myState != state.walking and not animaitionChange):
+			myState = state.walking
+			animaitionChange = true
 
 func selectPreviusSkill() -> void:
 
