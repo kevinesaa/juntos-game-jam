@@ -12,8 +12,6 @@ extends CustomScene
 @onready var player_controller_node: PlayerController = $gameNode/playerController_Node
 @onready var debris_spawner_node: DebrisSpawner = $gameNode/debrisSpawner_Node
 @onready var score_label: Label = $CanvasLayer/MarginContainer/VBoxContainer/scoreLabel
-@onready var together_label: Label = $CanvasLayer/MarginContainer/VBoxContainer/togetherHBoxContainer/togetherLabel
-@onready var together_progress_bar: ProgressBar = $CanvasLayer/MarginContainer/VBoxContainer/togetherHBoxContainer/together_ProgressBar
 
 @onready var player_one_layout: CharacterUiController = $CanvasLayer/MarginContainer/VBoxContainer/PanelContainer/HBoxContainer/PlayerOneLayout
 @onready var player_two_layout: CharacterUiController = $CanvasLayer/MarginContainer/VBoxContainer/PanelContainer/HBoxContainer/PlayerTwoLayout
@@ -43,7 +41,6 @@ func  _ready() -> void:
 	self.playerLayouts.append(player_two_layout)
 	self.playerLayouts.append(player_three_layout)
 	self.playerLayouts.append(player_four_layout)
-	_updateTogetherBar()
 	# PlayerController starts on index 0 but only emits on_current_character_change
 	# when the selection *changes*, so seed the highlight here or nothing is
 	# highlighted until the player first presses Q/E.
@@ -83,7 +80,6 @@ func on_debris_destroyed_listener(scoreValue:int) -> void:
 func on_debris_destroyed_by_character_listener(characterIndexId:int) -> void:
 	self.characterPower[characterIndexId] = min(self.characterPower[characterIndexId] + self.powerPerKill, POWER_MAX)
 	self.playerLayouts.get(characterIndexId).update_power(self.characterPower[characterIndexId])
-	_updateTogetherBar()
 
 func _allCharactersFull() -> bool:
 	for power in self.characterPower:
@@ -102,18 +98,7 @@ func on_together_skill_requested_listener() -> void:
 	# characterPower — resetting here is safe and final, not a race.
 	for i in self.characterPower.size():
 		self.characterPower[i] = 0.0
-	_updateTogetherBar()
-
-func _updateTogetherBar() -> void:
-	var total := 0.0
-	for power in self.characterPower:
-		total += power
-	together_progress_bar.max_value = POWER_MAX * self.characterPower.size()
-	together_progress_bar.value = total
-	if _allCharactersFull():
-		together_label.text = "JUNTOS! [SPACE]"
-	else:
-		together_label.text = "JUNTOS"
+		self.playerLayouts.get(i).update_power(0.0)
 
 func on_current_character_change_listener(characterIndexId:int) -> void:
 	_highlightSelectedCharacter(characterIndexId)

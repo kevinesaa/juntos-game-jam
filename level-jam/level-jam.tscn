@@ -517,21 +517,6 @@ layout_mode = 2
 layout_mode = 2
 text = "Score: 0"
 
-[node name="togetherHBoxContainer" type="HBoxContainer" parent="CanvasLayer/MarginContainer/VBoxContainer" unique_id=754402211]
-layout_mode = 2
-size_flags_horizontal = 0
-theme_override_constants/separation = 6
-
-[node name="togetherLabel" type="Label" parent="CanvasLayer/MarginContainer/VBoxContainer/togetherHBoxContainer" unique_id=754402212]
-layout_mode = 2
-text = "JUNTOS"
-
-[node name="together_ProgressBar" type="ProgressBar" parent="CanvasLayer/MarginContainer/VBoxContainer/togetherHBoxContainer" unique_id=754402213]
-custom_minimum_size = Vector2(120, 10)
-layout_mode = 2
-size_flags_vertical = 4
-show_percentage = false
-
 [node name="spacing_Control" type="Control" parent="CanvasLayer/MarginContainer/VBoxContainer" unique_id=456048802]
 layout_mode = 2
 size_flags_vertical = 3
