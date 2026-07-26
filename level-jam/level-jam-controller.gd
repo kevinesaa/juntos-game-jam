@@ -6,6 +6,7 @@ extends CustomScene
 @onready var loading_progress_bar: ProgressBar = $CanvasLayer/loadingPanel/CenterContainer/VBoxContainer/ProgressBar
 @onready var pause_panel: Panel = $CanvasLayer/pause_Panel
 @onready var loading_panel: Panel = $CanvasLayer/loadingPanel
+@onready var endgame_container_panel_container: PanelContainer = $CanvasLayer/endgame_container_PanelContainer
 
 @onready var player_one_layout: CharacterUiController = $CanvasLayer/MarginContainer/VBoxContainer/PanelContainer/HBoxContainer/PlayerOneLayout
 @onready var player_two_layout: CharacterUiController = $CanvasLayer/MarginContainer/VBoxContainer/PanelContainer/HBoxContainer/PlayerTwoLayout
@@ -18,6 +19,7 @@ var playerLayouts : Array[CharacterUiController]  = []
 func  _ready() -> void:
 	pause_panel.visible = false
 	loading_panel.visible = false
+	endgame_container_panel_container.visible = false
 	self.playerLayouts.append(player_one_layout)
 	self.playerLayouts.append(player_two_layout)
 	self.playerLayouts.append(player_three_layout)
@@ -41,3 +43,7 @@ func on_update_skill_recovery_status_listener(characterIndexId:int, skillIndex:i
 	
 	var characterLayout = self.playerLayouts.get(characterIndexId)
 	characterLayout.update_coldDown_status(skillIndex,value)
+
+func on_end_game_listener() -> void:
+	endgame_container_panel_container.visible = true
+	

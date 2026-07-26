@@ -14,6 +14,7 @@ signal on_selected_skill_change_notify(characterIndexId:int, skillIndexId:int)
 signal on_recovery_skill_status(characterIndexId:int, skillIndex:int, value:float)
 #endregion
 
+var endGame:bool = false
 var pauseStatus:bool = false
 var characters:Array[MyCharacterController] = []
 var currentSelectedIndex:int = 0
@@ -32,6 +33,9 @@ func _ready() -> void:
 		c.on_recovery_skill_status.connect(self._update_skill_status_listener)
 	
 func  _process(delta: float) -> void:
+	
+	if(endGame):
+		return
 	
 	var pauseButtonPress = Input.is_action_just_pressed("pause")
 	if(pauseButtonPress):
@@ -121,3 +125,5 @@ func _update_skill_status_listener(characterIndexId:int, skillIndex:int, value:f
 	
 	self.on_recovery_skill_status.emit(characterIndexId,skillIndex,value)
 	
+func on_end_game_listener() -> void:
+	endGame = true

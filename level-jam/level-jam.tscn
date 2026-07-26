@@ -34,6 +34,8 @@ script = ExtResource("1_dgymi")
 [node name="endPlay_Node" type="Node" parent="." unique_id=61854873]
 
 [node name="Timer" type="Timer" parent="endPlay_Node" unique_id=1264476296]
+wait_time = 155.0
+autostart = true
 
 [node name="music_Node" type="Node" parent="." unique_id=891149835]
 
@@ -294,9 +296,14 @@ layout_mode = 2
 max_value = 1.0
 
 [node name="endgame_container_PanelContainer" type="PanelContainer" parent="CanvasLayer" unique_id=807484433]
-offset_right = 40.0
-offset_bottom = 40.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
+[connection signal="timeout" from="endPlay_Node/Timer" to="." method="on_end_game_listener"]
+[connection signal="timeout" from="endPlay_Node/Timer" to="gameNode/playerController_Node" method="on_end_game_listener"]
 [connection signal="progressing_loading_scene_completed" from="sceneController_Node" to="." method="on_load_scene_complete_listener"]
 [connection signal="progressing_loading_scene_updated" from="sceneController_Node" to="." method="on_change_scene_controller_progressing_loading_scene_updated_listener"]
 [connection signal="on_press_pause_notify" from="gameNode/playerController_Node" to="." method="on_toggle_pause_listener"]
