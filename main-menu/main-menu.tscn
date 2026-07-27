@@ -2,9 +2,10 @@
 
 [ext_resource type="Script" uid="uid://l8di6o87hbaj" path="res://main-menu/main-menu-controller.gd" id="1_6u48k"]
 [ext_resource type="Script" uid="uid://dn1vx62hd863p" path="res://_commons/scene-manager/change-scene-controller.gd" id="2_6u48k"]
-[ext_resource type="AudioStream" uid="uid://cyjiab3y5tt34" path="res://audio-music/riffLoop.mp3" id="2_820v7"]
+[ext_resource type="AudioStream" uid="uid://bbf5f4sbc57xl" path="res://audio-music/LoopRiffMM.MP3" id="2_820v7"]
 [ext_resource type="Texture2D" uid="uid://dkm4hs7o2as5d" path="res://art-visuals/player_4/walk/UI_Background.png" id="2_xjbnb"]
 [ext_resource type="Theme" uid="uid://c8t4gy3m7o4jn" path="res://resources/themes/tema_menus.tres" id="3_1nbid"]
+[ext_resource type="Texture2D" uid="uid://bttl17xhsn36s" path="res://art-visuals/keyboard 1.png" id="6_klufr"]
 
 [node name="MainMenu" type="Node2D" unique_id=1442265409]
 script = ExtResource("1_6u48k")
@@ -92,6 +93,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 
 [node name="about_Content" type="MarginContainer" parent="CanvasLayer/MarginContainer/HBoxContainer/PanelContainer" unique_id=922746793]
+visible = false
 layout_mode = 2
 
 [node name="Label" type="Label" parent="CanvasLayer/MarginContainer/HBoxContainer/PanelContainer/about_Content" unique_id=1490359803]
@@ -100,6 +102,7 @@ text = "Este es un juego en memoria a los 4 integrantes de la banda de rock-rap 
 autowrap_mode = 3
 
 [node name="support_Content" type="MarginContainer" parent="CanvasLayer/MarginContainer/HBoxContainer/PanelContainer" unique_id=1329001544]
+visible = false
 layout_mode = 2
 theme_override_constants/margin_left = 20
 theme_override_constants/margin_top = 20
@@ -152,24 +155,40 @@ text = "DONATE HERE"
 [node name="controls_Content" type="MarginContainer" parent="CanvasLayer/MarginContainer/HBoxContainer/PanelContainer" unique_id=369995697]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="CanvasLayer/MarginContainer/HBoxContainer/PanelContainer/controls_Content" unique_id=1544658631]
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/MarginContainer/HBoxContainer/PanelContainer/controls_Content" unique_id=2049868716]
 layout_mode = 2
-text = "CONTROLES:
-Esc: Pausa [X]
-A D: Mover [X]
-Q: Personaje Anterior [X]
-E: Personaje Siguiente [X]
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
 
-I: upgrade skill
-J: habilidad normal (primaria) 
-K: habilidad secundaria [X]
-L: especial (Juntos)
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/MarginContainer/HBoxContainer/PanelContainer/controls_Content/MarginContainer" unique_id=1432035513]
+layout_mode = 2
 
-U: Seleccionar Secundaria anterior [X]
-O: Seleccionar Secundaria siguiente [X]
+[node name="Label" type="Label" parent="CanvasLayer/MarginContainer/HBoxContainer/PanelContainer/controls_Content/MarginContainer/VBoxContainer" unique_id=1544658631]
+layout_mode = 2
+text = "CONTROLS:
+
 "
 
+[node name="CenterContainer" type="CenterContainer" parent="CanvasLayer/MarginContainer/HBoxContainer/PanelContainer/controls_Content/MarginContainer/VBoxContainer" unique_id=519780795]
+layout_mode = 2
+offset_transform_enabled = true
+offset_transform_position = Vector2(0, 125.705)
+offset_transform_scale = Vector2(1.59, 1.59)
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/MarginContainer/HBoxContainer/PanelContainer/controls_Content/MarginContainer/VBoxContainer/CenterContainer" unique_id=1354527820]
+layout_mode = 2
+texture = ExtResource("6_klufr")
+
+[node name="CenterContainer" type="CenterContainer" parent="CanvasLayer/MarginContainer/HBoxContainer/PanelContainer/controls_Content" unique_id=1041536070]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/MarginContainer/HBoxContainer/PanelContainer/controls_Content/CenterContainer" unique_id=921872810]
+layout_mode = 2
+
 [node name="settings_Content" type="MarginContainer" parent="CanvasLayer/MarginContainer/HBoxContainer/PanelContainer" unique_id=660709915]
+visible = false
 layout_mode = 2
 
 [node name="Label" type="Label" parent="CanvasLayer/MarginContainer/HBoxContainer/PanelContainer/settings_Content" unique_id=1404542731]
@@ -177,6 +196,7 @@ layout_mode = 2
 text = "Configurción"
 
 [node name="credits_Content" type="MarginContainer" parent="CanvasLayer/MarginContainer/HBoxContainer/PanelContainer" unique_id=1220496008]
+visible = false
 layout_mode = 2
 
 [node name="Label" type="Label" parent="CanvasLayer/MarginContainer/HBoxContainer/PanelContainer/credits_Content" unique_id=857221748]
