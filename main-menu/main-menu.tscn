@@ -119,13 +119,32 @@ size_flags_horizontal = 3
 visible = false
 layout_mode = 2
 
-[node name="Label" type="Label" parent="CanvasLayer/MarginContainer/HBoxContainer/PanelContainer/about_Content" unique_id=1490359803]
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/MarginContainer/HBoxContainer/PanelContainer/about_Content" unique_id=1884044930]
 layout_mode = 2
-text = "Este es un juego en memoria a los 4 integrantes de la banda de rock-rap venenezolana VAN DER DIJS, quienes fallecieron por causa de los terremotos ocurridos en Venezuela el 24 de junio de 2026."
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/MarginContainer/HBoxContainer/PanelContainer/about_Content/MarginContainer" unique_id=415862887]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/MarginContainer/HBoxContainer/PanelContainer/about_Content/MarginContainer/VBoxContainer" unique_id=1490359803]
+layout_mode = 2
+text = "ABOUT:"
+autowrap_mode = 3
+
+[node name="Label2" type="Label" parent="CanvasLayer/MarginContainer/HBoxContainer/PanelContainer/about_Content/MarginContainer/VBoxContainer" unique_id=356502235]
+layout_mode = 2
+size_flags_vertical = 6
+text = "This project is, above all, a heartfelt tribute to Van Der Dijs—a band whose music, passion, and vibrant energy touched the lives of many. Tragically, their journey was cut short during the devastating earthquakes that struck La Guaira, Venezuela, on June 24th. The loss was profound, but their rhythm refuses to fade.
+
+We created this game to honor their memory and ensure their legacy plays on. We wanted to build a world where their unyielding energy and fighting spirit could be immortalized. Every line of code, every pixel, and every challenge you face in this game is dedicated to them.
+
+Thank you for playing, and for helping us keep the light of Van Der Dijs alive."
 autowrap_mode = 3
 
 [node name="support_Content" type="MarginContainer" parent="CanvasLayer/MarginContainer/HBoxContainer/PanelContainer" unique_id=1329001544]
-visible = false
 layout_mode = 2
 theme_override_constants/margin_left = 20
 theme_override_constants/margin_top = 20
@@ -159,19 +178,19 @@ theme_override_constants/separation = 16
 [node name="bodyText" type="Label" parent="CanvasLayer/MarginContainer/HBoxContainer/PanelContainer/support_Content/VBoxContainer/bodyPanel/bodyMargin/bodyVBox" unique_id=1879914725]
 layout_mode = 2
 size_flags_vertical = 3
-text = "This game is free, but the need for help is real.
+text = "This game is free, but the need for help is real.   Please consider supporting the victims of the recent earthquakes by donating to the World Food Program USA and Global Game Jam for Venezuela Earthquake Relief.
 
-Please consider supporting the victims of the recent earthquakes in Venezuela by donating to a trusted relief organization working in the region. Every contribution helps communities rebuild and recover.
-
-[donation link goes here]"
+The U.N. World Food Programme (WFP) is the world’s frontline responder to hunger and one of the largest humanitarian organizations in the world. WFP delivers food assistance to save lives in emergencies and help communities build resilience against future shocks. WFP is also a key enabler in the wider humanitarian system. Its logistical, technology and innovation expertise and assets support other humanitarian partners to deliver faster, smarter, and more efficiently on their own mission. In 2020, WFP was awarded the Nobel Peace Prize. To learn more about WFP, please visit wfp.org"
 vertical_alignment = 1
 autowrap_mode = 3
 
 [node name="donateRow" type="HBoxContainer" parent="CanvasLayer/MarginContainer/HBoxContainer/PanelContainer/support_Content/VBoxContainer/bodyPanel/bodyMargin/bodyVBox" unique_id=1879914726]
+visible = false
 layout_mode = 2
 alignment = 2
 
 [node name="donateButton" type="Button" parent="CanvasLayer/MarginContainer/HBoxContainer/PanelContainer/support_Content/VBoxContainer/bodyPanel/bodyMargin/bodyVBox/donateRow" unique_id=1879914727]
+visible = false
 layout_mode = 2
 text = "DONATE HERE"
 
@@ -220,6 +239,7 @@ layout_mode = 2
 text = "Configurción"
 
 [node name="credits_Content" type="MarginContainer" parent="CanvasLayer/MarginContainer/HBoxContainer/PanelContainer" unique_id=1220496008]
+visible = false
 layout_mode = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/MarginContainer/HBoxContainer/PanelContainer/credits_Content" unique_id=1132897715]
