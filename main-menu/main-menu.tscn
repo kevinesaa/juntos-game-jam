@@ -7,6 +7,7 @@
 [ext_resource type="Theme" uid="uid://c8t4gy3m7o4jn" path="res://resources/themes/tema_menus.tres" id="3_1nbid"]
 [ext_resource type="Texture2D" uid="uid://cugoqeujh1yu4" path="res://art-visuals/3.png" id="4_42iot"]
 [ext_resource type="Texture2D" uid="uid://bttl17xhsn36s" path="res://art-visuals/keyboard 1.png" id="6_klufr"]
+[ext_resource type="Script" uid="uid://db36vucbdiu5b" path="res://main-menu/link_button.gd" id="7_uqt4f"]
 
 [node name="MainMenu" type="Node2D" unique_id=1442265409]
 script = ExtResource("1_6u48k")
@@ -185,14 +186,21 @@ vertical_alignment = 1
 autowrap_mode = 3
 
 [node name="donateRow" type="HBoxContainer" parent="CanvasLayer/MarginContainer/HBoxContainer/PanelContainer/support_Content/VBoxContainer/bodyPanel/bodyMargin/bodyVBox" unique_id=1879914726]
-visible = false
 layout_mode = 2
 alignment = 2
 
 [node name="donateButton" type="Button" parent="CanvasLayer/MarginContainer/HBoxContainer/PanelContainer/support_Content/VBoxContainer/bodyPanel/bodyMargin/bodyVBox/donateRow" unique_id=1879914727]
-visible = false
 layout_mode = 2
 text = "DONATE HERE"
+
+[node name="LinkButton" type="LinkButton" parent="CanvasLayer/MarginContainer/HBoxContainer/PanelContainer/support_Content/VBoxContainer/bodyPanel/bodyMargin/bodyVBox/donateRow/donateButton" unique_id=1421618729]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("7_uqt4f")
 
 [node name="controls_Content" type="MarginContainer" parent="CanvasLayer/MarginContainer/HBoxContainer/PanelContainer" unique_id=369995697]
 visible = false
@@ -309,3 +317,4 @@ max_value = 1.0
 [connection signal="pressed" from="CanvasLayer/MarginContainer/HBoxContainer/buttonsZone_VBoxContainer/settings_Button" to="." method="_on_settings_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/MarginContainer/HBoxContainer/buttonsZone_VBoxContainer/credits_Button" to="." method="_on_credits_button_pressed"]
 [connection signal="button_down" from="CanvasLayer/MarginContainer/HBoxContainer/buttonsZone_VBoxContainer/quit_Button" to="." method="on_exit_click_listener"]
+[connection signal="pressed" from="CanvasLayer/MarginContainer/HBoxContainer/PanelContainer/support_Content/VBoxContainer/bodyPanel/bodyMargin/bodyVBox/donateRow/donateButton/LinkButton" to="CanvasLayer/MarginContainer/HBoxContainer/PanelContainer/support_Content/VBoxContainer/bodyPanel/bodyMargin/bodyVBox/donateRow/donateButton/LinkButton" method="_on_pressed"]
