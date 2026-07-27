@@ -7,32 +7,22 @@
 [ext_resource type="Texture2D" uid="uid://b1opabpolh8q8" path="res://art-visuals/game-play-background.png" id="3_r7tiq"]
 [ext_resource type="Script" uid="uid://g16hbx7227jf" path="res://player-controller/PlayerController.gd" id="3_xy2ov"]
 [ext_resource type="Script" uid="uid://dnnobjaro3ye8" path="res://player-controller/MyCharacterController.gd" id="4_qq2pt"]
-[ext_resource type="Texture2D" uid="uid://dxlgyitjvulnr" path="res://art-visuals/player_2/idle/idle_player2_frame_1.png" id="4_xy2ov"]
-[ext_resource type="Texture2D" uid="uid://cln65aqyty84m" path="res://art-visuals/player_1/idle/idle_player1_frame_1.png" id="5_oestl"]
 [ext_resource type="Script" uid="uid://077dg2mjwp8t" path="res://skills-controller/SkillController.gd" id="7_r7tiq"]
-[ext_resource type="Texture2D" uid="uid://cb7qgab22neif" path="res://art-visuals/player_1/idle/idle_player1_frame_2.png" id="8_kj87h"]
 [ext_resource type="Script" uid="uid://c2cbfir0yxdst" path="res://skills-controller/RangedShotSkill.gd" id="8_rangedshot"]
-[ext_resource type="Texture2D" uid="uid://bor468sdc3wa1" path="res://art-visuals/player_1/idle/idle_player1_frame_3.png" id="9_jvn1f"]
+[ext_resource type="Texture2D" uid="uid://cd72wlu35pbcd" path="res://art-visuals/player_1/idle/vander-sheet1.png" id="9_alr0a"]
 [ext_resource type="Script" uid="uid://bbajwn3ixpowo" path="res://falling-debris/DebrisSpawner.gd" id="9_spawner"]
+[ext_resource type="Texture2D" uid="uid://bppwwngki0cyc" path="res://art-visuals/player_1/idle/vander-sheet2.png" id="10_acjl5"]
 [ext_resource type="PackedScene" path="res://falling-debris/falling-debris.tscn" id="10_debris"]
-[ext_resource type="Texture2D" uid="uid://d00yrgs2p7skf" path="res://art-visuals/player_1/idle/idle_player1_frame_4.png" id="10_s5760"]
-[ext_resource type="Texture2D" uid="uid://b6ob8a0kjyyjg" path="res://art-visuals/player_1/walk/walk_player1_frame_1.png" id="11_dg01t"]
 [ext_resource type="Script" uid="uid://ck146t6l34lhi" path="res://_commons/debug/InputDebugOverlay.gd" id="11_inputdbg"]
-[ext_resource type="Texture2D" uid="uid://bkjv24jbt7mgj" path="res://art-visuals/player_1/walk/walk_player1_frame_2.png" id="12_nl8aj"]
 [ext_resource type="Script" uid="uid://b31p2b2tb7y4a" path="res://skills-controller/ShockwaveRadiusDebug.gd" id="12_radiusdbg"]
-[ext_resource type="Texture2D" uid="uid://dwjeb8a5dw4t8" path="res://art-visuals/player_1/walk/walk_player1_frame_3.png" id="13_gotef"]
 [ext_resource type="Script" uid="uid://bl2ypqeinp4cp" path="res://skills-controller/ShockwaveVisual.gd" id="13_wavevisual"]
-[ext_resource type="Texture2D" uid="uid://dnoqjwu8xyxem" path="res://art-visuals/player_1/walk/walk_player1_frame_4.png" id="14_8tge8"]
 [ext_resource type="Script" uid="uid://5xlk7iso76px" path="res://skills-controller/SpeedBoostSkill.gd" id="14_speedboost"]
 [ext_resource type="Script" uid="uid://nsq5t34n3jjl" path="res://_commons/camera/CameraShake.gd" id="15_camerashake"]
-[ext_resource type="Texture2D" uid="uid://ce711sdndn3ew" path="res://art-visuals/player_2/idle/idle_player2_frame_2.png" id="16_alr0a"]
 [ext_resource type="PackedScene" uid="uid://dmmsj4wng0tij" path="res://band-slideshow/band-slideshow.tscn" id="16_bandslide"]
-[ext_resource type="Texture2D" uid="uid://dr2stciwxsj5m" path="res://art-visuals/player_2/idle/idle_player2_frame_3.png" id="17_acjl5"]
-[ext_resource type="Texture2D" uid="uid://dxm7wcfc10ign" path="res://art-visuals/player_2/idle/idle_player2_frame_4.png" id="18_pw28h"]
-[ext_resource type="Texture2D" uid="uid://bi0tv0wixf5am" path="res://art-visuals/player_2/walk/walk_player2_frame_1.png" id="23_nwhcu"]
-[ext_resource type="Texture2D" uid="uid://dij7n5hi10q1q" path="res://art-visuals/player_2/walk/walk_player2_frame_2.png" id="24_7flsn"]
-[ext_resource type="Texture2D" uid="uid://ctj1daxe1vxj1" path="res://art-visuals/player_2/walk/walk_player2_frame_3.png" id="25_egubo"]
-[ext_resource type="Texture2D" uid="uid://dmng8decb4ich" path="res://art-visuals/player_2/walk/walk_player2_frame_4.png" id="26_xk365"]
+[ext_resource type="Texture2D" uid="uid://bh3r0d6vwu335" path="res://art-visuals/player_2/idle/guitarrista 1.png" id="23_xnfyh"]
+[ext_resource type="Texture2D" uid="uid://dj2ge617pbno0" path="res://art-visuals/player_2/idle/guitarrista 2.png" id="24_dg01t"]
+[ext_resource type="Texture2D" uid="uid://jfnofoeldoff" path="res://art-visuals/player_2/idle/guitarrista 3.png" id="25_nl8aj"]
+[ext_resource type="Script" uid="uid://do8epa03pwr6g" path="res://level-jam/link_button.gd" id="31_acjl5"]
 [ext_resource type="Texture2D" uid="uid://smo8p0ufnsu3" path="res://art-visuals/player_4/idle/1.png" id="32_xk365"]
 [ext_resource type="Texture2D" uid="uid://c73og8fxjj5ip" path="res://art-visuals/player_4/idle/2.png" id="33_bbsa6"]
 [ext_resource type="Texture2D" uid="uid://c3ejqajmdrp08" path="res://art-visuals/player_3/idle/EnigmaIdle-1.png" id="34_jiklv"]
@@ -52,16 +42,10 @@ shader_parameter/outline_width = 1.5
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("5_oestl")
+"texture": ExtResource("9_alr0a")
 }, {
 "duration": 1.0,
-"texture": ExtResource("8_kj87h")
-}, {
-"duration": 1.0,
-"texture": ExtResource("9_jvn1f")
-}, {
-"duration": 1.0,
-"texture": ExtResource("10_s5760")
+"texture": ExtResource("10_acjl5")
 }],
 "loop": 1,
 "name": &"idle",
@@ -69,16 +53,10 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("11_dg01t")
+"texture": ExtResource("9_alr0a")
 }, {
 "duration": 1.0,
-"texture": ExtResource("12_nl8aj")
-}, {
-"duration": 1.0,
-"texture": ExtResource("13_gotef")
-}, {
-"duration": 1.0,
-"texture": ExtResource("14_8tge8")
+"texture": ExtResource("10_acjl5")
 }],
 "loop": 1,
 "name": &"walk",
@@ -98,16 +76,13 @@ shader_parameter/outline_width = 1.5
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("4_xy2ov")
+"texture": ExtResource("23_xnfyh")
 }, {
 "duration": 1.0,
-"texture": ExtResource("16_alr0a")
+"texture": ExtResource("24_dg01t")
 }, {
 "duration": 1.0,
-"texture": ExtResource("17_acjl5")
-}, {
-"duration": 1.0,
-"texture": ExtResource("18_pw28h")
+"texture": ExtResource("25_nl8aj")
 }],
 "loop": 1,
 "name": &"idle",
@@ -115,16 +90,13 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("23_nwhcu")
+"texture": ExtResource("23_xnfyh")
 }, {
 "duration": 1.0,
-"texture": ExtResource("24_7flsn")
+"texture": ExtResource("24_dg01t")
 }, {
 "duration": 1.0,
-"texture": ExtResource("25_egubo")
-}, {
-"duration": 1.0,
-"texture": ExtResource("26_xk365")
+"texture": ExtResource("25_nl8aj")
 }],
 "loop": 1,
 "name": &"walk",
@@ -267,13 +239,13 @@ path_animation_controller = NodePath("player1_CharacterBody2D/player_SpriteRende
 
 [node name="player_SpriteRender" type="Sprite2D" parent="gameNode/playerController_Node/player1_Node2D/player1_CharacterBody2D" unique_id=593470189]
 scale = Vector2(2, 2)
-texture = ExtResource("5_oestl")
 
 [node name="player1_AnimatedSprite2D" type="AnimatedSprite2D" parent="gameNode/playerController_Node/player1_Node2D/player1_CharacterBody2D/player_SpriteRender" unique_id=1920963837]
 material = SubResource("ShaderMaterial_p1outline")
 rotation = 0.00061939366
+scale = Vector2(0.13, 0.13)
 sprite_frames = SubResource("SpriteFrames_ekf4n")
-animation = &"walk"
+animation = &"idle"
 autoplay = "idle"
 
 [node name="player1_CollisionShape2D" type="CollisionShape2D" parent="gameNode/playerController_Node/player1_Node2D/player1_CharacterBody2D" unique_id=1112553368]
@@ -342,12 +314,12 @@ path_animation_controller = NodePath("player2_CharacterBody2D/player_SpriteRende
 
 [node name="player_SpriteRender" type="Sprite2D" parent="gameNode/playerController_Node/player2_Node2D/player2_CharacterBody2D" unique_id=1949557825]
 scale = Vector2(2, 2)
-texture = ExtResource("4_xy2ov")
 
 [node name="player2_AnimatedSprite2D" type="AnimatedSprite2D" parent="gameNode/playerController_Node/player2_Node2D/player2_CharacterBody2D/player_SpriteRender" unique_id=2076262531]
 material = SubResource("ShaderMaterial_p2outline")
+scale = Vector2(0.065, 0.065)
 sprite_frames = SubResource("SpriteFrames_kj87h")
-animation = &"idle"
+animation = &"walk"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="gameNode/playerController_Node/player2_Node2D/player2_CharacterBody2D" unique_id=372874980]
@@ -570,6 +542,7 @@ shape = SubResource("RectangleShape2D_cw4k4")
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1630577108]
 
 [node name="inputDebugLabel" type="Label" parent="CanvasLayer" unique_id=1630577109]
+visible = false
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
@@ -598,6 +571,7 @@ theme_override_constants/margin_bottom = 32
 layout_mode = 2
 
 [node name="scoreLabel" type="Label" parent="CanvasLayer/MarginContainer/VBoxContainer" unique_id=754402210]
+visible = false
 layout_mode = 2
 text = "Score: 0"
 
@@ -618,7 +592,7 @@ theme_override_constants/separation = 0
 layout_mode = 2
 size_flags_horizontal = 3
 nameText = "VDD"
-imgPath = "res://art-visuals/player_portrait.png"
+imgPath = "res://art-visuals/portraits/IMG_20260726_224452_016.jpg"
 
 [node name="space1_Control" type="Control" parent="CanvasLayer/MarginContainer/VBoxContainer/PanelContainer/HBoxContainer" unique_id=1177596036]
 custom_minimum_size = Vector2(64, 0)
@@ -648,7 +622,7 @@ layout_mode = 2
 layout_mode = 2
 size_flags_horizontal = 3
 nameText = "Shield Guard"
-imgPath = "res://art-visuals/player_portrait.png"
+imgPath = "res://art-visuals/portraits/IMG_20260726_224457_535.jpg"
 
 [node name="pause_Panel" type="Panel" parent="CanvasLayer" unique_id=1243917536]
 visible = false
@@ -701,7 +675,6 @@ layout_mode = 2
 max_value = 1.0
 
 [node name="endgame_container_PanelContainer" type="PanelContainer" parent="CanvasLayer" unique_id=807484433]
-visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -735,17 +708,32 @@ layout_mode = 2
 text = "Thank you for playing"
 
 [node name="bandSlideshow" parent="CanvasLayer/endgame_container_PanelContainer/VBoxContainer" unique_id=1776656622 instance=ExtResource("16_bandslide")]
+layout_mode = 2
 auto_advance_seconds = 2.0
 
 [node name="donate_MarginContainer" type="MarginContainer" parent="CanvasLayer/endgame_container_PanelContainer/VBoxContainer" unique_id=1776656620]
 layout_mode = 2
-theme_override_constants/margin_top = 32
 
-[node name="donate_Label" type="Label" parent="CanvasLayer/endgame_container_PanelContainer/VBoxContainer/donate_MarginContainer" unique_id=1776656621]
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/endgame_container_PanelContainer/VBoxContainer/donate_MarginContainer" unique_id=331753964]
 layout_mode = 2
-text = "Support Venezuela earthquake relief: [donation link goes here]"
+
+[node name="donate_Label" type="Label" parent="CanvasLayer/endgame_container_PanelContainer/VBoxContainer/donate_MarginContainer/VBoxContainer" unique_id=1776656621]
+layout_mode = 2
+text = "Support Venezuela earthquake relief: "
 horizontal_alignment = 1
 autowrap_mode = 3
+
+[node name="Button" type="Button" parent="CanvasLayer/endgame_container_PanelContainer/VBoxContainer/donate_MarginContainer/VBoxContainer" unique_id=915337173]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Donate here"
+
+[node name="LinkButton" type="LinkButton" parent="CanvasLayer/endgame_container_PanelContainer/VBoxContainer/donate_MarginContainer/VBoxContainer/Button" unique_id=1507230112]
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 35.0
+script = ExtResource("31_acjl5")
 
 [connection signal="timeout" from="endPlay_Node/Timer" to="." method="on_end_game_listener"]
 [connection signal="timeout" from="endPlay_Node/Timer" to="gameNode/playerController_Node" method="on_end_game_listener"]
@@ -762,3 +750,4 @@ autowrap_mode = 3
 [connection signal="debris_landed" from="gameNode/debrisSpawner_Node" to="." method="on_debris_landed_listener"]
 [connection signal="button_down" from="CanvasLayer/pause_Panel/CenterContainer/VBoxContainer/quitGame_Button" to="." method="on_exit_game_click_listener"]
 [connection signal="button_down" from="CanvasLayer/endgame_container_PanelContainer/VBoxContainer/HBoxContainer/MarginContainer/Button" to="." method="on_exit_game_click_listener"]
+[connection signal="pressed" from="CanvasLayer/endgame_container_PanelContainer/VBoxContainer/donate_MarginContainer/VBoxContainer/Button/LinkButton" to="CanvasLayer/endgame_container_PanelContainer/VBoxContainer/donate_MarginContainer/VBoxContainer/Button/LinkButton" method="_on_pressed"]

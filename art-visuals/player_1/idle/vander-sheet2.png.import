@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dxcyngj1vojhj"
-path="res://.godot/imported/EnigmaIdle-4.png-3bf664528a4ce3936889e0daf6c85208.ctex"
+uid="uid://bppwwngki0cyc"
+path="res://.godot/imported/vander-sheet2.png-bc99a82c1881b0be4411015426e9bce0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art-visuals/player_1/idle/EnigmaIdle-4.png"
-dest_files=["res://.godot/imported/EnigmaIdle-4.png-3bf664528a4ce3936889e0daf6c85208.ctex"]
+source_file="res://art-visuals/player_1/idle/vander-sheet2.png"
+dest_files=["res://.godot/imported/vander-sheet2.png-bc99a82c1881b0be4411015426e9bce0.ctex"]
 
 [params]
 

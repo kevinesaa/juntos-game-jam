@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dpplq1s85v2s4"
-path="res://.godot/imported/EnigmaIdle-1.png-8ee9c870218d3e937e5a79205b9f7b83.ctex"
+uid="uid://jfnofoeldoff"
+path="res://.godot/imported/guitarrista 3.png-54f50d45d6cf8ae52eef342c9813c64e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art-visuals/player_1/idle/EnigmaIdle-1.png"
-dest_files=["res://.godot/imported/EnigmaIdle-1.png-8ee9c870218d3e937e5a79205b9f7b83.ctex"]
+source_file="res://art-visuals/player_2/idle/guitarrista 3.png"
+dest_files=["res://.godot/imported/guitarrista 3.png-54f50d45d6cf8ae52eef342c9813c64e.ctex"]
 
 [params]
 

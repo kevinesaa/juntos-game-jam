@@ -3,10 +3,10 @@ extends VBoxContainer
 
 @export var auto_advance_seconds: float = 6.0
 @export var members: Array[Dictionary] = [
-	{"name": "VDD", "bio": "Melee — wants to kill the aristocracy leader personally.", "color": Color(0.75, 0.15, 0.15)},
-	{"name": "Scorpio", "bio": "Healer — an ex-government scientist mutated by the same radiation he studied.", "color": Color(0.15, 0.55, 0.25)},
-	{"name": "Enigma", "bio": "Tank — his story remains untold.", "color": Color(0.2, 0.3, 0.7)},
-	{"name": "Shield Guard", "bio": "Ranged — guerrilla-raised, avenging a family killed by the Guardia Nocturna.", "color": Color(0.6, 0.5, 0.1)},
+	{"name": "Manuel Van Der Dijs alias: VDD", "bio": "Cantante", "color": Color(0.75, 0.15, 0.15), "photo": preload("res://art-visuals/RealPhotos/manuel.png")},
+	{"name": "Gabriel Gómez alias: Scorpio", "bio": "Guitarrista", "color": Color(0.15, 0.55, 0.25), "photo": preload("res://art-visuals/RealPhotos/Gabriel.png")},
+	{"name": "Xander Hernández alias: Enigma", "bio": "Bajista", "color": Color(0.2, 0.3, 0.7), "photo": preload("res://art-visuals/RealPhotos/xander.png")},
+	{"name": "Abraham Foucault alias: Shield Guard", "bio": "Baterista", "color": Color(0.6, 0.5, 0.1), "photo": preload("res://art-visuals/RealPhotos/abraham.png")},
 ]
 
 @onready var photo_placeholder: ColorRect = $PhotoCenterContainer/photo_ColorRect

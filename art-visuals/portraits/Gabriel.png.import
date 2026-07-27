@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dr5ptuo2so8y3"
-path="res://.godot/imported/EnigmaIdle-2.png-c4c0e6624e86fbd991baab6d11b7b4cc.ctex"
+uid="uid://cryceywmja62h"
+path="res://.godot/imported/Gabriel.png-0ade63969172f85fdf782e3765f19ca2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art-visuals/player_1/idle/EnigmaIdle-2.png"
-dest_files=["res://.godot/imported/EnigmaIdle-2.png-c4c0e6624e86fbd991baab6d11b7b4cc.ctex"]
+source_file="res://art-visuals/portraits/Gabriel.png"
+dest_files=["res://.godot/imported/Gabriel.png-0ade63969172f85fdf782e3765f19ca2.ctex"]
 
 [params]
 

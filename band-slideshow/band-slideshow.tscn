@@ -1,55 +1,54 @@
-[gd_scene load_steps=2 format=3]
+[gd_scene format=3 uid="uid://dmmsj4wng0tij"]
 
-[ext_resource type="Script" path="res://band-slideshow/band-slideshow.gd" id="1_bandslide"]
+[ext_resource type="Script" uid="uid://k6k6obssq4df" path="res://band-slideshow/band-slideshow.gd" id="1_bandslide"]
 
-[node name="BandSlideshow" type="VBoxContainer"]
-layout_mode = 2
+[node name="BandSlideshow" type="VBoxContainer" unique_id=1907385575]
 size_flags_horizontal = 3
 theme_override_constants/separation = 8
 script = ExtResource("1_bandslide")
 
-[node name="AutoAdvanceTimer" type="Timer" parent="."]
+[node name="AutoAdvanceTimer" type="Timer" parent="." unique_id=1516657528]
 wait_time = 6.0
 autostart = true
 
-[node name="name_Label" type="Label" parent="."]
+[node name="name_Label" type="Label" parent="." unique_id=517050374]
 layout_mode = 2
-horizontal_alignment = 1
 text = "Name"
+horizontal_alignment = 1
 
-[node name="PhotoCenterContainer" type="CenterContainer" parent="."]
+[node name="PhotoCenterContainer" type="CenterContainer" parent="." unique_id=298635952]
 layout_mode = 2
 
-[node name="photo_ColorRect" type="ColorRect" parent="PhotoCenterContainer"]
+[node name="photo_ColorRect" type="ColorRect" parent="PhotoCenterContainer" unique_id=374368274]
+visible = false
 custom_minimum_size = Vector2(192, 192)
 layout_mode = 2
 color = Color(0.5, 0.5, 0.5, 1)
 
-[node name="photo_TextureRect" type="TextureRect" parent="PhotoCenterContainer"]
+[node name="photo_TextureRect" type="TextureRect" parent="PhotoCenterContainer" unique_id=1877102591]
 custom_minimum_size = Vector2(192, 192)
 layout_mode = 2
-visible = false
 expand_mode = 1
 stretch_mode = 5
 
-[node name="bio_Label" type="Label" parent="."]
+[node name="bio_Label" type="Label" parent="." unique_id=1319774420]
 layout_mode = 2
+text = "Bio"
 horizontal_alignment = 1
 autowrap_mode = 3
-text = "Bio"
 
-[node name="NavHBoxContainer" type="HBoxContainer" parent="."]
+[node name="NavHBoxContainer" type="HBoxContainer" parent="." unique_id=991312047]
 layout_mode = 2
 alignment = 1
 
-[node name="prev_Button" type="Button" parent="NavHBoxContainer"]
+[node name="prev_Button" type="Button" parent="NavHBoxContainer" unique_id=790487715]
 layout_mode = 2
 text = "◀"
 
-[node name="next_Button" type="Button" parent="NavHBoxContainer"]
+[node name="next_Button" type="Button" parent="NavHBoxContainer" unique_id=241737766]
 layout_mode = 2
 text = "▶"
 
+[connection signal="timeout" from="AutoAdvanceTimer" to="." method="_on_auto_advance_timer_timeout"]
 [connection signal="pressed" from="NavHBoxContainer/prev_Button" to="." method="_on_prev_button_pressed"]
 [connection signal="pressed" from="NavHBoxContainer/next_Button" to="." method="_on_next_button_pressed"]
-[connection signal="timeout" from="AutoAdvanceTimer" to="." method="_on_auto_advance_timer_timeout"]
