@@ -176,6 +176,7 @@ layout_mode = 2
 text = "DONATE HERE"
 
 [node name="controls_Content" type="MarginContainer" parent="CanvasLayer/MarginContainer/HBoxContainer/PanelContainer" unique_id=369995697]
+visible = false
 layout_mode = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/MarginContainer/HBoxContainer/PanelContainer/controls_Content" unique_id=2049868716]
@@ -219,15 +220,37 @@ layout_mode = 2
 text = "Configurción"
 
 [node name="credits_Content" type="MarginContainer" parent="CanvasLayer/MarginContainer/HBoxContainer/PanelContainer" unique_id=1220496008]
-visible = false
 layout_mode = 2
 
-[node name="Label" type="Label" parent="CanvasLayer/MarginContainer/HBoxContainer/PanelContainer/credits_Content" unique_id=857221748]
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/MarginContainer/HBoxContainer/PanelContainer/credits_Content" unique_id=1132897715]
 layout_mode = 2
-text = "Créditos:
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/MarginContainer/HBoxContainer/PanelContainer/credits_Content/MarginContainer" unique_id=166802386]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/MarginContainer/HBoxContainer/PanelContainer/credits_Content/MarginContainer/VBoxContainer" unique_id=237551910]
+layout_mode = 2
+text = "CREDITS:"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/MarginContainer/HBoxContainer/PanelContainer/credits_Content/MarginContainer/VBoxContainer" unique_id=1486946637]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("3_1nbid")
+text = "Raúl Alfredo González
+Amarú González
+Pablo Aponte
+Daniel Zerpa
+Denise Cabello
+Edgar Escalona
+Elvimar Alvarez
 Kevin Esaa
-Raúl Gonzalez
-Peipol..."
+Coquita 
+Aaron Rumbos
+Víctor Blanco"
 
 [node name="loadingPanel" type="Panel" parent="CanvasLayer" unique_id=1375120956]
 visible = false
