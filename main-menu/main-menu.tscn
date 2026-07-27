@@ -2,10 +2,29 @@
 
 [ext_resource type="Script" uid="uid://l8di6o87hbaj" path="res://main-menu/main-menu-controller.gd" id="1_6u48k"]
 [ext_resource type="Script" uid="uid://dn1vx62hd863p" path="res://_commons/scene-manager/change-scene-controller.gd" id="2_6u48k"]
+[ext_resource type="AudioStream" uid="uid://cyjiab3y5tt34" path="res://audio-music/riffLoop.mp3" id="2_820v7"]
+[ext_resource type="Texture2D" uid="uid://dkm4hs7o2as5d" path="res://art-visuals/player_4/walk/UI_Background.png" id="2_xjbnb"]
 [ext_resource type="Theme" uid="uid://c8t4gy3m7o4jn" path="res://resources/themes/tema_menus.tres" id="3_1nbid"]
 
 [node name="MainMenu" type="Node2D" unique_id=1442265409]
 script = ExtResource("1_6u48k")
+
+[node name="Node" type="Node" parent="." unique_id=496677768]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Node" unique_id=1686868067]
+stream = ExtResource("2_820v7")
+autoplay = true
+parameters/looping = true
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="." unique_id=1725081822]
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer2" unique_id=739414839]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_xjbnb")
 
 [node name="ChangeSceneController" type="Node" parent="." unique_id=873296796]
 script = ExtResource("2_6u48k")
