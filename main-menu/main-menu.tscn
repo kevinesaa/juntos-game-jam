@@ -5,6 +5,7 @@
 [ext_resource type="AudioStream" uid="uid://bbf5f4sbc57xl" path="res://audio-music/LoopRiffMM.MP3" id="2_820v7"]
 [ext_resource type="Texture2D" uid="uid://dkm4hs7o2as5d" path="res://art-visuals/player_4/walk/UI_Background.png" id="2_xjbnb"]
 [ext_resource type="Theme" uid="uid://c8t4gy3m7o4jn" path="res://resources/themes/tema_menus.tres" id="3_1nbid"]
+[ext_resource type="Texture2D" uid="uid://cugoqeujh1yu4" path="res://art-visuals/3.png" id="4_42iot"]
 [ext_resource type="Texture2D" uid="uid://bttl17xhsn36s" path="res://art-visuals/keyboard 1.png" id="6_klufr"]
 
 [node name="MainMenu" type="Node2D" unique_id=1442265409]
@@ -19,13 +20,35 @@ parameters/looping = true
 
 [node name="CanvasLayer2" type="CanvasLayer" parent="." unique_id=1725081822]
 
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer2" unique_id=739414839]
+[node name="Control" type="Control" parent="CanvasLayer2" unique_id=1763305583]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer2/Control" unique_id=739414839]
+layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_xjbnb")
+
+[node name="TextureRect2" type="TextureRect" parent="CanvasLayer2/Control" unique_id=1412086029]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1011.55554
+offset_top = -569.0
+grow_horizontal = 0
+grow_vertical = 0
+texture = ExtResource("4_42iot")
 
 [node name="ChangeSceneController" type="Node" parent="." unique_id=873296796]
 script = ExtResource("2_6u48k")

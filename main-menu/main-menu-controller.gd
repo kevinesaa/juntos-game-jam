@@ -49,7 +49,7 @@ func _ready() -> void:
 	mi_grupo.pressed.connect(_on_grupo_cambio)
 	
 	# 5. Acerca empieza presionado por defecto
-	boton_about.button_pressed = true
+	#boton_about.button_pressed = true
 	
 	#loading_panel.visible.bind(false) # Oculto al iniciar
 	loading_panel.visible = false
