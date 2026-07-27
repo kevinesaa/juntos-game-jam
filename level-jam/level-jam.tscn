@@ -612,7 +612,7 @@ layout_mode = 2
 layout_mode = 2
 size_flags_horizontal = 3
 nameText = "Enigma"
-imgPath = "res://art-visuals/player_portrait.png"
+imgPath = "res://art-visuals/portraits/IMG_20260727_002409_849.webp"
 
 [node name="space3_Control" type="Control" parent="CanvasLayer/MarginContainer/VBoxContainer/PanelContainer/HBoxContainer" unique_id=19572423]
 custom_minimum_size = Vector2(64, 0)

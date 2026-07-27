@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cryceywmja62h"
-path="res://.godot/imported/Gabriel.png-0ade63969172f85fdf782e3765f19ca2.ctex"
+uid="uid://dbkky2q728oji"
+path="res://.godot/imported/IMG_20260727_002409_849.webp-e701b3dc842dce5f24092a1c253a7871.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art-visuals/portraits/Gabriel.png"
-dest_files=["res://.godot/imported/Gabriel.png-0ade63969172f85fdf782e3765f19ca2.ctex"]
+source_file="res://art-visuals/portraits/IMG_20260727_002409_849.webp"
+dest_files=["res://.godot/imported/IMG_20260727_002409_849.webp-e701b3dc842dce5f24092a1c253a7871.ctex"]
 
 [params]
 
