@@ -3,11 +3,13 @@ extends Node
 
 
 @export var nameText:String
+@export var imgPath:String
 @onready var name_label: Label = $VBoxContainer/nameLabel
 @onready var helth_progress_bar: ProgressBar = $VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer/helth_ProgressBar
 @onready var power_progress_bar: ProgressBar = $VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer/power_ProgressBar
 
 @onready var selection_highlight: ReferenceRect = $VBoxContainer/HBoxContainer/portrait_TextureRect/selectionHighlight
+@onready var portrait_texture_rect: TextureRect = $VBoxContainer/HBoxContainer/portrait_TextureRect
 
 @onready var skill_1_v_scroll_bar: VScrollBar = $VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer/HBoxContainer/skills_one_CenterContainer/PanelContainer/VScrollBar
 @onready var skill_2_v_scroll_bar: VScrollBar = $VBoxContainer/HBoxContainer/MarginContainer/VBoxContainer/HBoxContainer/skills_two_CenterContainer/PanelContainer/VScrollBar
@@ -22,6 +24,8 @@ var skill_selection_highlights : Array[ReferenceRect]
 
 func _ready() -> void:
 	name_label.text = nameText
+	var tempPreload = load(imgPath)
+	self.portrait_texture_rect.texture =  tempPreload 
 	skill_charge.append(skill_1_v_scroll_bar)
 	skill_charge.append(skill_2_v_scroll_bar)
 	skill_charge.append(skill_3_v_scroll_bar)
