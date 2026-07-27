@@ -602,7 +602,7 @@ layout_mode = 2
 layout_mode = 2
 size_flags_horizontal = 3
 nameText = "Scorpio"
-imgPath = "res://art-visuals/player_portrait.png"
+imgPath = "res://art-visuals/portraits/IMG_20260726_234211_434.jpg"
 
 [node name="space2_Control" type="Control" parent="CanvasLayer/MarginContainer/VBoxContainer/PanelContainer/HBoxContainer" unique_id=312282163]
 custom_minimum_size = Vector2(64, 0)
@@ -675,6 +675,7 @@ layout_mode = 2
 max_value = 1.0
 
 [node name="endgame_container_PanelContainer" type="PanelContainer" parent="CanvasLayer" unique_id=807484433]
+visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
